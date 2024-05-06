@@ -1,11 +1,11 @@
 window.onload = () => {
 
-    let formElement = document.querySelector("#form_E");
+    let formElement = document.querySelector("#form_U");
     console.log("a", formElement);
     formElement.onsubmit = async (e) => {
         e.preventDefault();
         let formFormData = new FormData(formElement);
-        let url = "http://localhost/proyecto/Backend/controlador/usuario_controlador.php?funcion=eliminar";
+        let url = "http://localhost/proyecto/Backend/controlador/cliente.php?funcion=agregar";
 
         let config = {
             method: 'POST',
@@ -23,7 +23,7 @@ window.onload = () => {
         }
 
         else {
-            alert("Usuario eliminado")
+            alert("Datos correctos")
         }
     }
     

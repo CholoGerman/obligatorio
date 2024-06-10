@@ -1,35 +1,34 @@
 <?php
 require_once '../conexion/conexion.php';
 
-class repuesto
+class cliente_telefono
 {
 
     function obtener()
     {
         $connection = connection();
-        $sql = "SELECT * FROM repuesto ";
+        $sql = "SELECT * FROM cliente_telefono ";
         $respuesta = $connection->query($sql);
         $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $pacientes;
     }
-    public function agregar($tipo,  $precio, $color, $estado, $id_vehiculo){
-        $sql = "INSERT INTO repuesto VALUES(0, '$tipo' $precio, '$color', '$estado', $id_vehiculo);";
+    public function agregar($id_registro, $id_cliente, $telefono){
+        $sql = "INSERT INTO cliente_telefono VALUES(0, $id_registro, $id_cliente, $telefono);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($id_repuesto){
-        $sql = "DELETE FROM repuesto WHERE id_repuesto= $id_repuesto;";
+    public function eliminar($id_registro){
+        $sql = "DELETE FROM cliente_telefono WHERE id_registro= $id_registro;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function editar($id_repuesto, $tipo, $precio, $color, $estado, $id_vehiculo){
-        $sql = "UPDATE repuesto SET tipo=$tipo, precio=$precio, color=$color, estado=$estado, $id_vehiculo=id_vehiculo WHERE id_repuesto= $id_repuesto;";  
+    public function editar($id_registro, $id_cliente, $telefono){
+        $sql = "UPDATE cliente_telefono SET id_cliente=$id_cliente, telefono=$telefono WHERE id_registro= $id_registro;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 }
-?>

@@ -4,29 +4,28 @@ require_once '../conexion/conexion.php';
 class detalle
 {
 
-    function obtener()
-    {
+    function obtener(){
         $connection = connection();
         $sql = "SELECT * FROM detalle ";
         $respuesta = $connection->query($sql);
         $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $pacientes;
     }
-    public function agregar($nombre,  $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "INSERT INTO detalle VALUES(0, '$nombre' '$apellido', $ci, $telefono, '$email' , '$fecha');";
+    public function agregar($cantidad,  $precio_unitario, $total, $ID_repuesto, $ID_pedido, $fecha){
+        $sql = "INSERT INTO detalle VALUES(0, $cantidad, $precio_unitario, $total, $ID_repuesto, $ID_pedido, $fecha);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($id){
-        $sql = "DELETE FROM detalle WHERE id= $id;";
+    public function eliminar($ID_detalle){
+        $sql = "DELETE FROM detalle WHERE ID_detalle= $ID_detalle;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "UPDATE detalle SET nombre=$nombre, apellido=$apellido, ci=$ci, telefono=$telefono, email=$email, fecha=$fecha WHERE id= $id;";  
+    public function editar($ID_detalle, $cantidad, $precio_unitario, $total, $ID_repuesto, $ID_pedido){
+        $sql = "UPDATE detalle SET cantidad=$cantidad, precio_unitario=$precio_unitario, total=$total, ID_repuesto=$ID_repuesto, ID_pedido=$ID_pedido ID_detalle= $ID_detalle;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

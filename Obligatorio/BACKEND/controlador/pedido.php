@@ -1,5 +1,5 @@
 <?php
-require_once '../modelo/clienteDAO.php';
+require_once '../modelo/pedidoDAO.php';
 
 $funcion = $_GET['funcion'];
 
@@ -26,32 +26,27 @@ function obtener()
 }
 function agregar()
 {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];        //editar los atributos con sus correspondientes
-    $email = $_POST['email'];
+
     $fecha = $_POST['fecha'];
-    $resultado = (new pedido())->agregar($nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $metodo_pago = $_POST['metodo_pago'];
+    $ID_cliente = $_POST['ID_cliente'];
+    $resultado = (new pedido())->agregar($fecha, $metodo_pago, $ID_cliente);
     echo json_encode($resultado);
 }
 function eliminar()
 {
-    $id = $_POST['id'];
-    $resultado = (new pedido())->eliminar($id);
+    $id_pedido = $_POST['id_pedido'];
+    $resultado = (new pedido())->eliminar($id_pedido);
     echo json_encode($resultado);
 }
 
 
 function editar()
 {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
+    $id_pedido = $_POST['id_pedido'];
     $fecha = $_POST['fecha'];
-    $resultado = (new pedido())->editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $metodo_pago = $_POST['cedula'];
+    $ID_cliente = $_POST['ID_cliente'];
+    $resultado = (new pedido())->editar($id_pedido, $fecha, $metodo_pago, $ID_cliente);
     echo json_encode($resultado);
 }

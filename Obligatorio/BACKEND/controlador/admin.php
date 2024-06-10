@@ -1,5 +1,5 @@
 <?php
-require_once '../modelo/clienteDAO.php';
+require_once '../modelo/adminDAO.php';
 
 $funcion = $_GET['funcion'];
 
@@ -20,34 +20,29 @@ switch ($funcion) {
         break;
 }
 function obtener(){
-    $resultado = (new cliente())->obtener();
+    $resultado = (new admin())->obtener();
     echo json_encode($resultado);
 }
 function agregar(){
     $usuario = $_POST['usuario'];
     $contrasenia = $_POST['contrasenia'];
     $id_persona = $_POST['id_persona'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $resultado = (new cliente())->agregar($usuario, $contrasenia, $id_persona, $nombre, $apellido);
+    $resultado = (new admin())->agregar($usuario, $contrasenia, $id_persona);
     echo json_encode($resultado);
 }
 function eliminar(){
-    $id_cliente = $_POST['id_cliente'];
-    $resultado = (new cliente())->eliminar($id_cliente);
+    $id_admin = $_POST['id_admin'];
+    $resultado = (new admin())->eliminar($id_admin);
     echo json_encode($resultado);
 }
 
 
 function editar(){
-    $id_cliente = $_POST['id_cliente'];
+   $id_admin = $_POST['id_admin'];
     $usuario = $_POST['usuario'];
     $contrasenia = $_POST['contrasenia'];
     $id_persona = $_POST['id_persona'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $fecha = $_POST['fecha'];
-    $resultado = (new cliente())->editar($id_cliente, $usuario, $contrasenia, $id_persona, $nombre, $apellido, $fecha);
+    $resultado = (new admin())->editar( $id_admin, $usuario, $contrasenia, $id_persona);
     echo json_encode($resultado);
 }
 ?>

@@ -26,32 +26,31 @@ function obtener()
 }
 function agregar()
 {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];        //editar los atributos con sus correspondientes
-    $email = $_POST['email'];
+    $cantidad = $_POST['cantidad'];
+    $precio_unitario = $_POST['precio_unitario'];
+    $precio_total = $_POST['precio_total'];
+    $id_repuesto = $_POST['id_repuesto'];     
+    $id_pedido = $_POST['id_pedido'];
     $fecha = $_POST['fecha'];
-    $resultado = (new detalle())->agregar($nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $resultado = (new detalle())->agregar($cantidad, $precio_unitario, $precio_total, $id_repuesto, $id_pedido, $fecha);
     echo json_encode($resultado);
 }
 function eliminar()
 {
-    $id = $_POST['id'];
-    $resultado = (new detalle())->eliminar($id);
+    $id_detalle = $_POST['id_detalle'];
+    $resultado = (new detalle())->eliminar($id_detalle);
     echo json_encode($resultado);
 }
 
 
 function editar()
 {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
-    $fecha = $_POST['fecha'];
-    $resultado = (new detalle())->editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $id_detalle = $_POST['id_detalle'];
+    $cantidad = $_POST['cantidad'];
+    $precio_unitario = $_POST['precio_unitario'];
+    $precio_total = $_POST['precio_total'];
+    $ID_repuesto = $_POST['ID_repuesto'];
+    $ID_pedido = $_POST['ID_pedido'];
+    $resultado = (new detalle())->editar($id_detalle, $cantidad, $precio_unitario, $precio_total, $ID_repuesto, $ID_pedido);
     echo json_encode($resultado);
 }

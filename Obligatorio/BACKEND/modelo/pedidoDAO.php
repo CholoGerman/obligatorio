@@ -9,24 +9,24 @@ class pedido
         $connection = connection();
         $sql = "SELECT * FROM pedido ";
         $respuesta = $connection->query($sql);
-        $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $pacientes;
+        $pametodoentes = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $pametodoentes;
     }
-    public function agregar($nombre,  $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "INSERT INTO pedido VALUES(0, '$nombre' '$apellido', $ci, $telefono, '$email' , '$fecha');";
+    public function agregar($fecha, $metodo_pago, $ID_cliente){
+        $sql = "INSERT INTO pedido VALUES(0, $fecha '$metodo_pago', $ID_cliente);"; // fecha (date) va entre comilla simple?
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($id){
-        $sql = "DELETE FROM pedido WHERE id= $id;";
+    public function eliminar($ID_pedido){
+        $sql = "DELETE FROM pedido WHERE ID_pedido= $ID_pedido;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "UPDATE pedido SET nombre=$nombre, apellido=$apellido, ci=$ci, telefono=$telefono, email=$email, fecha=$fecha WHERE id= $id;";  
+    public function editar($ID_pedido, $fecha, $metodo_pago, $ID_cliente){
+        $sql = "UPDATE pedido SET fecha=$fecha, metodo_pago=$metodo_pago, ID_cliente=$ID_cliente WHERE ID_pedido= $ID_pedido;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

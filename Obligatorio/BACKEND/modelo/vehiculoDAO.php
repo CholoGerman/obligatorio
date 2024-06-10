@@ -12,21 +12,21 @@ class vehiculo
         $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $pacientes;
     }
-    public function agregar($nombre,  $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "INSERT INTO vehiculo VALUES(0, '$nombre' '$apellido', $ci, $telefono, '$email' , '$fecha');";
+    public function agregar( $marca, $modelo, $anio){
+        $sql = "INSERT INTO vehiculo VALUES(0, '$marca' '$modelo', '$anio');";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($id){
-        $sql = "DELETE FROM vehiculo WHERE id= $id;";
+    public function eliminar($id_vehiculo){
+        $sql = "DELETE FROM vehiculo WHERE id_vehiculo= $id_vehiculo;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "UPDATE vehiculo SET nombre=$nombre, apellido=$apellido, ci=$ci, telefono=$telefono, email=$email, fecha=$fecha WHERE id= $id;";  
+    public function editar($id_vehiculo, $marca, $modelo, $anio){
+        $sql = "UPDATE vehiculo SET marca=$marca, modelo=$modelo, anio=$anio WHERE id_vehiculo= $id_vehiculo;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

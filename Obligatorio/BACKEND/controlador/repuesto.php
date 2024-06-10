@@ -26,32 +26,30 @@ function obtener()
 }
 function agregar()
 {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];           //editar los atributos con sus correspondientes
-    $email = $_POST['email'];
-    $fecha = $_POST['fecha'];
-    $resultado = (new repuesto())->agregar($nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $tipo = $_POST['tipo'];
+    $precio = $_POST['precio'];
+    $color = $_POST['color'];
+    $estado = $_POST['estado'];  
+    $id_vehiculo = $_POST['id_vehiculo'];       
+    $resultado = (new repuesto())->agregar($tipo, $precio, $color, $estado, $id_vehiculo);
     echo json_encode($resultado);
 }
 function eliminar()
 {
-    $id = $_POST['id'];
-    $resultado = (new repuesto())->eliminar($id);
+    $id_repuesto = $_POST['id_repuesto'];
+    $resultado = (new repuesto())->eliminar($id_repuesto);
     echo json_encode($resultado);
 }
 
 
 function editar()
 {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $ci = $_POST['cedula'];
-    $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
-    $fecha = $_POST['fecha'];
-    $resultado = (new repuesto())->editar($id, $nombre, $apellido, $ci, $telefono, $email, $fecha);
+    $id_repuesto = $_POST['id_repuesto'];
+    $tipo = $_POST['tipo'];
+    $precio = $_POST['precio'];
+    $color = $_POST['color'];
+    $estado = $_POST['estado'];
+    $id_vehiculo = $_POST['id_vehiculo'];
+    $resultado = (new repuesto())->editar($id_repuesto, $tipo, $precio, $color, $estado,$id_vehiculo);
     echo json_encode($resultado);
 }

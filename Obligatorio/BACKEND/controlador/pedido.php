@@ -1,31 +1,31 @@
 <?php
-require_once '../modelo/pedidoDAO.php';
+require_once '../modelo/pedidoDAO.php'; //Indicamos que necesitamos del archivo pedidoDAO.php
 
-$funcion = $_GET['funcion'];
+$funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRUD mediante GET
 
-switch ($funcion) {
+switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar";
-        agregar();
+    case "agregar"; //En el caso de que la funcion sea "agregar" 
+        agregar();  //Utilizar la funcion "agregar()"
+        break; //Fin
+
+    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
+        eliminar(); //Utilizar la funcion "eliminar()"
+        break; //Fin
+
+    case "obtener"; //En el caso de que la funcion sea "obtener" 
+        obtener(); //Utilizar la funcion "obtener()"
         break;
 
-    case "eliminar";
-        eliminar();
-        break;
-    case "obtener";
-        obtener();
-        break;
-    case "editar";
-        editar();
-        break;
+    case "editar"; //En el caso de que la funcion sea "editar" 
+        editar(); //Utilizar la funcion "editar()
+        break; //Fin
 }
-function obtener()
-{
+function obtener(){ //Funcion para mostrar los pedidos
     $resultado = (new pedido())->obtener();
     echo json_encode($resultado);
 }
-function agregar()
-{
+function agregar(){ //Funcion para agregar un nuevo pedido
 
     $fecha = $_POST['fecha'];
     $metodo_pago = $_POST['metodo_pago'];
@@ -33,16 +33,14 @@ function agregar()
     $resultado = (new pedido())->agregar($fecha, $metodo_pago, $ID_cliente);
     echo json_encode($resultado);
 }
-function eliminar()
-{
+function eliminar(){ //Funcion para eliminar un pedido
     $id_pedido = $_POST['id_pedido'];
     $resultado = (new pedido())->eliminar($id_pedido);
     echo json_encode($resultado);
 }
 
 
-function editar()
-{
+function editar(){ //Funcion para editar un pedido
     $id_pedido = $_POST['id_pedido'];
     $fecha = $_POST['fecha'];
     $metodo_pago = $_POST['cedula'];

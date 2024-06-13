@@ -17,15 +17,16 @@ class departamento
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($ID_depto) {
-        $sql = "DELETE FROM departamento WHERE ID_depto= $ID_depto;";
+    public function eliminar($id_depto) {
+        $sql = "DELETE FROM departamento WHERE id_depto= $id_depto;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
+    
 
-    public function editar($ID_depto,$nombre_depto) {
-        $sql = "UPDATE departamento SET ID_depto=$ID_depto, nombre_depto=$nombre_depto;";
+    public function editar($id_depto,$nombre_depto) {
+        $sql = "UPDATE departamento SET id_depto=$id_depto, nombre_depto=$nombre_depto;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

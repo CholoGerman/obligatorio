@@ -4,16 +4,15 @@ require_once '../conexion/conexion.php';
 class cliente_telefono
 {
 
-    function obtener()
-    {
+    function obtener(){
         $connection = connection();
         $sql = "SELECT * FROM cliente_telefono ";
         $respuesta = $connection->query($sql);
-        $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $pacientes;
+        $telefonos = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $telefonos;
     }
-    public function agregar($id_registro, $id_cliente, $telefono){
-        $sql = "INSERT INTO cliente_telefono VALUES(0, $id_registro, $id_cliente, $telefono);";
+    public function agregar($id_cliente, $telefono){ 
+        $sql = "INSERT INTO cliente_telefono VALUES(0, $id_cliente, $telefono);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

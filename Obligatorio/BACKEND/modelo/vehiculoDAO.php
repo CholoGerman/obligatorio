@@ -5,15 +5,15 @@ class vehiculo
 {
 
     function obtener()
-    {
+{
         $connection = connection();
         $sql = "SELECT * FROM vehiculo ";
         $respuesta = $connection->query($sql);
-        $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $pacientes;
+        $vehiculos = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $vehiculos;
     }
-    public function agregar( $marca, $modelo, $anio){
-        $sql = "INSERT INTO vehiculo VALUES(0, '$marca' '$modelo', '$anio');";
+    public function agregar($marca, $modelo, $anio){ 
+        $sql = "INSERT INTO vehiculo VALUES(0, '$marca', '$modelo', '$anio');";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

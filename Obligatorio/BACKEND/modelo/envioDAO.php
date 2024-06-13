@@ -9,8 +9,8 @@ class envio
         $connection = connection();
         $sql = "SELECT * FROM envio ";
         $respuesta = $connection->query($sql);
-        $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $pacientes;
+        $envios = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $envios;
     }
     public function agregar($nombre, $apellido,$fecha_envio, $id_ciudad, $calle_dir, $num_dir, $codigo_postal,$id_pedido){
         $sql = "INSERT INTO envio VALUES(0, $nombre,$fecha_envio, $apellido, $id_ciudad, $calle_dir, $num_dir, $codigo_postal,$id_pedido);";

@@ -9,11 +9,11 @@ class repuesto
         $connection = connection();
         $sql = "SELECT * FROM repuesto ";
         $respuesta = $connection->query($sql);
-        $pacientes = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $pacientes;
+        $repuestos = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $repuestos;
     }
-    public function agregar($tipo,  $precio, $color, $estado, $id_vehiculo){
-        $sql = "INSERT INTO repuesto VALUES(0, '$tipo' $precio, '$color', '$estado', $id_vehiculo);";
+    public function agregar($tipo,  $precio, $color, $estado, $id_vehiculo){ 
+        $sql = "INSERT INTO repuesto VALUES(0, '$tipo', $precio, '$color', '$estado', $id_vehiculo);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

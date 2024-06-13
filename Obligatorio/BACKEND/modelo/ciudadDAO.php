@@ -11,21 +11,21 @@ class ciudad
         $ciudades = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $ciudades;
     }
-    public function agregar($nombre_ciudad, $ID_depto)  {
-        $sql = "INSERT INTO ciudad VALUES(0, $nombre_ciudad, $ID_depto);";
+    public function agregar($nombre_ciudad, $id_depto)  {
+        $sql = "INSERT INTO ciudad VALUES(0, $nombre_ciudad, $id_depto);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
-    public function eliminar($ID_ciudad) {
-        $sql = "DELETE FROM ciudad WHERE ID_ciudad= $ID_ciudad;";
+    public function eliminar($id_ciudad) {
+        $sql = "DELETE FROM ciudad WHERE id_ciudad= $id_ciudad;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function editar($ID_ciudad, $nombre_ciudad, $ID_depto)  {
-        $sql = "UPDATE ciudad SET ID_ciudad=$ID_ciudad, nombre_ciudad=$nombre_ciudad, ID_depto=$ID_depto;";
+    public function editar($id_ciudad, $nombre_ciudad, $id_depto)  {
+        $sql = "UPDATE ciudad SET id_ciudad=$id_ciudad, nombre_ciudad=$nombre_ciudad, id_depto=$id_depto;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

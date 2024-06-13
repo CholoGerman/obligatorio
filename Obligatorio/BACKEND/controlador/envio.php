@@ -1,30 +1,31 @@
 <?php
-require_once '../modelo/envioDAO.php';
+require_once '../modelo/envioDAO.php'; //Indicamos que necesitamos del archivo envioDAO.php
 
-$funcion = $_GET['funcion'];
+$funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRUD mediante GET
 
-switch ($funcion) {
+switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar";
-        agregar();
+    case "agregar"; //En el caso de que la funcion sea "agregar" 
+        agregar();  //Utilizar la funcion "agregar()"
+        break; //Fin
+
+    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
+        eliminar(); //Utilizar la funcion "eliminar()"
+        break; //Fin
+
+    case "obtener"; //En el caso de que la funcion sea "obtener" 
+        obtener(); //Utilizar la funcion "obtener()"
         break;
 
-    case "eliminar";
-        eliminar();
-        break;
-    case "obtener";
-        obtener();
-        break;
-    case "editar";
-        editar();
-        break;
+    case "editar"; //En el caso de que la funcion sea "editar" 
+        editar(); //Utilizar la funcion "editar()
+        break; //Fin
 }
-function obtener(){
+function obtener(){ //Funcion para mostrar los envios
     $resultado = (new envio())->obtener();
     echo json_encode($resultado);
 }
-function agregar()
-{
+function agregar(){ //Funcion para agregar un nuevo envio
     $fecha_envio = $_POST['fecha_envio'];
     $peso = $_POST['peso'];
     $costo = $_POST['costo'];
@@ -36,14 +37,14 @@ function agregar()
     $resultado = (new envio())->agregar($fecha_envio, $peso, $costo, $id_ciudad, $codigo_postal, $calle_dir, $num_dir, $id_pedido);
     echo json_encode($resultado);
 }
-function eliminar(){
+function eliminar(){ //Funcion para eliminar un envio
     $id_envio = $_POST['id_envio'];
     $resultado = (new envio())->eliminar($id_envio);
     echo json_encode($resultado);
 }
 
 
-function editar(){
+function editar(){ //Funcion para editar un envio
     $id_envio = $_POST['id_envio'];
     $fecha_envio = $_POST['fecha_envio'];
     $peso = $_POST['peso'];

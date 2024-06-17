@@ -5,49 +5,49 @@ $funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRU
 
 switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar"; //En el caso de que la funcion sea "agregar" 
-        agregar();  //Utilizar la funcion "agregar()"
-        break; //Fin
+    case "agregar";  
+        agregar(); 
+        break; 
 
-    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
-        eliminar(); //Utilizar la funcion "eliminar()"
-        break; //Fin
+    case "eliminar"; 
+        eliminar(); 
+        break; 
 
-    case "obtener"; //En el caso de que la funcion sea "obtener" 
-        obtener(); //Utilizar la funcion "obtener()"
+    case "obtener";
+        obtener();
         break;
 
-    case "editar"; //En el caso de que la funcion sea "editar" 
-        editar(); //Utilizar la funcion "editar()
-        break; //Fin
+    case "editar";
+        editar(); 
+        break; 
 }
 function obtener(){ //Funcion para mostrar los repuestos
     $resultado = (new repuesto())->obtener();
     echo json_encode($resultado);
 }
 function agregar(){ //Funcion para agregar un nuevo repuesto
-    $tipo = $_POST['tipo'];
-    $precio = $_POST['precio'];
-    $color = $_POST['color'];
-    $estado = $_POST['estado'];  
-    $id_vehiculo = $_POST['id_vehiculo'];       
+    $tipo = $_GET['tipo'];
+    $precio = $_GET['precio'];
+    $color = $_GET['color'];
+    $estado = $_GET['estado'];  
+    $id_vehiculo = $_GET['id_vehiculo'];       
     $resultado = (new repuesto())->agregar($tipo, $precio, $color, $estado, $id_vehiculo);
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar un repuesto
-    $id_repuesto = $_POST['id_repuesto'];
+    $id_repuesto = $_GET['id_repuesto'];
     $resultado = (new repuesto())->eliminar($id_repuesto);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar un repuesto
-    $id_repuesto = $_POST['id_repuesto'];
-    $tipo = $_POST['tipo'];
-    $precio = $_POST['precio'];
-    $color = $_POST['color'];
-    $estado = $_POST['estado'];
-    $id_vehiculo = $_POST['id_vehiculo'];
+    $id_repuesto = $_GET['id_repuesto'];
+    $tipo = $_GET['tipo'];
+    $precio = $_GET['precio'];
+    $color = $_GET['color'];
+    $estado = $_GET['estado'];
+    $id_vehiculo = $_GET['id_vehiculo'];
     $resultado = (new repuesto())->editar($id_repuesto, $tipo, $precio, $color, $estado,$id_vehiculo);
     echo json_encode($resultado);
 }

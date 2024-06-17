@@ -5,27 +5,27 @@ $funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRU
 
 switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar"; //En el caso de que la funcion sea "agregar" 
-        agregar();  //Utilizar la funcion "agregar()"
+    case "agregar"; 
+        agregar(); 
         break; 
 
-    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
-        eliminar(); //Utilizar la funcion "eliminar()"
+    case "eliminar"; 
+        eliminar();
         break; 
 
-    case "obtener"; //En el caso de que la funcion sea "obtener" 
-        obtener(); //Utilizar la funcion "obtener()"
+    case "obtener"; 
+        obtener();
         break;
 
-    case "editar"; //En el caso de que la funcion sea "editar" 
-        editar(); //Utilizar la funcion "editar()
+    case "editar";  
+        editar(); 
         break; 
 }
 function obtener(){ //Funcion para mostrar los admin
     $resultado = (new admin())->obtener(); 
     echo json_encode($resultado);
 }
-function agregar(){ //Funcion que recibe los parametros y los envia al modelo //¿Funcion que agrega un admin?
+function agregar(){ //Funcion que recibe los parametros y los envia al modelo //
     $usuario = $_GET['usuario'];
     $contrasenia = $_GET['contrasenia'];
     $ID_persona = $_GET['ID_persona'];

@@ -5,43 +5,43 @@ $funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRU
 
 switch ($funcion) { //Utilizamos switch para crear los casos posibles de la funcion
 
-    case "agregar"; //En el caso de que la funcion sea "agregar" 
-        agregar();  //Utilizar la funcion "agregar()"
-        break; //Fin
+    case "agregar"; 
+        agregar();  
+        break; 
 
-    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
-        eliminar(); //Utilizar la funcion "eliminar()"
-        break; //Fin
+    case "eliminar"; 
+        eliminar(); 
+        break; 
 
-    case "obtener"; //En el caso de que la funcion sea "obtener" 
-        obtener(); //Utilizar la funcion "obtener()"
+    case "obtener"; 
+        obtener(); 
         break;
 
-    case "editar"; //En el caso de que la funcion sea "editar" 
-        editar(); //Utilizar la funcion "editar()
-        break; //Fin
+    case "editar"; 
+        editar(); 
+        break; 
 }
 function obtener(){ //Funcion para mostrar los telefonos
     $resultado = (new cliente_telefono())->obtener();
     echo json_encode($resultado);
 }
 function agregar(){ //Funcion para agregar un nuevo telefono
-    $id_cliente = $_POST['id_cliente'];
-    $telefono = $_POST['telefono'];
+    $id_cliente = $_GET['id_cliente'];
+    $telefono = $_GET['telefono'];
     $resultado = (new cliente_telefono())->agregar( $id_cliente, $telefono);
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar un telefono
-    $id_registro = $_POST['id_registro'];
+    $id_registro = $_GET['id_registro'];
     $resultado = (new cliente_telefono())->eliminar($id_registro);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar un telefono
-    $id_registro = $_POST['id_registro'];
-    $id_cliente = $_POST['id_cliente'];
-    $telefono = $_POST['telefono'];
+    $id_registro = $_GET['id_registro'];
+    $id_cliente = $_GET['id_cliente'];
+    $telefono = $_GET['telefono'];
     $resultado = (new cliente_telefono())->editar($id_registro, $id_cliente, $telefono);
     echo json_encode($resultado);
 }

@@ -32,12 +32,7 @@ class admin
     }
 }
 
-/*
-Como hacemos para probar el backend cuando tenemos foreign key? tenemos que tener ya agregados todos los datos?
 
-
-
-*/
 
 
 

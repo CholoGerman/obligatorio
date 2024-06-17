@@ -5,51 +5,51 @@ $funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRU
 
 switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar"; //En el caso de que la funcion sea "agregar" 
-        agregar();  //Utilizar la funcion "agregar()"
-        break; //Fin
+    case "agregar"; 
+        agregar();  
+        break; 
 
-    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
-        eliminar(); //Utilizar la funcion "eliminar()"
-        break; //Fin
+    case "eliminar"; 
+        eliminar(); 
+        break; 
 
-    case "obtener"; //En el caso de que la funcion sea "obtener" 
-        obtener(); //Utilizar la funcion "obtener()"
+    case "obtener"; 
+        obtener(); 
         break;
 
-    case "editar"; //En el caso de que la funcion sea "editar" 
-        editar(); //Utilizar la funcion "editar()
-        break; //Fin
+    case "editar"; 
+        editar();  
+        break; 
 }
 function obtener(){ //Funcion para mostrar las personas
     $resultado = (new persona())->obtener();
     echo json_encode($resultado);
 }
 function agregar(){ //Funcion para agregar una nueva persona
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $id_ciudad = $_POST['id_ciudad'];
-    $calle_dir = $_POST['calle_dir'];
-    $num_dir = $_POST['num_dir'];
-    $codigo_postal = $_POST['codigo_postal'];
+    $nombre = $_GET['nombre'];
+    $apellido = $_GET['apellido'];
+    $id_ciudad = $_GET['id_ciudad'];
+    $calle_dir = $_GET['calle_dir'];
+    $num_dir = $_GET['num_dir'];
+    $codigo_postal = $_GET['codigo_postal'];
     $resultado = (new persona())->agregar($nombre, $apellido, $id_ciudad, $calle_dir, $num_dir, $codigo_postal);
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar una persona
-    $id_persona = $_POST['id_persona'];
+    $id_persona = $_GET['id_persona'];
     $resultado = (new persona())->eliminar($id_persona);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar una persona
-    $id_persona = $_POST['id_persona'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $id_ciudad = $_POST['id_ciudad'];
-    $calle_dir = $_POST['calle_dir'];
-    $num_dir = $_POST['num_dir'];
-    $codigo_postal = $_POST['codigo_postal'];
+    $id_persona = $_GET['id_persona'];
+    $nombre = $_GET['nombre'];
+    $apellido = $_GET['apellido'];
+    $id_ciudad = $_GET['id_ciudad'];
+    $calle_dir = $_GET['calle_dir'];
+    $num_dir = $_GET['num_dir'];
+    $codigo_postal = $_GET['codigo_postal'];
     $resultado = (new persona())->editar($id_persona, $nombre, $apellido, $id_ciudad, $calle_dir, $num_dir, $codigo_postal);
     echo json_encode($resultado);
 }

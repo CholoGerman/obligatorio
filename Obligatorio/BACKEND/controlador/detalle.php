@@ -5,50 +5,50 @@ $funcion = $_GET['funcion']; //Declaramos que vamos a recibir la funcion del CRU
 
 switch ($funcion) { //Utilizamos switch para crear los distintos casos de la funcion
 
-    case "agregar"; //En el caso de que la funcion sea "agregar" 
-        agregar();  //Utilizar la funcion "agregar()"
-        break; //Fin
+    case "agregar"; 
+        agregar(); 
+        break; 
 
-    case "eliminar"; //En el caso de que la funcion sea "eliminar" 
-        eliminar(); //Utilizar la funcion "eliminar()"
-        break; //Fin
+    case "eliminar"; 
+        eliminar();
+        break; 
 
-    case "obtener"; //En el caso de que la funcion sea "obtener" 
-        obtener(); //Utilizar la funcion "obtener()"
+    case "obtener"; 
+        obtener(); 
         break;
 
-    case "editar"; //En el caso de que la funcion sea "editar" 
-        editar(); //Utilizar la funcion "editar()
-        break; //Fin
+    case "editar"; 
+        editar();
+        break; 
 }
 function obtener() { //Funcion para mostrar los detalles del pedido
     $resultado = (new detalle())->obtener();
     echo json_encode($resultado);
 }
 function agregar(){ //Funcion para agregar un nuevo detalle del pedido
-    $cantidad = $_POST['cantidad']; 
-    $precio_unitario = $_POST['precio_unitario']; 
-    $precio_total = $_POST['precio_total'];
-    $id_repuesto = $_POST['id_repuesto'];      
-    $id_pedido = $_POST['id_pedido'];
-    $fecha = $_POST['fecha'];
+    $cantidad = $_GET['cantidad']; 
+    $precio_unitario = $_GET['precio_unitario']; 
+    $precio_total = $_GET['precio_total'];
+    $id_repuesto = $_GET['id_repuesto'];      
+    $id_pedido = $_GET['id_pedido'];
+    $fecha = $_GET['fecha'];
     $resultado = (new detalle())->agregar($cantidad, $precio_unitario, $precio_total, $id_repuesto, $id_pedido, $fecha);
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar un detalle del pedido
-    $id_detalle = $_POST['id_detalle'];
+    $id_detalle = $_GET['id_detalle'];
     $resultado = (new detalle())->eliminar($id_detalle);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar un detalle del pedido
-    $id_detalle = $_POST['id_detalle'];
-    $cantidad = $_POST['cantidad'];
-    $precio_unitario = $_POST['precio_unitario'];
-    $precio_total = $_POST['precio_total'];
-    $id_repuesto = $_POST['id_repuesto'];
-    $id_pedido = $_POST['id_pedido'];
+    $id_detalle = $_GET['id_detalle'];
+    $cantidad = $_GET['cantidad'];
+    $precio_unitario = $_GET['precio_unitario'];
+    $precio_total = $_GET['precio_total'];
+    $id_repuesto = $_GET['id_repuesto'];
+    $id_pedido = $_GET['id_pedido'];
     $resultado = (new detalle())->editar($id_detalle, $cantidad, $precio_unitario, $precio_total, $id_repuesto, $id_pedido);
     echo json_encode($resultado);
 }

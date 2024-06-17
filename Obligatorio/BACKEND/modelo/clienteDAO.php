@@ -24,8 +24,8 @@ class cliente
         return $respuesta;
     }
 
-    public function editar($id_cliente, $nombre, $apellido, $ci, $telefono, $email, $fecha){
-        $sql = "UPDATE cliente SET nombre=$nombre, apellido=$apellido, ci=$ci, telefono=$telefono, email=$email, fecha=$fecha WHERE id_cliente= $id_cliente;";  
+    public function editar($id_cliente, $nombre, $apellido, $usuario, $contrasenia, /*$email, */ $id_persona){
+        $sql = "UPDATE cliente SET nombre='$nombre', apellido='$apellido', usuario='$usuario', contrasenia='$contrasenia', /*email */ id_persona=$id_persona WHERE id_cliente= $id_cliente;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

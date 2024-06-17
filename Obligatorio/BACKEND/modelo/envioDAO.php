@@ -12,8 +12,8 @@ class envio
         $envios = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $envios;
     }
-    public function agregar($nombre, $apellido,$fecha_envio, $id_ciudad, $calle_dir, $num_dir, $codigo_postal,$id_pedido){
-        $sql = "INSERT INTO envio VALUES(0, $nombre,$fecha_envio, $apellido, $id_ciudad, $calle_dir, $num_dir, $codigo_postal,$id_pedido);";
+    public function agregar($id_envio, $fecha_envio, $peso, $costo, $id_ciudad, $codigo_postal, $calle_dir,$num_dir, $id_pedido){
+        $sql = "INSERT INTO envio VALUES(0, '$id_envio', '$peso', '$fecha_envio', $costo, '$id_ciudad', '$codigo_postal', '$calle_dir', '$num_dir', $id_pedido);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
@@ -25,8 +25,8 @@ class envio
         return $respuesta;
     }
 
-    public function editar($id_envio,$fecha_envio, $nombre, $apellido, $id_ciudad, $calle_dir, $num_dir, $codigo_postal,$id_pedido ){
-        $sql = "UPDATE envio SET nombre=$nombre,fecha_envio=$fecha_envio, apellido=$apellido, id_ciudad=$id_ciudad, calle_dir=$calle_dir, num_dir=$num_dir, codigo_postal=$codigo_postal, id_pedido=$id_pedido WHERE id_envio= $id_envio;";  
+    public function editar($id_envio, $peso, $fecha_envio, $costo, $id_ciudad, $codigo_postal, $calle_dir,$num_dir, $id_pedido ){
+        $sql = "UPDATE envio SET peso='$peso', fecha_envio='$fecha_envio', costo=$costo, id_ciudad=$id_ciudad, codigo_postal='$codigo_postal', calle_dir='$calle_dir', num_dir='$num_dir', $id_pedido=id_pedido WHERE id_envio= $id_envio;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

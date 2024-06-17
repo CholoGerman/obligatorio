@@ -33,17 +33,17 @@ function agregar(){ //Funcion para agregar un nuevo vehiculo
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar un vehiculo
-    $id_vehiculo = $_POST['id_vehiculo'];
+    $id_vehiculo = $_GET['id_vehiculo'];
     $resultado = (new vehiculo())->eliminar($id_vehiculo);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar un vehiculo
-    $id_vehiculo = $_POST['id_vehiculo'];
-    $marca = $_POST['marca'];
-    $modelo = $_POST['modelo'];
-    $anio = $_POST['anio'];
+    $id_vehiculo = $_GET['id_vehiculo'];
+    $marca = $_GET['marca'];
+    $modelo = $_GET['modelo'];
+    $anio = $_GET['anio'];
     $resultado = (new vehiculo())->editar($id_vehiculo, $marca, $modelo, $anio);
     echo json_encode($resultado);
 }

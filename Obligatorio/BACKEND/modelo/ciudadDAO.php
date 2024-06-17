@@ -12,7 +12,7 @@ class ciudad
         return $ciudades;
     }
     public function agregar($nombre_ciudad, $id_depto)  {
-        $sql = "INSERT INTO ciudad VALUES(0, $nombre_ciudad, $id_depto);";
+        $sql = "INSERT INTO ciudad VALUES(0, '$nombre_ciudad', $id_depto);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
@@ -25,7 +25,7 @@ class ciudad
     }
 
     public function editar($id_ciudad, $nombre_ciudad, $id_depto)  {
-        $sql = "UPDATE ciudad SET id_ciudad=$id_ciudad, nombre_ciudad=$nombre_ciudad, id_depto=$id_depto;";
+        $sql = "UPDATE ciudad SET nombre_ciudad='$nombre_ciudad', id_depto=$id_depto WHERE id_ciudad=$id_ciudad;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

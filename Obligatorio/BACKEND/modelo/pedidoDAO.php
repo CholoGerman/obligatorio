@@ -26,7 +26,7 @@ class pedido
     }
 
     public function editar($id_pedido, $fecha, $metodo_pago, $id_cliente){
-        $sql = "UPDATE pedido SET fecha=$fecha, metodo_pago=$metodo_pago, id_cliente=$id_cliente WHERE id_pedido= $id_pedido;";  
+        $sql = "UPDATE pedido SET fecha='$fecha', metodo_pago='$metodo_pago', id_cliente=$id_cliente WHERE id_pedido= $id_pedido;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

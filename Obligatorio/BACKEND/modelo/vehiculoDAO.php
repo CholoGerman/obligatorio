@@ -26,7 +26,7 @@ class vehiculo
     }
 
     public function editar($id_vehiculo, $marca, $modelo, $anio){
-        $sql = "UPDATE vehiculo SET marca=$marca, modelo=$modelo, anio=$anio WHERE id_vehiculo= $id_vehiculo;";  
+        $sql = "UPDATE vehiculo SET marca='$marca', modelo='$modelo', anio='$anio' WHERE id_vehiculo= $id_vehiculo;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

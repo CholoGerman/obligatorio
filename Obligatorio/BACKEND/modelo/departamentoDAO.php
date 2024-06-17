@@ -12,7 +12,7 @@ class departamento
         return $departamentos;
     }
     public function agregar($nombre_depto){
-        $sql = "INSERT INTO departamento VALUES(0, $nombre_depto);";
+        $sql = "INSERT INTO departamento VALUES(0, '$nombre_depto');";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
@@ -26,7 +26,7 @@ class departamento
     
 
     public function editar($id_depto,$nombre_depto) {
-        $sql = "UPDATE departamento SET id_depto=$id_depto, nombre_depto=$nombre_depto;";
+        $sql = "UPDATE departamento SET nombre_depto='$nombre_depto' WHERE id_depto=$id_depto;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

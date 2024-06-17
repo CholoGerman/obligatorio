@@ -26,25 +26,25 @@ function obtener(){ //Funcion para mostrar los admin
     echo json_encode($resultado);
 }
 function agregar(){ //Funcion que recibe los parametros y los envia al modelo //¿Funcion que agrega un admin?
-    $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['contrasenia'];
-    $id_persona = $_POST['id_persona'];
-    $resultado = (new admin())->agregar($usuario, $contrasenia, $id_persona);
+    $usuario = $_GET['usuario'];
+    $contrasenia = $_GET['contrasenia'];
+    $ID_persona = $_GET['ID_persona'];
+    $resultado = (new admin())->agregar($usuario, $contrasenia, $ID_persona);
     echo json_encode($resultado);
 }
 function eliminar(){ //Funcion para eliminar un admin
-    $id_admin = $_POST['id_admin'];
+    $id_admin = $_GET['id_admin'];
     $resultado = (new admin())->eliminar($id_admin);
     echo json_encode($resultado);
 }
 
 
 function editar(){ //Funcion para editar un admin
-   $id_admin = $_POST['id_admin'];
-    $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['contrasenia'];
-    $id_persona = $_POST['id_persona'];
-    $resultado = (new admin())->editar( $id_admin, $usuario, $contrasenia, $id_persona);
+   $id_admin = $_GET['id_admin'];
+    $usuario = $_GET['usuario'];
+    $contrasenia = $_GET['contrasenia'];
+    $ID_persona = $_GET['ID_persona'];
+    $resultado = (new admin())->editar($id_admin, $usuario, $contrasenia, $ID_persona);
     echo json_encode($resultado);
 }
 ?>

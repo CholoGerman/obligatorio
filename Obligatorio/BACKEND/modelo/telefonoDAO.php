@@ -12,7 +12,7 @@ class cliente_telefono
         return $telefonos;
     }
     public function agregar($id_cliente, $telefono){ 
-        $sql = "INSERT INTO cliente_telefono VALUES(0, $id_cliente, $telefono);";
+        $sql = "INSERT INTO cliente_telefono VALUES(0, $id_cliente, '$telefono');";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
@@ -25,7 +25,7 @@ class cliente_telefono
     }
 
     public function editar($id_registro, $id_cliente, $telefono){
-        $sql = "UPDATE cliente_telefono SET id_cliente=$id_cliente, telefono=$telefono WHERE id_registro= $id_registro;";  
+        $sql = "UPDATE cliente_telefono SET id_cliente=$id_cliente, telefono='$telefono' WHERE id_registro= $id_registro;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

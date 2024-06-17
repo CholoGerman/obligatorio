@@ -18,14 +18,14 @@ class admin
         return $respuesta;
     }
     public function eliminar($id_admin) { //Funcion que indica los parametros y consulta sql a utilizar para eliminar un admin
-        $sql = "DELETE FROM admin WHERE id_admin= $id_admin;";
+        $sql = "DELETE FROM admin WHERE id_admin=$id_admin;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
     public function editar($id_admin, $usuario, $contrasenia, $id_persona) { //Funcion que indica los parametros y consulta sql a utilizar para editar un admin
-        $sql = "UPDATE admin SET usuario=$usuario, contrasenia=$contrasenia, id_persona=$id_persona WHERE id_admin=$id_admin;";
+        $sql = "UPDATE admin SET usuario='$usuario', contrasenia='$contrasenia', id_persona=$id_persona WHERE id_admin=$id_admin;";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

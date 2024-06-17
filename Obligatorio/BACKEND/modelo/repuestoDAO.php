@@ -26,7 +26,7 @@ class repuesto
     }
 
     public function editar($id_repuesto, $tipo, $precio, $color, $estado, $id_vehiculo){
-        $sql = "UPDATE repuesto SET tipo=$tipo, precio=$precio, color=$color, estado=$estado, $id_vehiculo=id_vehiculo WHERE id_repuesto= $id_repuesto;";  
+        $sql = "UPDATE repuesto SET tipo='$tipo', precio='$precio', color='$color', estado='$estado', $id_vehiculo=id_vehiculo WHERE id_repuesto= $id_repuesto;";  
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

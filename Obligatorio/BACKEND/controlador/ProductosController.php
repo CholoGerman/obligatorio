@@ -12,13 +12,13 @@ switch ($funcion) {
     case "agregar":
         agregarProducto();
         break;
-        case "eliminar":
-            eliminarProducto();
-            break;
+    case "eliminar":
+        eliminarProducto();
+        break;
 }
 
 
-function obtenerProductos() {
+function obtenerProducto() {
 
 }
 

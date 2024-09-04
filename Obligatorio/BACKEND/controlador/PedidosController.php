@@ -12,12 +12,14 @@ switch ($funcion) {
         break;
 }
 function obtenerPedido(){
-
+    $resultado = (new PedidoDao())->obtenerPedido($id_repuesto);
+    echo json_encode($resultado);
 
 }
 
 function obtenerPedidos(){
-
+    $resultado = (new PedidoDao())->obtenerPedidos();
+    echo json_encode($resultado);
 
 }
 

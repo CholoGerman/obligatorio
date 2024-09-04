@@ -8,7 +8,7 @@ switch ($funcion) {
         eliminarFavorito();
         break;
     case "obtener":
-        verFavoritos();
+        obtenerFavoritos();
         break;
 }
 

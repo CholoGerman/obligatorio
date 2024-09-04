@@ -41,6 +41,6 @@ function agregarProducto() {
 }
 
 function eliminarProducto() {
-    $id = $_POST["id_producto"];
+    $id_repuesto = $_POST["id_repuesto"];
 
 }

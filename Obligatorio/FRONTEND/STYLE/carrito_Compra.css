@@ -1,0 +1,85 @@
+*{
+    font-family: 'Roboto', sans-serif;  
+}
+
+body{
+    margin:0;
+}
+
+
+nav{
+    background-color: red;
+    height: 120px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+input{
+    width: 360px;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+h1{
+    letter-spacing: 8px;
+    margin-right: 250px;
+    font-size: 30px;
+    cursor:default;
+}
+
+main {
+    display:flex;
+    justify-content: space-between;
+    padding:50px;
+}
+
+.contenedor_productos {
+   width: 75%;
+   display: flex;
+   flex-direction: column;
+   gap:40px;
+}
+
+.producto{
+    background-color: blue;
+    height: 170px;
+    display:Flex;
+    border-radius: 18px;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 2px;
+}
+
+
+.contenedor_resumen{
+    background-color: red;
+    height: 450px;
+    position: sticky;
+    border-radius: 10px;
+    position: sticky;
+    top: 50%; /* Se mantiene a la mitad de la pantalla */
+    transform: translateY(-50%); /* Centra el div verticalmente */
+    padding:15px;
+    text-align: center;
+    display: flex;
+    margin-top: 250px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button{
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 30px;
+    letter-spacing: 3px;
+}
+
+
+h2{
+    cursor: default;
+}

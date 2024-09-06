@@ -7,6 +7,7 @@ body{
     margin:0;
     /* background: linear-gradient(100deg, #B80C09, #700606, #000000);  */
     /* background: linear-gradient(135deg, #B7B5B3, #9A9997);  */
+    background-color: #1C1C1C;
 }
 
 nav {
@@ -59,4 +60,5 @@ h1{
     align-items: center;
     justify-content: space-around;
     border-radius: 8px;
+    color:white;
 }

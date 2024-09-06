@@ -50,6 +50,7 @@ input {
     justify-content: center;
     align-items: center;
     letter-spacing: 5px;
+    opacity: 0.4;
 }
 
 .productos_oferta {

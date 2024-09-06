@@ -1,4 +1,5 @@
 <?php
+require_once "../modelo/UsuarioDAO.php";
 
 $funcion = $_GET["funcion"];
 switch ($funcion) {
@@ -20,6 +21,7 @@ function obtenerUsuarios(){
 
 function eliminarUsuario(){
     $correo = $_POST["email"];
- 
+    $respuesta = (new UsuarioDao())->eliminarUsuario($correo);
+    echo json_encode($respuesta);
     
 }

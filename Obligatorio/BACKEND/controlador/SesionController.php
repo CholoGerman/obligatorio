@@ -1,4 +1,6 @@
 <?php
+require_once "../modelo/SesionDAO.php";
+
 $funcion = $_GET["funcion"];
 switch ($funcion) {
     case "register":
@@ -13,6 +15,7 @@ switch ($funcion) {
 }
 
 function register() {
+    $usuario = $_POST["usuario"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 }

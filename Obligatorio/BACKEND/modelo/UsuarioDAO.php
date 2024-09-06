@@ -18,8 +18,7 @@ function eliminarUsuario($correo){
     $connection = connection();
     $respuesta = $connection->query($sql);
     return $respuesta;
-    
-return new Respuesta(true,"Eliminado correctamente",null);
+    return new Respuesta(true,"Eliminado correctamente",null);
 }
 
 }

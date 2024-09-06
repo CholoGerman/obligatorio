@@ -1,13 +1,13 @@
 export default class FavoritoController{
 
 
-    async agregarFavorito(){
+    async agregarFavorito(id_producto){
 
         //consultar si necesita informacion
 
-        let url ="http://localhost/obligatorio/obligatorio-3/Obligatorio/backend/controlador/FavoritoController.php?funcion=agregar";
+        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/FavoritoController.php?funcion=agregar";
         let formData = new FormData();
-        formData.append("id_producto",id);
+        formData.append("id_producto",id_producto);
       
         let config = {
             method:"POST",
@@ -20,13 +20,13 @@ export default class FavoritoController{
     }
     
     
-    async eliminarFavorito(){
+    async eliminarFavorito(id_producto){
 
          //consultar si necesita informacion
 
-        let url ="http://localhost/obligatorio/obligatorio-3/Obligatorio/backend/controlador/FavoritoController.php?funcion=eliminar";
+        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/FavoritoController.php?funcion=eliminar";
         let formData = new FormData();
-        formData.append("id_producto",id);
+        formData.append("id_producto",id_producto);
       
         let config = {
             method:"POST",

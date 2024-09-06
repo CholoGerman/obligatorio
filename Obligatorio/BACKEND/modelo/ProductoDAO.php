@@ -2,10 +2,10 @@
 require_once "../conexion/conexion.php";
 
 class ProductoDao{
-    public function obtenerProductos(){
-        // codigo a sql
+    public function obtenerProducto($id_repuesto){
+      
         $connection = connection();
-        $sql = "SELECT * FROM Productos";
+        $sql = "SELECT * FROM Repuesto where id_repeusto=$id_repuesto";
         $respuesta = $connection->query($sql);
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $productos;
@@ -13,7 +13,11 @@ class ProductoDao{
 
 
     public function obtenerCatalogo(){
-        // codigo a sql
+        $connection = connection();
+        $sql = "SELECT * FROM Repuesto";
+        $respuesta = $connection->query($sql);
+        $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $productos;
 
     }
 

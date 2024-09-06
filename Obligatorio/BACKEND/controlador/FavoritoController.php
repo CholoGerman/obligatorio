@@ -1,4 +1,5 @@
 <?php
+require_once "../modelo/FavoritoDAO.php";
 $funcion = $_GET["funcion"];
 switch ($funcion) {
     case "agregar":
@@ -13,19 +14,22 @@ switch ($funcion) {
 }
 
 function agregarFavorito(){
+ 
 
 
 }
 
 
 function eliminarFavorito(){
+ 
 
 
 }
 
 
 function obtenerFavoritos(){
+   
+ }
 
 
     
-}

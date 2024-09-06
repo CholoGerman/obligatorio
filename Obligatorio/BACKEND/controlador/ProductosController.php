@@ -4,7 +4,7 @@ require_once "../modelo/ProductoDAO.php";
 $funcion = $_GET["funcion"];
 switch ($funcion) {
     case "obtener":
-        obtenerProductos();
+        obtenerProducto();
         break;
     case "obtenerall":
         obtenerCatalogo();
@@ -19,12 +19,16 @@ switch ($funcion) {
 
 
 function obtenerProducto() {
-
+    $id_repuesto = $_POST["id_repuesto"];
+    $respuesta = (new ProductoDao())->obtenerProducto($id_repuesto);
+    echo json_encode($respuesta);
 }
 
 
 function obtenerCatalogo() {
-
+   
+    $respuesta = (new ProductoDao())->obtenerCatalogo();
+    echo json_encode($respuesta);
 }
 
 
@@ -42,5 +46,7 @@ function agregarProducto() {
 
 function eliminarProducto() {
     $id_repuesto = $_POST["id_repuesto"];
+    $respuesta = (new ProductoDao())->eliminarProducto($id_repuesto);
+    echo json_encode($respuesta);
 
 }

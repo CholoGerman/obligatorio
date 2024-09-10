@@ -13,7 +13,7 @@ function obtenerPedido($id_pedido){
 
 function obtenerPedidos(){
     $connection = connection();
-    $sql = "SELECT * FROM Pedido";
+    $sql = "SELECT * FROM Pedido;";
     $respuesta = $connection->query($sql);
     $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $pedidos;
@@ -22,7 +22,7 @@ function obtenerPedidos(){
 
 function cambiarEstadoPedido($id_detalle, $estado){
     $connection = connection();
-    $sql = "UPDATE detalle_pedido SET estado = $estado WHERE id_detalle=$id_detalle;";       
+    $sql = "UPDATE detalle_pedido SET estado = '$estado' WHERE id_detalle=$id_detalle;";       
     $respuesta = $connection->query($sql);
     $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $pedidos;

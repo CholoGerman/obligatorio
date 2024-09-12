@@ -45,6 +45,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+.product-info{
+    /* background: linear-gradient(135deg, #B7B5B3, #9A9997); */
+    border-radius: 20px;
+    padding:15px;
+    height: 50%;
+}
 
 
 .contenedor_img{

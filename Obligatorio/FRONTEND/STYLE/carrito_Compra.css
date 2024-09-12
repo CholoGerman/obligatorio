@@ -92,6 +92,17 @@ main {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+a img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
 button{
     border-radius: 5px;
     border: 1px solid black;
@@ -106,3 +117,5 @@ button{
 h2{
     cursor: default;
 }
+
+

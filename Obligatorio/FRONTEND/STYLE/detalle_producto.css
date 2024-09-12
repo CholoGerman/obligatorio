@@ -50,6 +50,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 20px;
     padding:15px;
     height: 50%;
+    color:white;
 }
 
 
@@ -60,6 +61,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -110,6 +112,7 @@ button{
     border: 1px solid black;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:white;
 }
 
 

@@ -6,6 +6,7 @@
 body{
     margin:0;
     background-color: #1C1C1C;
+    position: relative;
 }
 
 h1{
@@ -75,10 +76,12 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-.icons {
-    display:flex;
-    justify-content: space-around;
-    width: 30%;
+.icon_carrito{
+    position: absolute;
+    bottom: 2vh;
+    right: 2vw;
+    
+    
 }
 
 .primera_fila {

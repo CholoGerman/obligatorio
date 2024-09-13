@@ -64,7 +64,7 @@ main {
 }
 
 .producto{
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
     height: 170px;
     display:Flex;
     border-radius: 18px;
@@ -77,7 +77,7 @@ main {
 
 
 .contenedor_resumen{
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
     height: 450px;
     position: sticky;
     border-radius: 10px;

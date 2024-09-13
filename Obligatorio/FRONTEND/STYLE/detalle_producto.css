@@ -74,6 +74,13 @@ body::-webkit-scrollbar-thumb{
     left: 0;
 }
 
+
+.icons {
+    display:flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
 .primera_fila {
     display:flex;
     gap:50px;

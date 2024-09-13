@@ -70,8 +70,9 @@ main {
     border-radius: 18px;
     align-items: center;
     justify-content: space-around;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid red;
 }
 
 
@@ -90,11 +91,13 @@ main {
     flex-direction: column;
     gap: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border:1px solid red;
 }
 
 a img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 a img:hover {
@@ -114,7 +117,7 @@ button{
 }
 
 
-h2{
+h2 , h4{
     cursor: default;
 }
 

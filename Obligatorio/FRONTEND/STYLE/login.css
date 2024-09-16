@@ -106,6 +106,7 @@ p a:hover {
     letter-spacing: 2px;
     opacity: 0;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .btn_body:hover {

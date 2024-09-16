@@ -55,7 +55,7 @@ h1{
 .producto{
     letter-spacing: 3px;
     margin: 0 25px 30px 25px;
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     height: 150px;
     display:flex;

@@ -25,7 +25,7 @@ class FavoritoDao
 
     function obtenerFavoritos($correo){
     $connection = connection();
-    $sql = "SELECT * FROM Favorito where correo = '$correo';";
+    $sql = "SELECT * FROM Favorito WHERE correo = '$correo';";
     $respuesta = $connection->query($sql);
     $favorito = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $favorito;

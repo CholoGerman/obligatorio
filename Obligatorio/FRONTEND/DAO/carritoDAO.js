@@ -22,5 +22,32 @@ export default class CarritoController {
     
     
     }
+    async agregarDetalle(id_pedido){
+    
+        let url ="http://localhost/obligatorio/obligatorio-1/Obligatorio/BACKEND/controlador/CarritoController.php?funcion=factura";
+        let formData = new FormData();
+        formData.append("id_pedido",id_pedido);
+        let config = {
+            method:"POST",
+            body:formData
+        }
+        let respuesta = await fetch(url,config);
+    
+        
+    }
+    async modificarStock(id_repuesto, cantidad){
+    
+        let url ="http://localhost/obligatorio/obligatorio-1/Obligatorio/BACKEND/controlador/CarritoController.php?funcion=stock";
+        let formData = new FormData();
+        formData.append("id_repuesto",id_repuesto);
+        formData.append("cantidad",cantidad);
+        let config = {
+            method:"POST",
+            body:formData
+        }
+        let respuesta = await fetch(url,config);
+    
+        
+    }
     }
 

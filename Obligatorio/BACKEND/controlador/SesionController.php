@@ -16,14 +16,18 @@ switch ($funcion) {
 
 function register() {
     $usuario = $_POST["usuario"];
-    $email = $_POST["email"];
+    $correo = $_POST["correo"];
     $password = $_POST["password"];
+    $respuesta = (new SesionDao())->register($usuario,$correo, $password,);
+    echo json_encode($respuesta);
 }
 
 
 function login() {
-    $email = $_POST["email"];
+    $correo = $_POST["correo"];
     $password = $_POST["password"];
+    $respuesta = (new SesionDao())->login($correo, $password);
+    echo json_encode($respuesta);
     
   
   

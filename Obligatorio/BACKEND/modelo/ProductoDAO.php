@@ -22,8 +22,8 @@ class ProductoDao{
     }
 
 
-    public function agregarProducto($tipo, $precio, $color, $estado){
-        $sql = "INSERT INTO Repuesto(tipo, precio, color, estado) VALUES( '$tipo', '$precio', '$color', '$estado');";
+    public function agregarProducto($nombre, $stock, $precio, $color, $estado){
+        $sql = "INSERT INTO Repuesto(nombre, stock precio, color, estado) VALUES( 0,  '$nombre', '$stock', '$precio', '$color', '$estado');";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

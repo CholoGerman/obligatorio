@@ -4,7 +4,7 @@ export default class SesionController{
         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=register";
         let formData = new FormData();
         formData.append("usuario",usuario);
-        formData.append("email",correo);
+        formData.append("correo",correo);
         formData.append("password",password);
         let config = {
             method:"POST",
@@ -17,9 +17,15 @@ export default class SesionController{
     
     async login(){
         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=login";
-        let respuesta = await fetch(url);
-    
-    
+        let formData = new FormData();
+        formData.append("correo",correo);
+        formData.append("password",password);
+        let config = {
+            method:"POST",
+            body:formData
+        }
+        let respuesta = await fetch(url,config);
+
     }
     
     

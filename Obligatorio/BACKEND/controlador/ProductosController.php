@@ -33,12 +33,12 @@ function obtenerCatalogo() {
 
 
 function agregarProducto() {
-
-    $tipo = $_POST["tipo"];
+    $nombre = $_POST["nombre"];
+    $stock = $_POST["stock"];
     $precio = $_POST["precio"];
     $color = $_POST["color"];
     $estado = $_POST["estado"];
-    $respuesta = (new ProductoDao())->agregarProducto( $tipo, $precio, $color, $estado );
+    $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado );
     echo json_encode($respuesta);
 
 

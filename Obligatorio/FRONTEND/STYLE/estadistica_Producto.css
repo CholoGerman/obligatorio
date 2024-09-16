@@ -1,7 +1,11 @@
-
+*{
+    font-family: 'Roboto', sans-serif;  
+}
 body {
     margin:0;
     background-color: red;
+
+    background-color: #1C1C1C;
 }
 
 nav {
@@ -11,14 +15,15 @@ nav {
     align-items: center;
     letter-spacing: 3px;
     height: 95px;
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
 }
 
 
 
 main{
     padding:20px;
-    display: flex;
     flex-direction: column;
+    display: flex;
 }
 
 .filtrado > button{
@@ -28,6 +33,9 @@ main{
     border-radius: 5px;
     border: 1px solid black;
     margin-bottom: 50px;
+    background-color: #B80C09;
+    color:#000000;
+    cursor: pointer;
 }
 
 .contenedor_producto{
@@ -48,6 +56,8 @@ main{
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
 }
 
 .datos {

@@ -19,8 +19,17 @@ export default class ProductoController{
     
         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
         let respuesta = await fetch(url);
-    
+        let tbodyElement = document.querySelector("#contenedor_producto");
+    productos.forEach((producto) => {
+        let trELement = document.createElement("tr");
+        trELement.innerHTML = `
+
+
+      html 
+   
+ `;
     }
+}
     
     
     async agregarProducto(tipo,precio,color,estado){

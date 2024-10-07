@@ -3,7 +3,7 @@ require_once "../conexion/conexion.php";
 session_start();
 class SesionDao{
 
-function register($usuario, $email, $password){
+function register($usuario, $email, $password){ //Funcion para registrar un usuario
     $hash = password_hash($password, PASSWORD_DEFAULT, [15]);
     $sql = "INSERT INTO cliente(usuario, email, contrasenia) VALUES( '$usuario', '$email', '$hash');";
     $connection = connection();
@@ -14,7 +14,7 @@ function register($usuario, $email, $password){
 }
 
 
-function login($correo, $password ){
+function login($correo, $password ){  //Funcion para iniciar sesion
 
     $sql=  "SELECT * FROM cliente WHERE correo='$correo'";
     $connection = connection();
@@ -31,7 +31,7 @@ function login($correo, $password ){
 
 
 
-function logOut(){
+function logOut(){  //Funcion para cerrar sesion
     $_SESSION["session"]=null;
     return  new Respuesta(true, "agregado correctamente", null);
 

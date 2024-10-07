@@ -1,7 +1,7 @@
 <?php
 require_once "../modelo/CarritoDAO.php";
 $funcion = $_GET["funcion"];
-switch ($funcion) {
+switch ($funcion) { // Le asignamos una funcion a cada posible variable de "funcion"
   case "comprar":
     realizarCompra();
     break;
@@ -15,8 +15,7 @@ switch ($funcion) {
     break;
 }
 
-function realizarCompra()
-{
+function realizarCompra(){   //Funcion para realizar una compra
   $nombre = $_POST["nombre"];
   $apellido = $_POST["apellido"];
   $departamento = $_POST["departamento"];
@@ -24,20 +23,18 @@ function realizarCompra()
   $calle = $_POST["calle"];
   $numero = $_POST["numero"];
   $telefono = $_POST["telefono"];
-  /* dudas*/  $id_repuesto = $_POST["id_repuesto"];
+  $id_repuesto = $_POST["id_repuesto"];
 
   $resultado = (new CarritoDao())->realizarCompra($nombre, $apellido, $departamento, $ciudad, $calle, $numero, $telefono,$id_repuesto);
   echo json_encode($resultado);
 }
 
-function agregarDetalle()
-{
+function agregarDetalle(){ //Funcion para mostrar una factura
   $id_pedido = $_GET["id_pedido"];
   $resultado = (new CarritoDao())->agregarDetalle($id_pedido);
   echo json_encode($resultado);
 }
-function modificarStock()
-{
+function modificarStock(){ //Funcion para modificar el stock
   $id_repuesto = $_POST["id_repuesto"];
   $cantidad = $_POST["cantidad"];
   $resultado = (new CarritoDao())->modificarStock($id_repuesto, $cantidad);

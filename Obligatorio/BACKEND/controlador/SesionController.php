@@ -2,7 +2,7 @@
 require_once "../modelo/SesionDAO.php";
 
 $funcion = $_GET["funcion"];
-switch ($funcion) {
+switch ($funcion) { // Le asignamos una funcion a cada posible variable de "funcion"
     case "register":
         register();
         break;
@@ -14,7 +14,7 @@ switch ($funcion) {
         break;
 }
 
-function register() {
+function register() { //Funcion para registrar un usuario
     $usuario = $_POST["usuario"];
     $correo = $_POST["correo"];
     $password = $_POST["password"];
@@ -23,7 +23,7 @@ function register() {
 }
 
 
-function login() {
+function login() { //Funcion para iniciar sesion
     $correo = $_POST["correo"];
     $password = $_POST["password"];
     $respuesta = (new SesionDao())->login($correo, $password);
@@ -35,6 +35,7 @@ function login() {
 
 
 
-function logOut() {
-
+function logOut() { //Funcion para cerrar sesion
+    $respuesta = (new SesionDao())->logOut();
+    echo json_encode($respuesta);
 }

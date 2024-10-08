@@ -15,7 +15,7 @@ export default class SesionController{
     }
     
     
-    async login(){
+    async login(correo,password){
         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=login";
         let formData = new FormData();
         formData.append("correo",correo);

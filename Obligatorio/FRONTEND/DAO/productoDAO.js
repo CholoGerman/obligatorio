@@ -1,4 +1,4 @@
-window.onload =function() {
+window.onload =()=> {
       
     mostrarCatalogo(productos);
     mostrarProducto(productos);
@@ -18,6 +18,8 @@ export default class ProductoController{
              body:formData
          }
          let respuesta = await fetch(url,config);
+         let producto = await respuesta.json();
+         return producto;
 
 
     }
@@ -27,6 +29,8 @@ export default class ProductoController{
     
         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
         let respuesta = await fetch(url);
+        let productos = await respuesta.json();
+        return productos;
  
 }
     
@@ -44,12 +48,14 @@ export default class ProductoController{
             body:formData
         }
         let respuesta = await fetch(url,config);
+        let producto = await respuesta.json();
+        return producto;
         
     
     }
     
     async eliminarProducto(){
-        let url ="http://localhost/obligatorio/obligatorio-3/Obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
         let formData = new FormData();
         formData.append("id_repuesto",id_repuesto);
       
@@ -58,6 +64,8 @@ export default class ProductoController{
             body:formData
         }
         let respuesta = await fetch(url,config);
+        let producto = await respuesta.json();
+        return producto;
     
     }
 
@@ -68,12 +76,12 @@ export default class ProductoController{
 function mostrarCatalogo(productos) {
     let tbodyElement = document.querySelector("#divCatalogo");
     tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // por modificar
+    productos.forEach((producto) => { // aca va el html para mostrar todos los productos en el catalogo
         tbodyElement.innerHTML += ` 
      
            <div class="contenedor_producto">
-                
-                <div class="contenedor_producto2">
+
+                <div class="contenedor_producto2">                                                       <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
 
                     <a href="../PAGE/detalle_Producto.html"><img ${producto.imagen} "></a> 
                    
@@ -95,7 +103,7 @@ function mostrarCatalogo(productos) {
 function mostrarProducto(productos) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // por modificar
+    productos.forEach((producto) => { // aca va el html de cuando vemos un producto en especifico
         tbodyElement.innerHTML += ` 
      
             <div class="contenedor_img">
@@ -105,7 +113,7 @@ function mostrarProducto(productos) {
             <div class="product-info">
 
                 <div class="primera_fila">
-                    <h1 class="product-title">${producto.nombre}</h1>
+                    <h1 class="product-title">${producto.nombre}</h1>                            <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
                     <p class="product-price">${producto.precio}.99</p>
                 </div>
                 <p class="product-details">Estado: ${producto.estado}</p>

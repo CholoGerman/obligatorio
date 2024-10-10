@@ -1,4 +1,4 @@
-window.onload =function() {
+window.onload =()=> {
       
     mostrarPedido(pedido);
     mostrarPedidos(pedido);
@@ -16,12 +16,16 @@ async obtenerPedido(id_pedido){
         body:formData
     }
     let respuesta = await fetch(url,config);
+    let pedido = await respuesta.json();
+    return pedido;
 
 
 }
 async obtenerPedidos(){
     let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
+    let pedidos = await respuesta.json();
+    return pedidos;
 
 
 }
@@ -36,38 +40,25 @@ async cambiarEstadoPedido(id_detalle,estado){
         body:formData
     }
     let respuesta = await fetch(url,config);
+    if(respuesta.ok){
+        let mensaje = await respuesta.text();
+        alert(mensaje);
+    }else{
+        let mensaje = await respuesta.text();
+        alert("Error: "+mensaje);
+    }
 
 }
     
 }
 
- /* function mostrarPedido(pedido) {
+  function mostrarPedido(pedido) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // por modificar
+    productos.forEach((producto) => { // aca va el html que se ve cuando abrimos un pedido en especifico (lo puede ver tanto el admin como el cliente)
         tbodyElement.innerHTML += ` 
      
-            <div class="contenedor_img">
-                <a><img ${producto.imagen}" style="aspect-ratio: auto"></a>
-            </div>
-
-            <div class="product-info">
-
-                <div class="primera_fila">
-                    <h1 class="product-title">${producto.nombre}</h1>
-                    <p class="product-price">${producto.precio}.99</p>
-                </div>
-                <p class="product-details">Estado: ${producto.estado}</p>
-                <p class="product-details">Año: ${producto.año}</p>
-                <p class="product-details">Color: ${producto.color}</p>
-                <div class="product-buttons">
-                    <!-- <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> -->
-                    <button>Agregar al carrito</button>
-                </div>
-
-            </div>  
-        </div>
-
+                                                 <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
 
    
  `;
@@ -78,30 +69,11 @@ async cambiarEstadoPedido(id_detalle,estado){
 function mostrarPedidos(productos) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // por modificar
+    productos.forEach((producto) => { // aca ve el html que ve el admin cuando ve todos los pedidos
         tbodyElement.innerHTML += ` 
      
-            <div class="contenedor_img">
-                <a><img ${producto.imagen}" style="aspect-ratio: auto"></a>
-            </div>
-
-            <div class="product-info">
-
-                <div class="primera_fila">
-                    <h1 class="product-title">${producto.nombre}</h1>
-                    <p class="product-price">${producto.precio}.99</p>
-                </div>
-                <p class="product-details">Estado: ${producto.estado}</p>
-                <p class="product-details">Año: ${producto.año}</p>
-                <p class="product-details">Color: ${producto.color}</p>
-                <div class="product-buttons">
-                    <!-- <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> -->
-                    <button>Agregar al carrito</button>
-                </div>
-
-            </div>  
-        </div>
-
+          
+                                                 <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
 
    
  `;
@@ -109,4 +81,3 @@ function mostrarPedidos(productos) {
     }
 )
 }
-*/ 

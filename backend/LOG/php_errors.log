@@ -61,3 +61,4 @@
 
 )
 
+[15-Oct-2024 22:32:01 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 4

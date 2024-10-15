@@ -19,6 +19,11 @@ nav{
     margin-bottom: 30px;
 }
 
+h2 {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
 nav img {
     cursor: pointer;
 }

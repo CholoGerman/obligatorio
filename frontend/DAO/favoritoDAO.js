@@ -10,7 +10,7 @@ export default class FavoritoController{
 
        
 
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/FavoritoController.php?funcion=agregar";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
         let formData = new FormData();
         formData.append("id_producto",id_producto);
         formData.append("correo",correo);
@@ -33,7 +33,7 @@ export default class FavoritoController{
 
         
 
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/FavoritoController.php?funcion=eliminar";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
         let formData = new FormData();
         formData.append("id_producto",id_producto);
       
@@ -52,7 +52,7 @@ export default class FavoritoController{
     
     async obtenerFavoritos(correo){
     
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/FavoritoController.php?funcion=obtener";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
         let formData = new FormData();
         formData.append("correo",correo);
         let config = {
@@ -67,6 +67,9 @@ export default class FavoritoController{
     }
 
 }
+
+// va a favorito.js
+
 
  function mostrarFavorito(productos) { incompleto
 

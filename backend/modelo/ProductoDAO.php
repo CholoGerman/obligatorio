@@ -1,22 +1,25 @@
 <?php
 require_once "../conexion/conexion.php";
 
-class ProductoDAO{
+class ProductoDao{
     public function obtenerProducto($id_repuesto){ //Funcion para obtener un producto
-      
         $connection = connection();
-        $sql = "SELECT * FROM Repuesto where id_repeusto=$id_repuesto";
+        $sql = "SELECT * FROM repuesto WHERE id_repuesto = $id_repuesto";
         $respuesta = $connection->query($sql);
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $productos;
     }
 
 
-    public function obtenerCatalogo(){  //Funcion para obtener todos los productos
+    public function obtenerCatalogo(){  //Funcion para obtener todos los productos 
+        
         $connection = connection();
-        $sql = "SELECT * FROM Repuesto";
+        $sql = "SELECT * FROM repuesto";
         $respuesta = $connection->query($sql);
+        
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
+
+      
         return $productos;
 
     }

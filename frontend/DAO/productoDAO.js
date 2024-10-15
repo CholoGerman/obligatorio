@@ -1,11 +1,11 @@
-class ProductoDAO{
+class ProductoDao{
 
    
 
 
      async obtenerProducto(id_repuesto){
 
-         let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.phpfuncion=obtener";
          let formData = new FormData();
          formData.append("id_repuesto",id_repuesto);
          let config = {
@@ -21,7 +21,7 @@ class ProductoDAO{
     
     
     async obtenerCatalogo(){
-        let url ="http://localhost/obligatorio/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
 
         let respuesta = await fetch(url);
         let productos = await respuesta.json();
@@ -33,7 +33,7 @@ class ProductoDAO{
     
     async agregarProducto(tipo,precio,color,estado){
 
-        let url ="http://localhost/obligatorio/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
         let formData = new FormData();
         formData.append("tipo",tipo);
         formData.append("precio",precio);
@@ -52,7 +52,7 @@ class ProductoDAO{
     }
     
     async eliminarProducto(){
-        let url ="http://localhost/obligatorio/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
         let formData = new FormData();
         formData.append("id_repuesto",id_repuesto);
       
@@ -72,4 +72,4 @@ class ProductoDAO{
 
 
 
-export default ProductoDAO;
+export default ProductoDao;

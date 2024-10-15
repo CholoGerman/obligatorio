@@ -6,7 +6,8 @@ switch ($funcion) { // Le asignamos una funcion a cada posible variable de "func
     case "obtener":
         obtenerProducto();
         break;
-    case "obtenerall":
+    case "obtenerall": 
+        
         obtenerCatalogo();
         break;
     case "agregar":
@@ -20,15 +21,17 @@ switch ($funcion) { // Le asignamos una funcion a cada posible variable de "func
 
 function obtenerProducto() { //Funcion para obtener un producto
     $id_repuesto = $_POST["id_repuesto"];
-    $respuesta = (new ProductoDAO())->obtenerProducto($id_repuesto);
+    $respuesta = (new ProductoDao())->obtenerProducto($id_repuesto);
     echo json_encode($respuesta);
+    
 }
 
 
 function obtenerCatalogo() { //Funcion para obtener todos los productos
- 
-    $respuesta = (new ProductoDAO())->obtenerCatalogo();
-    echo json_encode($respuesta);
+    $respuesta = (new ProductoDao())->obtenerCatalogo();
+    error_log(print_r($respuesta,true )); echo json_encode("hola");
+   
+   echo json_encode($respuesta);
 }
 
 
@@ -40,15 +43,18 @@ function agregarProducto() { //Funcion para publicar un producto
     $estado = $_POST["estado"];
     $imagen = $_FILES["imagen"];
     $descripcion = $_POST["descripcion"];
-    $respuesta = (new ProductoDAO())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion);
+    $nombreIMG = $_GET["nombreIMG"];
+    $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion, $nombreIMG);
     echo json_encode($respuesta);
+
+ 
 
 
 }
 
 function eliminarProducto() { //Funcion para eliminar un producto
     $id_repuesto = $_POST["id_repuesto"];
-    $respuesta = (new ProductoDAO())->eliminarProducto($id_repuesto);
+    $respuesta = (new ProductoDao())->eliminarProducto($id_repuesto);
     echo json_encode($respuesta);
 
 }

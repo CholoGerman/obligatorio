@@ -6,7 +6,7 @@ Window.onload = () => {
 export default class SesionController{
 
      async register(correo,password,usuario){
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=register";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=register";
         let formData = new FormData();
         formData.append("usuario",usuario);
         formData.append("correo",correo);
@@ -27,7 +27,7 @@ export default class SesionController{
     
     
     async login(correo,password){
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=login";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=login";
         let formData = new FormData();
         formData.append("correo",correo);
         formData.append("password",password);
@@ -48,7 +48,7 @@ export default class SesionController{
     
     
      async logOut(){
-        let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/SesionController.php?funcion=logOut";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=logOut";
         let respuesta = await fetch(url);
         let respuestaJson = await respuesta.json();
         if(respuestaJson.success){

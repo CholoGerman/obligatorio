@@ -8,7 +8,7 @@ window.onload =()=> {
 export default class PedidoController{
 
 async obtenerPedido(id_pedido){
-    let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/PedidosController.php?funcion=obtener";
+    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
     let formData = new FormData();
     formData.append("id_pedido",id_pedido);
     let config = {
@@ -22,7 +22,7 @@ async obtenerPedido(id_pedido){
 
 }
 async obtenerPedidos(){
-    let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
+    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
     let pedidos = await respuesta.json();
     return pedidos;
@@ -31,7 +31,7 @@ async obtenerPedidos(){
 }
 async cambiarEstadoPedido(id_detalle,estado){
 
-    let url ="http://localhost/obligatorio/Obligatorio/backend/controlador/PedidosController.php?funcion=estado";
+    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=estado";
     let formData = new FormData();
     formData.append("estado",estado);
     formData.append("id_detalle",id_detalle);
@@ -51,6 +51,8 @@ async cambiarEstadoPedido(id_detalle,estado){
 }
     
 }
+
+// va a confirmacion,js y esas
 
   function mostrarPedido(pedido) {
     let tbodyElement = document.querySelector("#divProducto");

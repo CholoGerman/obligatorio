@@ -25,12 +25,30 @@ class ProductoDao{
     }
 
 
-    public function agregarProducto($nombre, $stock, $precio, $color, $estado , $imagen, $descripcion){  //Funcion para publicar un producto
+    public function agregarProducto($nombre, $stock, $precio, $color, $estado , $imagen, $descripcion, $nombreIMG){  //Funcion para publicar un producto
         $sql = "INSERT INTO Repuesto(nombre, stock, precio, color, estado, imagen, descripcion) VALUES( 0,  '$nombre', '$stock', '$precio', '$color', '$estado' , $imagen ,'$descripcion');";
+        
+        $rutaTemporal = $imagen["tmp_name"];
+        $nombreImagen = $imagen["name"];
+        $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
+        $sql = "INSERT INTO imagen (nombre, extension) VALUES('$nombreIMG', '$extension');";
         $connection = connection();
         $respuesta = $connection->query($sql);
+        $id = $connection->insert_id;
+        move_uploaded_file($rutaTemporal, "../IMG/$id.$extension");
         return $respuesta;
         return new Respuesta(true, "agregado correctamente", null);
+
+
+
+    
+     
+      
+    
+
+
+
+
     }
 
     public function eliminarProducto($id_repuesto){ //Funcion para eliminar un producto

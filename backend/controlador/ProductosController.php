@@ -46,6 +46,8 @@ function agregarProducto() { //Funcion para publicar un producto
     $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion);
     echo json_encode($respuesta);
 
+ 
+
 
 }
 

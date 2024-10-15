@@ -1,0 +1,66 @@
+*{
+    font-family: 'Roboto', sans-serif;  
+}
+body {
+    margin:0;
+    background-color: red;
+
+    background-color: #1C1C1C;
+}
+
+nav {
+    display:Flex;
+    background-color: blue;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 3px;
+    height: 95px;
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
+}
+
+
+
+main{
+    padding:20px;
+    flex-direction: column;
+    display: flex;
+}
+
+.filtrado > button{
+    width: 180px;
+    letter-spacing: 4px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    background-color: #B80C09;
+    color:#000000;
+    cursor: pointer;
+}
+
+.contenedor_producto{
+    display:flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center;
+    gap:35px;
+    
+}
+
+.producto {
+    background-color: blue;
+    height: 320px;
+    width: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
+}
+
+.datos {
+    display:flex;
+    gap: 15px;
+}

@@ -5,3 +5,27 @@ Stack trace:
 #2 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(14): agregarProducto()
 #3 {main}
   thrown in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php on line 62
+[16-Oct-2024 21:10:09 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 21:10:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 21:10:27 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 21:10:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 21:12:34 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 21:12:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18

@@ -43,11 +43,9 @@ function agregarProducto() { //Funcion para publicar un producto
     $estado = $_POST["estado"];
     $imagen = $_FILES["imagen"];
     $descripcion = $_POST["descripcion"];
-    $nombreIMG = $_GET["nombreIMG"];
-    $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion, $nombreIMG);
-    echo json_encode($respuesta);
-
  
+    $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion);
+    echo json_encode($respuesta);
 
 
 }

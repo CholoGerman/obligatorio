@@ -1,64 +1,7 @@
-[15-Oct-2024 21:57:46 Europe/Berlin] Array
-(
-    [0] => Array
-        (
-            [id_repuesto] => 78183
-            [precio] => 2300
-            [tipo] => Auto
-            [color] => Rojo
-            [estado] => Nuevo
-            [img_repuesto] => ‰PNG
-
-
-[15-Oct-2024 21:57:46 Europe/Berlin] 
-[15-Oct-2024 21:59:32 Europe/Berlin] Array
-(
-    [0] => Array
-        (
-            [id_repuesto] => 78183
-            [precio] => 2300
-            [tipo] => Auto
-            [color] => Rojo
-            [estado] => Nuevo
-            [img_repuesto] => 
-            [id_vehiculo] => 5003
-            [Id_pedido] => 100
-        )
-
-)
-
-[15-Oct-2024 21:59:32 Europe/Berlin] [{"id_repuesto":"78183","precio":"2300","tipo":"Auto","color":"Rojo","estado":"Nuevo","img_repuesto":null,"id_vehiculo":"5003","Id_pedido":"100"}]
-[15-Oct-2024 22:00:18 Europe/Berlin] Array
-(
-    [0] => Array
-        (
-            [id_repuesto] => 78183
-            [precio] => 2300
-            [tipo] => Auto
-            [color] => Rojo
-            [estado] => Nuevo
-            [img_repuesto] => 
-            [id_vehiculo] => 5003
-            [Id_pedido] => 100
-        )
-
-)
-
-[15-Oct-2024 22:00:18 Europe/Berlin] [{"id_repuesto":"78183","precio":"2300","tipo":"Auto","color":"Rojo","estado":"Nuevo","img_repuesto":null,"id_vehiculo":"5003","Id_pedido":"100"}]
-[15-Oct-2024 22:01:04 Europe/Berlin] Array
-(
-    [0] => Array
-        (
-            [id_repuesto] => 78183
-            [precio] => 2300
-            [tipo] => Auto
-            [color] => Rojo
-            [estado] => Nuevo
-            [img_repuesto] => 
-            [id_vehiculo] => 5003
-            [Id_pedido] => 100
-        )
-
-)
-
-[15-Oct-2024 22:32:01 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 4
+[16-Oct-2024 05:50:11 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`tallergerman`.`repuesto`, CONSTRAINT `vehi_rep` FOREIGN KEY (`id_vehiculo`) REFERENCES `vehiculo` (`id_vehiculo`)) in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php:62
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php(62): mysqli->query('INSERT INTO Rep...')
+#1 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(47): ProductoDao->agregarProducto('prueba', '12', '1700', 'azul', 'Usado', Array, 'Repuesto tatata')
+#2 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(14): agregarProducto()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php on line 62

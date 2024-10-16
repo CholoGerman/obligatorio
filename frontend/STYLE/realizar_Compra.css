@@ -72,12 +72,25 @@ label {
 }
 
 
-button{
+
+.btn {
+    margin-top: 80px;
+}
+
+
+button {
     position: absolute;
     bottom: 0;
     left: 50%;
+    transform: translateX(-50%);
     margin-bottom: 30px;
     border-radius: 5px;
-    
-
+    padding: 10px 20px; 
+    width: 150px; 
+    font-size: 16px; 
+    background-color: red; 
+    border: none; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    color: white; 
+    cursor: pointer; 
 }

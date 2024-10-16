@@ -58,6 +58,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+.icons {
+    display:flex;
+    gap:30px;
+}
+
 .contenedor_img{
     background: linear-gradient(135deg, #B7B5B3, #9A9997);
     height: 350px;
@@ -134,6 +139,25 @@ button:hover{
     opacity: 0.6;
 }
 
-nav .carrito {
+/* cambios */
 
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }

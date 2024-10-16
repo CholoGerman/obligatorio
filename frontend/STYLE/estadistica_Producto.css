@@ -16,9 +16,12 @@ nav {
     letter-spacing: 3px;
     height: 95px;
     background: linear-gradient(100deg, #A00A08, #600404, #000000);
+    background: linear-gradient(100deg, #007BA7, #005B82, #002740);
 }
 
-
+.logo a img {
+    border-radius: 50%;
+}
 
 main{
     padding:20px;
@@ -33,7 +36,7 @@ main{
     border-radius: 5px;
     border: 1px solid black;
     margin-bottom: 50px;
-    background-color: #B80C09;
+    background-color: #007BA7;
     color:#000000;
     cursor: pointer;
 }

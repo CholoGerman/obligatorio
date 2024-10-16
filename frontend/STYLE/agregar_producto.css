@@ -77,3 +77,14 @@ input {
     display:flex;
     flex-direction: column;
 }
+
+
+#descripcion {
+    width: 100%; 
+    max-width: 400px;
+    max-height: 150px;
+    resize: none; 
+}
+
+
+

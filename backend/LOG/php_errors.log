@@ -29,3 +29,85 @@ Stack trace:
 #2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
 #3 {main}
   thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 21:56:22 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 21:56:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 21:56:34 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 21:56:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 21:59:29 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 4
+[16-Oct-2024 22:04:51 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:04:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:62
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(62): mysqli->query('INSERT INTO Rep...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(47): ProductoDao->agregarProducto('prueba', '12', '1000', 'azul', 'usado', Array, 'Holaholahola')
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(14): agregarProducto()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 62
+[16-Oct-2024 22:05:30 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:05:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:18
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(18): mysqli->query('SELECT * FROM r...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(31): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(11): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 18
+[16-Oct-2024 22:05:46 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:05:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17
+[16-Oct-2024 22:05:53 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:05:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17
+[16-Oct-2024 22:06:22 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 4
+[16-Oct-2024 22:06:32 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:06:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17
+[16-Oct-2024 22:07:03 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:07:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17
+[16-Oct-2024 22:08:17 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:08:17 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17
+[16-Oct-2024 22:12:24 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'tallergerman' in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[16-Oct-2024 22:12:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:17
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php(17): mysqli->query('SELECT * FROM P...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(24): PedidoDao->obtenerPedidos()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(10): obtenerPedidos()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 17

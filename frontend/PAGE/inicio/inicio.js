@@ -3,8 +3,7 @@ import ProductoDao from "../../DAO/productoDAO.js";
 window.onload = async () => {
         let catalogo = await new ProductoDao().obtenerCatalogo();
         mostrarCatalogo(catalogo);
-        // let producto = await new ProductoDao().obtenerProducto();
-        // mostrarProducto(producto);
+
  
         
 

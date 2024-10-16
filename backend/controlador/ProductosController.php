@@ -29,7 +29,7 @@ function obtenerProducto() { //Funcion para obtener un producto
 
 function obtenerCatalogo() { //Funcion para obtener todos los productos
     $respuesta = (new ProductoDao())->obtenerCatalogo();
-    error_log(print_r($respuesta,true )); echo json_encode("hola");
+
    
    echo json_encode($respuesta);
 }
@@ -43,8 +43,9 @@ function agregarProducto() { //Funcion para publicar un producto
     $estado = $_POST["estado"];
     $imagen = $_FILES["imagen"];
     $descripcion = $_POST["descripcion"];
- 
+
     $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion);
+    
     echo json_encode($respuesta);
 
 

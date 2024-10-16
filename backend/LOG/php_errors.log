@@ -5,3 +5,10 @@ Stack trace:
 #2 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(14): agregarProducto()
 #3 {main}
   thrown in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php on line 62
+[17-Oct-2024 01:39:08 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`tallergerman`.`repuesto`, CONSTRAINT `vehi_rep` FOREIGN KEY (`id_vehiculo`) REFERENCES `vehiculo` (`id_vehiculo`)) in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php:62
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php(62): mysqli->query('INSERT INTO Rep...')
+#1 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(47): ProductoDao->agregarProducto('prueba', '12', '1700', 'azul', 'Usado', Array, 'Repuesto tatata')
+#2 C:\xampp\htdocs\obligatorio\obligatorio\backend\controlador\ProductosController.php(14): agregarProducto()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\obligatorio\backend\modelo\ProductoDAO.php on line 62

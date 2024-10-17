@@ -1,7 +1,8 @@
-window.onload = async () => {
+window.onload = async () => { 
+    let agregar = new ProductoDao();
+    agregar.agregarProducto(); 
+};
 
-
-}
 
 class ProductoDao {
 
@@ -36,10 +37,10 @@ class ProductoDao {
     }
 
 
-    async agregarProducto() {
+    async agregarProducto(){
         let formElement = document.querySelector("#agregarProductoForm");
         formElement.onsubmit = async (e) => {
-            e.preventDefault(); // Prevenir el envío del formulario
+            e.preventDefault(); 
     
             let formFormData = new FormData(formElement);
             let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
@@ -49,21 +50,17 @@ class ProductoDao {
                 body: formFormData
             };
     
-            try {
+          
                 let respuesta = await fetch(url, config);
                 let repuestos = await respuesta.json();
-    
-             
-                alert(repuestos.mensaje);
-    
-               
+                console.log(repuestos);
+                alert("Producto agregado correctamente");
                 formElement.reset();
-            } catch (error) {
-                console.error("Error al agregar el producto:", error);
-            }
+        
         };
     }
     
+
      
         
     

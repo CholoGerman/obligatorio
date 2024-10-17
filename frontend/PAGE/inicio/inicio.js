@@ -26,7 +26,7 @@ document.addEventListener('click', function(event) {
 });
 
 function mostrarCatalogo(catalogo) {
-    console.log("Catálogo recibido:", catalogo);  
+    console.log("Catálogo recibido:");  
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }

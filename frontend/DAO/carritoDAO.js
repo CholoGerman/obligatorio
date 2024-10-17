@@ -7,7 +7,7 @@ window.onload =()=> {
  class CarritoDao {
 
 
-    async realizarCompra(nombre, apellido, departamento, ciudad, calle, numero, telefono,id_repuesto) { // con dudas
+    async  realizarCompra(nombre, apellido, departamento, ciudad, calle, numero, telefono,id_repuesto) { // con dudas
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=comprar";
         formData.append("nombre",nombre);
         formData.append("apellido",apellido);
@@ -33,7 +33,7 @@ window.onload =()=> {
     
     
     }
-    async agregarDetalle(id_pedido){
+    async  agregarDetalle(id_pedido){
     
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=factura";
         let formData = new FormData();
@@ -51,7 +51,7 @@ window.onload =()=> {
     
         
     }
-    async modificarStock(id_repuesto, cantidad){
+    async  modificarStock(id_repuesto, cantidad){
     
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=stock";
         let formData = new FormData();

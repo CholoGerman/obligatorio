@@ -6,7 +6,7 @@ window.onload =()=> {
 class FavoritoDao{
 
 
-    async agregarFavorito(id_producto, correo){
+    async  agregarFavorito(id_producto, correo){
 
        
 
@@ -29,7 +29,7 @@ class FavoritoDao{
     }
     
     
-    async eliminarFavorito(id_producto){
+    async  eliminarFavorito(id_producto){
 
         
 
@@ -50,7 +50,7 @@ class FavoritoDao{
     }
     
     
-    async obtenerFavoritos(correo){
+    async  obtenerFavoritos(correo){
     
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
         let formData = new FormData();

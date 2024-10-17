@@ -4,7 +4,8 @@ window.onload = async () => {
         let catalogo = await new ProductoDao().obtenerCatalogo();
         mostrarCatalogo(catalogo);
 
- 
+    
+
         
 
 }
@@ -25,16 +26,18 @@ document.addEventListener('click', function(event) {
 });
 
 function mostrarCatalogo(catalogo) {
-    console.log("Catálogo recibido:", catalogo);  // Agregar más detalles para depurar
+    console.log("Catálogo recibido:", catalogo);  
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }
     let tbodyElement = document.querySelector("#contenedor_producto");
-    tbodyElement.innerHTML = "";  // Limpiar cualquier contenido previo
+    tbodyElement.innerHTML = "";  
+
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2">                                                      
-                <a href="../producto/detalle_Producto.html"><img src="${repuesto.imagen}"></a> 
+          <a href="../producto/detalle_producto.html?id=${repuesto.id}" class="producto-link"><img src="${repuesto.imagen}"></a>
+
                 <div class="detalles">
                     <p>${repuesto.nombre}</p>
                     <p>$${repuesto.precio}</p>
@@ -42,7 +45,18 @@ function mostrarCatalogo(catalogo) {
             </div>
         `;
     });
+
+    // Añadir el evento click a los enlaces
+    let link = document.querySelectorAll('.producto-link');
+    link.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            let id = this.dataset.id; 
+            window.open(`detalle_Producto.html?id=${id}`, '_blank'); // Abre la nueva pestaña
+        });
+    });
 }
+
 
 
 

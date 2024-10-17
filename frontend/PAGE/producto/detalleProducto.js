@@ -25,27 +25,28 @@ document.addEventListener('click', function(event) {
 });
 
 
-// function mostrarProducto(productos) {
-//     let tbodyElement = document.querySelector("#divProducto");
-//     tbodyElement.innerHTML = "";
-//     productos.forEach((producto) => {
-//         tbodyElement.innerHTML += ` 
-//             <div class="contenedor_img">
-//                 <a><img src="${producto.imagen}" style="aspect-ratio: auto" alt="${producto.nombre}"></a>
-//             </div>
-//             <div class="product-info">
-//                 <div class="primera_fila">
-//                     <h1 class="product-title">${producto.nombre}</h1>
-//                     <p class="product-price">${producto.precio}.99</p>
-//                 </div>
-//                 <p class="product-details">Estado: ${producto.estado}</p>
-//                 <p class="product-details">Año: ${producto.año}</p>
-//                 <p class="product-details">Color: ${producto.color}</p>
-//                 <p class="product-details">Descripcion: ${producto.descripcion}</p>
-//                 <div class="product-buttons">
-//                     <button>Agregar al carrito</button>
-//                 </div>
-//             </div>  
-//         `;
-//     });
-// }
+
+function mostrarProducto(producto) {
+    let tbodyElement = document.querySelector("#divProducto");
+    tbodyElement.innerHTML = ""; // Limpiar el contenido previo
+
+    tbodyElement.innerHTML += ` 
+        <div class="contenedor_img">
+            <img src="${producto.imagen}" style="aspect-ratio: auto" alt="${producto.nombre}">
+        </div>
+        <div class="product-info">
+            <div class="primera_fila">
+                <h1 class="product-title">${producto.nombre}</h1>
+                <p class="product-price">${producto.precio}.99</p>
+            </div>
+            <p class="product-details">Estado: ${producto.estado}</p>
+            <p class="product-details">Año: ${producto.año}</p>
+            <p class="product-details">Color: ${producto.color}</p>
+            <p class="product-details">Descripción: ${producto.descripcion}</p>
+            <div class="product-buttons">
+                <button>Agregar al carrito</button>
+            </div>
+        </div>  
+    `;
+}
+

@@ -1,5 +1,6 @@
 <?php
 require_once "../conexion/conexion.php";
+require_once '../modelo/Repuesta.php';
 
 class ProductoDao{
     public function obtenerProducto($id_repuesto){ //Funcion para obtener un producto
@@ -26,7 +27,7 @@ class ProductoDao{
 
 
 
-    public function agregarProducto($nombre,$precio,$color,$estado, $stock, $descripcion, $imagen) {  
+    public function agregarProducto($nombre, $precio, $color, $estado, $stock, $descripcion, $imagen) {  
         // Conectar a la base de datos
         $connection = connection();
     
@@ -52,7 +53,7 @@ class ProductoDao{
         $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
         
         // Insertar en la tabla de imagen
-        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$imagen');";
+        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$extension');"; // Corregido
         $respuesta2 = $connection->query($sqlImagen);
     
         if (!$respuesta2) {
@@ -64,6 +65,7 @@ class ProductoDao{
     
         return new Respuesta(true, "Agregado correctamente", null);
     }
+    
     
 
     public function eliminarProducto($id_repuesto){ //Funcion para eliminar un producto

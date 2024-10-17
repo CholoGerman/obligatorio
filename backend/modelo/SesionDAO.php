@@ -1,5 +1,6 @@
 <?php
 require_once "../conexion/conexion.php";
+require_once '../modelo/Repuesta.php';
 session_start();
 class SesionDao{
 

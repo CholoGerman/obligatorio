@@ -1,6 +1,6 @@
 <?php
 require_once "../conexion/conexion.php";
-
+require_once '../modelo/Repuesta.php';
 class PedidoDao{
 function obtenerPedido($id_pedido){ //Funcion para mostrar un pedido
     $connection = connection();

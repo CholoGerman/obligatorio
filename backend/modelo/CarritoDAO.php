@@ -1,6 +1,6 @@
 <?php
 require_once "../conexion/conexion.php";
-
+require_once '../modelo/Repuesta.php';
 class CarritoDao{
 
     function realizarCompra($cantidad, $id_repuesto, $metodo_pago, $id_envio, $id_cliente) {

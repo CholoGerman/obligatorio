@@ -10,6 +10,7 @@ body{
 
 nav {
     background: linear-gradient(100deg, #B80C09, #700606, #000000);  
+    background: linear-gradient(100deg, #007BA7, #005B82, #002740); 
     height: 100px;
     display: flex;
     align-items: center;

@@ -25,27 +25,6 @@ class ProductoDao{
     }
 
 
-    public function agregarProduct2($nombre, $stock, $precio, $color, $estado , $imagen, $descripcion){  //Funcion para publicar un producto
-        $connection = connection(); 
-        $sql1 = "INSERT INTO Repuesto(nombre, stock, precio, color, estado, imagen, descripcion) VALUES( '$nombre', '$stock', '$precio', '$color', '$estado' , $imagen ,'$descripcion');";
-        $respuesta = $connection->query($sql1);
-        $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $productos;
-
-
-        $rutaTemporal = $imagen["tmp_name"];
-        $nombreImagen = $imagen["name"];
-        $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
-        $sql2 = "INSERT INTO imagen (0, extension) VALUES('$extension');";
-        $connection = connection();
-        $respuesta = $connection->query($sql2);
-        $id = $connection->insert_id;
-        move_uploaded_file($rutaTemporal, "../IMG/$id.$extension");
-        return $respuesta;
-        return new Respuesta(true, "agregado correctamente", null);
-
-
-    }
 
     public function agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion) {  
         // Conectar a la base de datos
@@ -56,7 +35,7 @@ class ProductoDao{
         $rutaTemporal = $imagen["tmp_name"]; // Aquí obtienes la ruta temporal
     
         // Preparar la consulta para insertar en la tabla Repuesto
-        $sqlRepuesto = "INSERT INTO Repuesto(nombre, stock, precio, color, estado, img_repuesto, descripcion) VALUES('$nombre', '$stock', '$precio', '$color', '$estado', '$nombreImagen', '$descripcion');";
+        $sqlRepuesto = "INSERT INTO Repuesto(nombre, stock, precio, color, estado, descripcion) VALUES('$nombre', '$stock', '$precio', '$color', '$estado', '$descripcion');";
         
         // Ejecutar la consulta
         $respuesta = $connection->query($sqlRepuesto);
@@ -73,7 +52,7 @@ class ProductoDao{
         $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
         
         // Insertar en la tabla de imagen
-        $sqlImagen = "INSERT INTO imagen (nombre, extension) VALUES('$nombreImagen', '$extension');";
+        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$imagen');";
         $respuesta2 = $connection->query($sqlImagen);
     
         if (!$respuesta2) {

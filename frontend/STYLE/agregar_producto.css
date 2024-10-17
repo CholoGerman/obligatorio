@@ -15,12 +15,13 @@ body{
 
 nav{
     background: linear-gradient(100deg, #A00A08, #600404, #000000);
+    background: linear-gradient(100deg, #007BA7, #005B82, #002740); 
     display:Flex;
     justify-content: space-around;
     height: 70px;
     padding:10px;
     align-items: center;
-    border-bottom: 2px solid #600404;
+    border-bottom: 2px solid #002740;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -37,6 +38,11 @@ main{
 
 h1{
     letter-spacing: 4px;
+}
+
+
+.logo a img {
+    border-radius: 50%;
 }
 
 .contenedor_datos {
@@ -71,3 +77,14 @@ input {
     display:flex;
     flex-direction: column;
 }
+
+
+#descripcion {
+    width: 100%; 
+    max-width: 400px;
+    max-height: 150px;
+    resize: none; 
+}
+
+
+

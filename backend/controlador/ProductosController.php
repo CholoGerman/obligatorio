@@ -37,14 +37,14 @@ function obtenerCatalogo() { //Funcion para obtener todos los productos
 
 function agregarProducto() { //Funcion para publicar un producto
     $nombre = $_POST["nombre"];
-    $stock = $_POST["stock"];
     $precio = $_POST["precio"];
     $color = $_POST["color"];
     $estado = $_POST["estado"];
-    $imagen = $_FILES["imagen"];
+    $stock = $_POST["stock"];
     $descripcion = $_POST["descripcion"];
+    $imagen = $_FILES["imagen"];
 
-    $respuesta = (new ProductoDao())->agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion);
+    $respuesta = (new ProductoDao())->agregarProducto($nombre,$precio,$color,$estado, $stock, $descripcion, $imagen);
     
     echo json_encode($respuesta);
 

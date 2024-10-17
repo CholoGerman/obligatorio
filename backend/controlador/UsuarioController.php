@@ -21,7 +21,7 @@ function obtenerUsuarios(){ //Funcion para mostrar los clientes
 
 
 function eliminarUsuario(){ //Funcion para eliminar un cliente
-    $correo = $_POST["email"];
+    $correo = $_POST["correo"];
     $respuesta = (new UsuarioDao())->eliminarUsuario($correo);
     echo json_encode($respuesta);
     

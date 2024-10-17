@@ -24,14 +24,17 @@ function realizarCompra(){   //Funcion para realizar una compra
   $numero = $_POST["numero"];
   $telefono = $_POST["telefono"];
   $id_repuesto = $_POST["id_repuesto"];
+  $cantidad = $_POST["cantidad"];
 
-  $resultado = (new CarritoDao())->realizarCompra($nombre, $apellido, $departamento, $ciudad, $calle, $numero, $telefono,$id_repuesto);
+  $resultado = (new CarritoDao())->realizarCompra($nombre, $apellido, $departamento, $ciudad, $calle, $numero, $telefono,$id_repuesto, $cantidad);
   echo json_encode($resultado);
 }
 
 function agregarDetalle(){ //Funcion para mostrar una factura
   $id_pedido = $_GET["id_pedido"];
-  $resultado = (new CarritoDao())->agregarDetalle($id_pedido);
+  $id_repuesto = $_GET["id_repuesto"];
+  $cantidad = $_GET["cantidad"];
+  $resultado = (new CarritoDao())->agregarDetalle($id_pedido, $id_repuesto, $cantidad);
   echo json_encode($resultado);
 }
 function modificarStock(){ //Funcion para modificar el stock
@@ -40,3 +43,6 @@ function modificarStock(){ //Funcion para modificar el stock
   $resultado = (new CarritoDao())->modificarStock($id_repuesto, $cantidad);
   echo json_encode($resultado);
 }
+
+
+

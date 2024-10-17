@@ -34,7 +34,7 @@ function mostrarCatalogo(catalogo) {
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2">                                                      
-                <a href="../PAGE/detalle_Producto.html"><img src="${repuesto.imagen}"></a> 
+                <a href="../producto/detalle_Producto.html"><img src="${repuesto.imagen}"></a> 
                 <div class="detalles">
                     <p>${repuesto.nombre}</p>
                     <p>$${repuesto.precio}</p>

@@ -20,9 +20,9 @@ function obtenerPedidos(){ //Funcion para mostrar todos los pedidos
 
 }
 
-function cambiarEstadoPedido($id_detalle, $estado){ //Funcion para modificar el estado de un pedido
+function cambiarEstadoPedido($id_pedido, $estado){ //Funcion para modificar el estado de un pedido
     $connection = connection();
-    $sql = "UPDATE detalle_pedido SET estado = '$estado' WHERE id_detalle=$id_detalle;";       
+    $sql = "UPDATE detalle SET estado = '$estado' WHERE id_pedido=$id_pedido;";       
     $respuesta = $connection->query($sql);
     $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $pedidos;

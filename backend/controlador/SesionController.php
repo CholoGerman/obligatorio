@@ -14,28 +14,24 @@ switch ($funcion) { // Le asignamos una funcion a cada posible variable de "func
         break;
 }
 
-function register() { //Funcion para registrar un usuario
-    $usuario = $_POST["usuario"];
+function register() { // Función para registrar un usuario
     $correo = $_POST["correo"];
-    $password = $_POST["password"];
-    $respuesta = (new SesionDao())->register($usuario,$correo, $password,);
+    $contraseña = $_POST["contraseña"];
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
     echo json_encode($respuesta);
 }
 
-
-function login() { //Funcion para iniciar sesion
+function login() { // Función para iniciar sesión
     $correo = $_POST["correo"];
-    $password = $_POST["password"];
-    $respuesta = (new SesionDao())->login($correo, $password);
+    $contraseña = $_POST["contraseña"];
+    $respuesta = (new SesionDao())->login($correo, $contraseña);
     echo json_encode($respuesta);
-    
-  
-  
 }
 
-
-
-function logOut() { //Funcion para cerrar sesion
+function logOut() { // Función para cerrar sesión
     $respuesta = (new SesionDao())->logOut();
     echo json_encode($respuesta);
 }
+

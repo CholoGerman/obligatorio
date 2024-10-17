@@ -4,8 +4,8 @@ require_once "../conexion/conexion.php";
 class FavoritoDao
 {
 
-    function agregarFavorito($correo,$id_repuesto) { //Funcion para agregar un producto a favorito
-        $sql = "INSERT INTO favorito (correo, id_repuesto) VALUES ('$correo', $id_repuesto);";
+    function agregarFavorito($id_cliente,$id_repuesto) { //Funcion para agregar un producto a favorito
+        $sql = "INSERT INTO favorito (id_cliente, id_repuesto) VALUES ($id_cliente, $id_repuesto);";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
@@ -13,9 +13,9 @@ class FavoritoDao
     }
 
 
-    function eliminarFavorito($correo,$id_repuesto){ //Funcion para eliminar un producto de favorito
+    function eliminarFavorito($id_cliente,$id_repuesto){ //Funcion para eliminar un producto de favorito
       
-    $sql = "DELETE FROM favorito WHERE correo = '$correo' AND id_repuesto = $id_repuesto;";
+    $sql = "DELETE FROM favorito WHERE id_cliente = $id_cliente AND id_repuesto = $id_repuesto;";
     $connection = connection();
     $respuesta = $connection->query($sql);
     return $respuesta;
@@ -23,9 +23,9 @@ class FavoritoDao
     }
 
 
-    function obtenerFavoritos($correo){ //Funcion para mostrar los favoritos
+    function obtenerFavoritos($id_cliente){ //Funcion para mostrar los favoritos
     $connection = connection();
-    $sql = "SELECT * FROM Favorito WHERE correo = '$correo';";
+    $sql = "SELECT * FROM Favorito WHERE id_cliente = $id_cliente;";
     $respuesta = $connection->query($sql);
     $favorito = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $favorito;

@@ -5,7 +5,7 @@ class UsuarioDao{
  
 function obtenerUsuarios(){ //Funcion para mostrar los clientes
     $connection = connection();
-    $sql = "SELECT * FROM Usuario;";
+    $sql = "SELECT * FROM persona;";
     $respuesta = $connection->query($sql);
     $Usuario = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $Usuario;
@@ -14,7 +14,7 @@ function obtenerUsuarios(){ //Funcion para mostrar los clientes
 
 
 function eliminarUsuario($correo){ //Funcion para eliminar un cliente
-    $sql = "DELETE FROM Usuario WHERE correo = '$correo';";
+    $sql = "DELETE FROM persona WHERE correo = '$correo';";
     $connection = connection();
     $respuesta = $connection->query($sql);
     return $respuesta;

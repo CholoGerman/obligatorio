@@ -26,16 +26,16 @@ class ProductoDao{
 
 
 
-    public function agregarProducto($nombre, $stock, $precio, $color, $estado, $imagen, $descripcion) {  
+    public function agregarProducto($nombre,$precio,$color,$estado, $stock, $descripcion, $imagen) {  
         // Conectar a la base de datos
         $connection = connection();
     
         // Extraer el nombre del archivo de imagen
-        $nombreImagen = $imagen["name"]; // Aquí obtienes el nombre del archivo
-        $rutaTemporal = $imagen["tmp_name"]; // Aquí obtienes la ruta temporal
+        $nombreImagen = $imagen["name"]; // Obtenemos nombre del archivo
+        $rutaTemporal = $imagen["tmp_name"]; // Obtenemos ruta temporal
     
         // Preparar la consulta para insertar en la tabla Repuesto
-        $sqlRepuesto = "INSERT INTO Repuesto(nombre, stock, precio, color, estado, descripcion) VALUES('$nombre', '$stock', '$precio', '$color', '$estado', '$descripcion');";
+        $sqlRepuesto = "INSERT INTO Repuesto(nombre, precio, color, estado, stock, descripcion) VALUES('$nombre', '$precio', '$color', '$estado', '$stock', '$descripcion');";
         
         // Ejecutar la consulta
         $respuesta = $connection->query($sqlRepuesto);

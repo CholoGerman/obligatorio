@@ -2,6 +2,7 @@
 
 require_once "../modelo/ProductoDAO.php";
 $funcion = $_GET["funcion"];
+
 switch ($funcion) { // Le asignamos una funcion a cada posible variable de "funcion"
     case "obtener":
         obtenerProducto();

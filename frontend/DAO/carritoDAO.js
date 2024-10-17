@@ -4,7 +4,7 @@ window.onload =()=> {
    
 }
 
-export default class CarritoController {
+ class CarritoDao {
 
 
     async realizarCompra(nombre, apellido, departamento, ciudad, calle, numero, telefono,id_repuesto) { // con dudas
@@ -72,3 +72,4 @@ export default class CarritoController {
     }
     }
 
+    export default CarritoDao;

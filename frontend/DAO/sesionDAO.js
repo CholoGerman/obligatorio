@@ -1,9 +1,9 @@
-Window.onload = () => {
+window.onload =()=> {
 
 }
 
 
-export default class SesionController{
+class SesionDao{
 
      async register(correo,password,usuario){
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=register";
@@ -63,3 +63,4 @@ export default class SesionController{
 
 
 }
+export default SesionDao;

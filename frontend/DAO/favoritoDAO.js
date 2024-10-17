@@ -3,7 +3,7 @@ window.onload =()=> {
 }
 
 
-export default class FavoritoController{
+class FavoritoDao{
 
 
     async agregarFavorito(id_producto, correo){
@@ -86,3 +86,5 @@ export default class FavoritoController{
     }
 )
 }
+
+export default FavoritoDao;

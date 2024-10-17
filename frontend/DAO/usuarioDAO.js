@@ -1,9 +1,9 @@
-Window.onload = () => {
+window.onload = () => {
     mostrarUsuarios(clientes);
 
 }
 
-export default class UsuarioController {
+ class UsuarioDao {
 
     async obtenerUsuarios() {
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
@@ -51,3 +51,5 @@ function mostrarUsuarios(clientes) {
     }
 )
 }
+
+export default UsuarioDao;

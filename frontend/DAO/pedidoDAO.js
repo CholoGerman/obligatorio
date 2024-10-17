@@ -5,7 +5,7 @@ window.onload =()=> {
 }
 
 
-export default class PedidoController{
+ class PedidoDao{
 
 async obtenerPedido(id_pedido){
     let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
@@ -83,3 +83,6 @@ function mostrarPedidos(productos) {
     }
 )
 }
+
+
+export default PedidoDao;

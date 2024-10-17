@@ -28,43 +28,45 @@ class ProductoDao{
 
 
     public function agregarProducto($nombre, $precio, $color, $estado, $stock, $descripcion, $imagen) {  
-        // Conectar a la base de datos
         $connection = connection();
-    
-        // Extraer el nombre del archivo de imagen
-        $nombreImagen = $imagen["name"]; // Obtenemos nombre del archivo
-        $rutaTemporal = $imagen["tmp_name"]; // Obtenemos ruta temporal
-    
-        // Preparar la consulta para insertar en la tabla Repuesto
-        $sqlRepuesto = "INSERT INTO Repuesto(nombre, precio, color, estado, stock, descripcion) VALUES('$nombre', '$precio', '$color', '$estado', '$stock', '$descripcion');";
         
-        // Ejecutar la consulta
-        $respuesta = $connection->query($sqlRepuesto);
+        // Extraer el nombre del archivo de imagen
+        $nombreImagen = $imagen["name"];
+        $rutaTemporal = $imagen["tmp_name"];
     
-        // Verificar si la inserción fue exitosa
+        // Insertar en la tabla Repuesto
+        $sqlRepuesto = "INSERT INTO Repuesto(nombre, precio, color, estado, stock, descripcion) VALUES('$nombre', '$precio', '$color', '$estado', '$stock', '$descripcion');";
+        $respuesta = $connection->query($sqlRepuesto);
+        
         if (!$respuesta) {
             return new Respuesta(false, "Error al agregar el producto: " . $connection->error, null);
         }
     
         // Obtener el ID del producto agregado
-        $id = $connection->insert_id;
+        $idRepuesto = $connection->insert_id;
     
         // Procesar la imagen
         $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
-        
-        // Insertar en la tabla de imagen
-        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$extension');"; // Corregido
+        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$extension');";
         $respuesta2 = $connection->query($sqlImagen);
     
         if (!$respuesta2) {
             return new Respuesta(false, "Error al agregar la imagen: " . $connection->error, null);
         }
     
+        // Obtener el ID de la imagen insertada
+        $idImagen = $connection->insert_id;
+    
+        // Actualizar la tabla Repuesto con el id_imagen
+        $sqlActualizarRepuesto = "UPDATE Repuesto SET id_imagen = $idImagen WHERE id_repuesto = $idRepuesto;";
+        $connection->query($sqlActualizarRepuesto);
+    
         // Mover el archivo a la carpeta correspondiente
-        move_uploaded_file($rutaTemporal, "../IMG/$id.$extension");
+        move_uploaded_file($rutaTemporal, "../IMG/$idRepuesto.$extension");
     
         return new Respuesta(true, "Agregado correctamente", null);
     }
+    
     
     
 

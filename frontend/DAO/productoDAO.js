@@ -10,8 +10,9 @@ class ProductoDao {
 
 
     async obtenerProducto(id_repuesto) {
+       
 
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.phpfuncion=obtener";
+        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
         let formData = new FormData();
         formData.append("id_repuesto", id_repuesto);
         let config = {

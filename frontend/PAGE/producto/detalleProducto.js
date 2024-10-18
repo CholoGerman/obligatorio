@@ -1,19 +1,30 @@
+import ProductoDao from "../../DAO/productoDAO.js";
+
 window.onload = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id_repuesto'); 
 
-    let producto = await new ProductoDao().obtenerProducto();
-    mostrarProducto(producto);
-
-    
-
-}
-
-
+    if (productId) {
+        try {
+            let repuestos = await new ProductoDao().obtenerProducto(productId); // Pasa el id
+            if (repuestos.length > 0) {
+                mostrarProducto(repuestos[0]); // Accede al primer elemento
+            } else {
+                console.error("No se encontró el repuesto con el ID especificado.");
+            }
+        } catch (error) {
+            console.error("Error al obtener el producto:", error);
+        }
+    } else {
+        console.error("No se ha encontrado el ID del producto en la URL.");
+    }
+};
 
 const menuToggle = document.getElementById('menuToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
-let cantidad=0;
+
 menuToggle.addEventListener('click', function(event) {
-    event.preventDefault(); // Evita que el enlace recargue la página
+    event.preventDefault();
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
@@ -25,14 +36,6 @@ document.addEventListener('click', function(event) {
 });
 
 
-function obtenerProductoPorId(id) {
-    // Aquí puedes hacer una solicitud AJAX para obtener los detalles del producto
-    // Por ejemplo, usando fetch:
-    fetch(`../../backend/modelo/ProductoDAO${id}`)
-        .then(response => response.json())
-        .then(producto => mostrarProducto([producto]))
-        .catch(error => console.error("Error al obtener el producto:", error));
-}
 
 function aumentarCantidad() {
    
@@ -47,42 +50,27 @@ function disminuirCantidad() {
     }
 }
 
-
-
-
-function mostrarProducto(producto) {
+function mostrarProducto(repuesto) {
     let tbodyElement = document.querySelector("#divProducto");
-    tbodyElement.innerHTML = ""; // Limpiar el contenido previo
+    tbodyElement.innerHTML = ""; 
 
     tbodyElement.innerHTML += ` 
         <div class="contenedor_img">
-            <img src="${producto.imagen}" style="aspect-ratio: auto" alt="${producto.nombre}">
+            <img src="${repuesto.imagen}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
         <div class="product-info">
             <div class="primera_fila">
-                <h1 class="product-title">${producto.nombre}</h1>
-                <p class="product-price">${producto.precio}.99</p>
+                <h1 class="product-title">${repuesto.nombre}</h1>
+                <p class="product-price">$${repuesto.precio}</p>
             </div>
-            <p class="product-details">Estado: ${producto.estado}</p>
-            <p class="product-details">Año: ${producto.año}</p>
-            <p class="product-details">Color: ${producto.color}</p>
-            <p class="product-details">Descripción: ${producto.descripcion}</p>
+            <p class="product-details">Estado: ${repuesto.estado}</p>
+            <p class="product-details">Color: ${repuesto.color}</p>
+            <p class="product-details">Descripción: ${repuesto.descripcion}</p>
             <div class="product-buttons">
-                <button>Agregar al carrito</button>
-            </div>
+                    <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> 
+                    <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">0</label> <button onclick="aumentarCantidad()">+</button>
+                    <button>Agregar al carrito</button>
+                </div>
         </div>  
     `;
 }
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
-    if (productId) {
-        obtenerProductoPorId(productId);
-    }
-});

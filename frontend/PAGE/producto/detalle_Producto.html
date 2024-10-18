@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle Producto</title>
     <link rel="stylesheet" href="../../STYLE/detalle_producto.css">
-    <script src="detalleProducto.js"></script>
+    <script type="module" src="../../DAO/productoDAO.js"></script>
+    <script type="module" src="detalleProducto.js"></script>
 </head>
 <body>
 
@@ -40,7 +41,7 @@
     <main>
       
         <div class="contenedor_producto" id="divProducto">
-            <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
+            <!-- <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
             <div class="contenedor_img">
                 <a><img src="../../BACKEND/IMG/img ejemplo.jpg" style="aspect-ratio: auto"></a>
             </div>
@@ -55,19 +56,19 @@
                 <p class="product-details">Año: 2024</p>
                 <p class="product-details">Color: Rojo</p>
                 <div class="product-buttons">
-                    <!-- <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> -->
+                    <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> 
                     <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">0</label> <button onclick="aumentarCantidad()">+</button>
                     <button>Agregar al carrito</button>
                 </div>
 
                 
 
-            </div>  
+            </div>   -->
         </div>
 
     </main>
     
 
-   
+ 
 </body>
 </html>

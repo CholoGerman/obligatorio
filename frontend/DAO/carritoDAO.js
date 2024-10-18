@@ -1,5 +1,6 @@
 window.onload =()=> {
-      
+    let carrito = new carritoDao();
+    carrito.agregarProducto(); 
     mostrarCarrito(productos);
    
 }

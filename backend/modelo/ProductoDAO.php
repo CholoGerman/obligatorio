@@ -3,9 +3,11 @@ require_once "../conexion/conexion.php";
 require_once '../modelo/Repuesta.php';
 
 class ProductoDao{
-    public function obtenerProducto($id_repuesto){ //Funcion para obtener un producto
+    public function obtenerProducto($id_repuesto) { 
         $connection = connection();
-        $sql = "SELECT * FROM repuesto WHERE id_repuesto = $id_repuesto";
+        $sql = "SELECT r.*, i.extension FROM repuesto r 
+                LEFT JOIN imagen i ON r.id_imagen = i.id_imagen 
+                WHERE r.id_repuesto = $id_repuesto";
         $respuesta = $connection->query($sql);
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $productos;

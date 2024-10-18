@@ -1,6 +1,8 @@
 import ProductoDao from "../../DAO/productoDAO.js";
 
 window.onload = async () => {
+
+
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id_repuesto'); 
 
@@ -36,27 +38,32 @@ document.addEventListener('click', function(event) {
 });
 
 
-
+let cantidad = 1; 
 function aumentarCantidad() {
-   
-    cantidad += 1;  // Incrementa la cantidad
-    document.getElementById('cantidad').innerHTML = cantidad;  // Actualiza el contenido
+    cantidad += 1; 
+    document.getElementById('cantidad').innerHTML = cantidad; 
 }
 
 function disminuirCantidad() {
-    if (cantidad > 0) {  // Asegúrate de que la cantidad no sea menor a 1
-        cantidad -= 1;  // Decrementa la cantidad
-        document.getElementById('cantidad').innerHTML = cantidad;  // Actualiza el contenido
+    if (cantidad > 1) { // Cambiado a 1 para que la cantidad mínima sea 1
+        cantidad -= 1; 
+        document.getElementById('cantidad').innerHTML = cantidad; 
     }
 }
+window.aumentarCantidad = aumentarCantidad;
+window.disminuirCantidad = disminuirCantidad;
+
 
 function mostrarProducto(repuesto) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = ""; 
 
+    const imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`; // Construir la ruta de la imagen
+
     tbodyElement.innerHTML += ` 
+        <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
         <div class="contenedor_img">
-            <img src="${repuesto.imagen}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
+            <img src="${imagenSrc}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
         <div class="product-info">
             <div class="primera_fila">
@@ -68,9 +75,10 @@ function mostrarProducto(repuesto) {
             <p class="product-details">Descripción: ${repuesto.descripcion}</p>
             <div class="product-buttons">
                     <button onclick="location.href='../PAGE/realizar_Compra.html'">Comprar</button> 
-                    <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">0</label> <button onclick="aumentarCantidad()">+</button>
+                    <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">1</label> <button onclick="aumentarCantidad()">+</button>
                     <button>Agregar al carrito</button>
                 </div>
         </div>  
     `;
 }
+

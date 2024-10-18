@@ -11,7 +11,7 @@ window.onload = async () => {
 
 const menuToggle = document.getElementById('menuToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
-
+let cantidad=0;
 menuToggle.addEventListener('click', function(event) {
     event.preventDefault(); // Evita que el enlace recargue la página
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
@@ -23,6 +23,30 @@ document.addEventListener('click', function(event) {
         dropdownMenu.style.display = 'none';
     }
 });
+
+
+function obtenerProductoPorId(id) {
+    // Aquí puedes hacer una solicitud AJAX para obtener los detalles del producto
+    // Por ejemplo, usando fetch:
+    fetch(`../../backend/modelo/ProductoDAO${id}`)
+        .then(response => response.json())
+        .then(producto => mostrarProducto([producto]))
+        .catch(error => console.error("Error al obtener el producto:", error));
+}
+
+function aumentarCantidad() {
+   
+    cantidad += 1;  // Incrementa la cantidad
+    document.getElementById('cantidad').innerHTML = cantidad;  // Actualiza el contenido
+}
+
+function disminuirCantidad() {
+    if (cantidad > 0) {  // Asegúrate de que la cantidad no sea menor a 1
+        cantidad -= 1;  // Decrementa la cantidad
+        document.getElementById('cantidad').innerHTML = cantidad;  // Actualiza el contenido
+    }
+}
+
 
 
 
@@ -50,3 +74,12 @@ function mostrarProducto(producto) {
     `;
 }
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+    if (productId) {
+        obtenerProductoPorId(productId);
+    }
+});

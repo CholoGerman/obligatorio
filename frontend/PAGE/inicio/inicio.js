@@ -26,7 +26,7 @@ document.addEventListener('click', function(event) {
 });
 
 function mostrarCatalogo(catalogo) {
-    console.log("Catálogo recibido:");  
+    console.log("Catálogo recibido:", catalogo);  
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }
@@ -36,7 +36,7 @@ function mostrarCatalogo(catalogo) {
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2">                                                      
-          <a href="../producto/detalle_producto.html?id=${repuesto.id}" class="producto-link"><img src="${repuesto.imagen}"></a>
+          <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}"><img src="${repuesto.imagen}"></a>
 
                 <div class="detalles">
                     <p>${repuesto.nombre}</p>
@@ -44,7 +44,7 @@ function mostrarCatalogo(catalogo) {
                 </div>
             </div>
         `;
-    });
+    }); 
 
     // Añadir el evento click a los enlaces
     let link = document.querySelectorAll('.producto-link');

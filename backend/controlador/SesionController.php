@@ -13,15 +13,18 @@ switch ($funcion) { // Le asignamos una funcion a cada posible variable de "func
         logOut();
         break;
 }
-
-function register() { // Función para registrar un usuario
+function register() {
     $correo = $_POST["correo"];
     $contraseña = $_POST["contraseña"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
+
+    error_log("Registro - Correo: $correo, Nombre: $nombre, Apellido: $apellido"); 
+
     $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
     echo json_encode($respuesta);
 }
+
 
 function login() { // Función para iniciar sesión
     $correo = $_POST["correo"];

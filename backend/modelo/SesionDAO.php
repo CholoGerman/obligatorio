@@ -19,18 +19,19 @@ class SesionDao{
         // Obtener el ID de la persona recién creada
         $idPersona = $connection->insert_id;
     
-
-        if ($codigo_postal || $calle_dir || $num_dir) {
-            $sqlCliente = "INSERT INTO cliente(id_persona, codigo_postal, calle_dir, num_dir) VALUES ($idPersona, '$codigo_postal', '$calle_dir', $num_dir);";
-            $respuestaCliente = $connection->query($sqlCliente);
+     
+        $sqlCliente = "INSERT INTO cliente(id_persona, codigo_postal, calle_dir, num_dir) VALUES ($idPersona, " . ($codigo_postal ? "'$codigo_postal'" : "NULL") . ", " . ($calle_dir ? "'$calle_dir'" : "NULL") . ", " . ($num_dir ? $num_dir : "NULL") . ");";
+        
+        $respuestaCliente = $connection->query($sqlCliente);
     
-            if (!$respuestaCliente) {
-                return new Respuesta(false, "Error al agregar el cliente: " . $connection->error, null);
-            }
+        if (!$respuestaCliente) {
+            return new Respuesta(false, "Error al agregar el cliente: " . $connection->error, null);
         }
     
-        return new Respuesta(true, "Usuario y cliente agregados correctamente", null);
+        return new Respuesta(true, "Usuario y cliente registrados correctamente", null);
     }
+    
+    
     
     
         function login($correo, $contraseña) { // Función para iniciar sesión
@@ -47,10 +48,14 @@ class SesionDao{
             }
         }
     
-        function logOut() { // Función para cerrar sesión
-            $_SESSION["session"] = null;
-            return new Respuesta(true, "Sesión cerrada correctamente", null);
+        function logOut() {
+            if (session_status() == PHP_SESSION_ACTIVE) {
+                session_destroy();
+                return new Respuesta(true, "Sesión cerrada correctamente", null);
+            }
+            return new Respuesta(false, "No hay sesión activa", null);
         }
+        
     }
     
 

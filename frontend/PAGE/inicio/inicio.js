@@ -1,10 +1,17 @@
-import ProductoDao from "../../DAO/productoDAO.js";
+import SesionDao from '../../../frontend/DAO/sesionDAO.js';
+import ProductoDao from '../../../frontend/DAO/productoDAO.js'; 
+
 
 window.onload = async () => {
         let catalogo = await new ProductoDao().obtenerCatalogo();
         mostrarCatalogo(catalogo);
 
     
+       // Agregar el evento al botón de cerrar sesión
+       document.getElementById('logoutButton').addEventListener('click', async () => {
+        let sesionDao = new SesionDao();
+        await sesionDao.logOut(); // Llama a la función de cierre de sesión
+});
 
         
 
@@ -24,6 +31,9 @@ document.addEventListener('click', function(event) {
         dropdownMenu.style.display = 'none';
     }
 });
+
+
+
 
 function mostrarCatalogo(catalogo) {
     console.log("Catálogo recibido:", catalogo);  

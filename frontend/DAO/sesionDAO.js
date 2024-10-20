@@ -1,44 +1,17 @@
-window.onload = () => {
-    const registroForm = document.getElementById('registroForm');
-
-    if (registroForm) {
-        registroForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            let nombre = document.getElementById('nombre').value;
-            let apellido = document.getElementById('apellido').value;
-            let correo = document.getElementById('correo').value;
-            let password = document.getElementById('contraseña').value;
-            let re_password = document.getElementById('re_contraseña').value;
-
-            if (password !== re_password) {
-                alert("Las contraseñas no coinciden");
-                return;
-            }
-
-            let sesionDao = new SesionDao();
-            await sesionDao.register(correo, password, nombre, apellido);
-        });
-    } else {
-        console.error("El formulario 'registroForm' no se encontró en el DOM.");
-    }
-
-    document.getElementById('loginForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-        let correo = document.getElementById('correo').value;
-        let password = document.getElementById('contraseña').value;
-    
-        let sesionDao = new SesionDao();
-        await sesionDao.login(correo, password);
-    });
-    
-    // Aquí puedes mantener el evento de registro si es necesario
-    document.getElementById('registroForm').addEventListener('submit', async (event) => {
-        // Código de registro...
-    });
-};
-
 class SesionDao {
+    async fetchRequest(url, method, body) {
+        let config = {
+            method: method,
+            body: body
+        };
+        let respuesta = await fetch(url, config);
+        if (!respuesta.ok) {
+            throw new Error(`HTTP error! status: ${respuesta.status}`);
+        }
+        return await respuesta.json();
+    }
+    
+
     async register(correo, password, nombre, apellido) {
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=register"; 
         let formData = new FormData();
@@ -46,64 +19,65 @@ class SesionDao {
         formData.append("contraseña", password);
         formData.append("nombre", nombre);
         formData.append("apellido", apellido);
-
-        let config = {
-            method: "POST",
-            body: formData
-        };
-
-        let respuesta = await fetch(url, config);
-        let respuestaJson = await respuesta.json();
-        
-        if (respuestaJson.success) {
-            alert("Registro exitoso");
+    
+        let respuestaJson = await this.fetchRequest(url, "POST", formData);
+        console.log("Respuesta del servidor:", respuestaJson); // Agrega este log
+    
+        // Asegúrate de verificar si 'status' y 'mensaje' están presentes
+        if (respuestaJson.status) {
+            alert(respuestaJson.mensaje); // Usa 'mensaje' para mostrar
         } else {
-            alert(respuestaJson.message);
+            alert("Error: " + (respuestaJson.mensaje || "Ocurrió un problema inesperado"));
         }
     }
-
-
-
-
-
-    
-async login(correo, password) {
-    let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
-    let formData = new FormData();
-    formData.append("correo", correo);
-    formData.append("contraseña", password); // Asegúrate de que sea "contraseña" y no "password"
-    
-    let config = {
-        method: "POST",
-        body: formData
-    };
-
-    let respuesta = await fetch(url, config);
-    let respuestaJson = await respuesta.json();
-    if (respuestaJson.success) {
-        alert("Bienvenido " + respuestaJson.usuario.nombre); // Asegúrate de acceder correctamente al nombre
-    } else {
-        alert(respuestaJson.message);
-    }
-}
-
     
     
-    
-     async logOut(){
-        let url ="http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut";
-        let respuesta = await fetch(url);
-        let respuestaJson = await respuesta.json();
-        if(respuestaJson.success){
-            alert("Sesión cerrada correctamente");
-        } else{
-            alert(respuestaJson.message);
-        }
-    
+
+    async login(correo, password) {
+        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
+        let formData = new FormData();
+        formData.append("correo", correo);
+        formData.append("contraseña", password);
         
+        let respuestaJson = await this.fetchRequest(url, "POST", formData);
+        console.log("Respuesta del servidor:", respuestaJson);
+    
+        if (respuestaJson.status) {
+            
+            window.location.href = 'http://localhost/obligatorio/frontend/PAGE/inicio/index.html'; // Cambia esto a la página que quieras
+        } else {
+            alert(respuestaJson.mensaje);
+        }
     }
+    
+
+    async logOut() {
+        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut";
+        let respuesta = await fetch(url);
+        let respuestaJson;
+    
+        try {
+            respuestaJson = await respuesta.json();
+            console.log("Respuesta del servidor:", respuestaJson);
+            
+            if (respuestaJson.status) {
+                // Redirigir al login sin mostrar alerta
+                window.location.href = "../../PAGE/login/login.html"; // Ajusta la ruta según sea necesario
+            } else {
+                console.error(respuestaJson.mensaje);
+            }
+        } catch (error) {
+            console.error("Error al parsear JSON:", error);
+        }
+    }
+    
+    
+
+    
+    
+    
+    
+    
 }
-
-
 
 export default SesionDao;

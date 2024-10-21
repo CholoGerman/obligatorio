@@ -17,6 +17,7 @@ window.onload = async () => {
 
 }
 
+
 const menuToggle = document.getElementById('menuToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
 

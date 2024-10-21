@@ -74,7 +74,6 @@ function mostrarProducto(repuesto) {
             <p class="product-details">Color: ${repuesto.color}</p>
             <p class="product-details">Descripción: ${repuesto.descripcion}</p>
             <div class="product-buttons">
-                    <button onclick="location.href='../comprar/realizar_Compra.html'">Comprar</button> 
                     <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">1</label> <button onclick="aumentarCantidad()">+</button>
                     <button>Agregar al carrito</button>
                 </div>

@@ -78,6 +78,8 @@ input {
 .contenedor_producto{
     display:flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas */
+    justify-content: center; /* Centra los productos */
 }
 
 .contenedor_producto2 {
@@ -93,6 +95,11 @@ input {
     padding:20px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+    flex: 1 0 200px; 
+    max-width: 220px;
+    margin: 10px; 
 }
 
 .contenedor_producto2:hover {

@@ -45,7 +45,7 @@ function mostrarCatalogo(catalogo) {
 
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
-            <div class="contenedor_producto2">                                                      
+            <div class="contenedor_producto2"  data-nombre="${repuesto.nombre.toLowerCase()}" >                                                      
           <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}"><img src="${repuesto.imagen}"></a>
 
                 <div class="detalles">
@@ -85,3 +85,16 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 7000); // Change image every 2 seconds
 } 
+
+
+document.getElementById('searchInput').addEventListener('input', filtrarProductos);
+
+function filtrarProductos() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const productos = document.querySelectorAll('.contenedor_producto2');
+
+    productos.forEach(producto => {
+        const nombre = producto.getAttribute('data-nombre');
+        producto.style.display = nombre.includes(searchInput) ? 'block' : 'none';
+    });
+}

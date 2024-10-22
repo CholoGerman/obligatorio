@@ -99,3 +99,10 @@ function filtrarProductos() {
         producto.style.display = nombre.includes(searchInput) ? 'block' : 'none';
     });
 }
+
+
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const carousel = document.getElementById('carousel');
+    carousel.style.display = this.value ? 'none' : 'block';
+});

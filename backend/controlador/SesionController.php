@@ -1,10 +1,9 @@
 <?php
 require_once "../modelo/SesionDAO.php"; // Incluye el modelo de acceso a datos
 
-// Captura la función que se desea ejecutar desde la URL
 $funcion = $_GET["funcion"]; // Obtiene el valor de "funcion" de la URL
 
-// Determina qué función ejecutar según el valor de "funcion"
+// Le asignamos una funcion a cada posible variable de "funcion"
 switch ($funcion) {
     case "register":
         register(); // Llama a la función de registro
@@ -32,7 +31,7 @@ function register() {
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
 
-    // Llama a la función para registrar al cliente en el modelo
+    // Llama a la función para registrar al cliente en el modelo SesionDAO.php
     $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
     echo json_encode($respuesta); // Devuelve la respuesta en formato JSON
 }
@@ -55,21 +54,21 @@ function isAdmin($idPersona) {
 function registerAdmin() {
     // Captura los datos del formulario
     $correo = $_POST["correo"];
-    $contraseña = password_hash($_POST["contraseña"] ?? '', PASSWORD_BCRYPT); // Hash de la contraseña
+    $contraseña = $_POST["contraseña"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
 
-    $connection = connection(); // Conexión a la base de datos
+    // Validación básica
+    if (empty($correo) || empty($contraseña) || empty($nombre) || empty($apellido)) {
+        echo json_encode(["status" => false, "mensaje" => "Todos los campos son obligatorios."]);
+        return;
+    }
 
-    // Inserta el nuevo usuario en la tabla persona
-    $connection->query("INSERT INTO persona (correo, contraseña, nombre, apellido) VALUES ('$correo', '$contraseña', '$nombre', '$apellido')");
-    $id_persona = $connection->insert_id; // Obtiene el ID del nuevo usuario
-
-    // Inserta el ID en la tabla admin
-    $connection->query("INSERT INTO admin (id_persona) VALUES ('$id_persona')");
-
-    // Retorna una respuesta de éxito en formato JSON
-    echo jsonResponse(true, "Administrador registrado correctamente.");
+    // Llama a la función del modelo para registrar al administrador
+    $respuesta = (new SesionDao())->registerAdmin($correo, $contraseña, $nombre, $apellido);
+    
+    // Devuelve la respuesta en formato JSON
+    echo json_encode($respuesta);
 }
 
 // Función para iniciar sesión

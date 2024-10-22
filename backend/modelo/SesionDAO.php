@@ -44,28 +44,32 @@ class SesionDao {
     }
     
     // Método para registrar un administrador
-    function registerAdmin() {
-        // Obtiene los datos del formulario
-        $correo = $_POST["correo"];
-        $contraseña = $_POST["contraseña"];
-        $nombre = $_POST["nombre"];
-        $apellido = $_POST["apellido"];
-
+    function registerAdmin($correo, $contraseña, $nombre, $apellido) {
+        // Hashea la contraseña
+        $hash = password_hash($contraseña, PASSWORD_BCRYPT);
+    
         // Inserta en la tabla persona
-        $sqlPersona = "INSERT INTO persona (correo, contraseña, nombre, apellido) VALUES ('$correo', '$contraseña', '$nombre', '$apellido')";
+        $sqlPersona = "INSERT INTO persona (correo, contraseña, nombre, apellido) VALUES ('$correo', '$hash', '$nombre', '$apellido')";
         $connection = connection();
-        $connection->query($sqlPersona);
-
-        // Obtener el ID de la persona recién creada
-        $id_persona = $connection->insert_id;
-
+        $respuesta = $connection->query($sqlPersona);
+    
+        if (!$respuesta) {
+            return new Respuesta(false, "Error al agregar el usuario: " . $connection->error, null);
+        }
+    
+        $id_persona = $connection->insert_id; // Obtiene el ID
+    
         // Inserta en la tabla admin
         $sqlAdmin = "INSERT INTO admin (id_persona) VALUES ('$id_persona')";
-        $connection->query($sqlAdmin);
-
-        // Retornar respuesta en formato JSON
-        echo json_encode(["status" => true, "mensaje" => "Administrador registrado correctamente."]);
+        $respuestaAdmin = $connection->query($sqlAdmin);
+    
+        if (!$respuestaAdmin) {
+            return new Respuesta(false, "Error al agregar el administrador: " . $connection->error, null);
+        }
+    
+        return new Respuesta(true, "Administrador registrado correctamente", null);
     }
+    
 
     // Método para iniciar sesión
     public function login($correo, $contraseña) {

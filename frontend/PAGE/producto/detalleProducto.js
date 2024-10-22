@@ -1,4 +1,9 @@
+// detalleProducto.js
 import ProductoDao from "../../DAO/productoDAO.js";
+import CarritoDao from "../../DAO/carritoDAO.js"; // Asegúrate de que la ruta sea correcta
+
+
+
 
 window.onload = async () => {
 
@@ -10,7 +15,7 @@ window.onload = async () => {
         try {
             let repuestos = await new ProductoDao().obtenerProducto(productId); // Pasa el id
             if (repuestos.length > 0) {
-                mostrarProducto(repuestos[0]); // Accede al primer elemento
+                mostrarProducto(repuestos[0]); 
             } else {
                 console.error("No se encontró el repuesto con el ID especificado.");
             }
@@ -54,11 +59,12 @@ window.aumentarCantidad = aumentarCantidad;
 window.disminuirCantidad = disminuirCantidad;
 
 
+
 function mostrarProducto(repuesto) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = ""; 
 
-    let imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`; // letruir la ruta de la imagen
+    let imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`;
 
     tbodyElement.innerHTML += ` 
         <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
@@ -75,9 +81,13 @@ function mostrarProducto(repuesto) {
             <p class="product-details">Descripción: ${repuesto.descripcion}</p>
             <div class="product-buttons">
                     <button onclick="disminuirCantidad()">-</button><label id="cantidad" style="color:white">1</label> <button onclick="aumentarCantidad()">+</button>
-                    <button>Agregar al carrito</button>
+                    <button id="agregarCarrito" onclick="agregarAlCarrito(${repuesto.id_repuesto}, ${repuesto.precio})">Agregar al carrito</button>
                 </div>
         </div>  
     `;
 }
+
+
+
+
 

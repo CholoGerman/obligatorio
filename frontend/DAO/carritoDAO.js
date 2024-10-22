@@ -73,4 +73,32 @@ window.onload =()=> {
     }
     }
 
+    async function agregarAlCarrito(id_repuesto, precio) {
+        const cantidad = parseInt(document.getElementById('cantidad').innerHTML);
+        
+        try {
+            const response = await fetch("ruta/a/tu/controlador/carritoController.php?funcion=comprar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id_repuesto: id_repuesto,
+                    cantidad: cantidad,
+                  precio: precio
+                })
+            });
+    
+            const resultado = await response.json();
+            if (resultado.success) {
+                alert("Producto agregado al carrito.");
+            } else {
+                alert("Error al agregar el producto al carrito: " + resultado.message);
+            }
+        } catch (error) {
+            console.error("Error al agregar al carrito:", error);
+            alert("Error al agregar el producto al carrito.");
+        }
+    }
+
     export default CarritoDao;

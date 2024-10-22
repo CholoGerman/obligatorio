@@ -28,6 +28,8 @@ class CarritoDao{
         return new Respuesta(false, "Error al realizar la compra", null);
     }
     
+
+    
     function agregarDetalle($id_pedido, $id_repuesto, $cantidad) {
         // Inserta el detalle del pedido
         $precio = $this->obtenerPrecioRepuesto($id_repuesto);

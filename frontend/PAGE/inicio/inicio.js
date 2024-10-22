@@ -104,5 +104,10 @@ function filtrarProductos() {
 
 document.getElementById('searchInput').addEventListener('input', function() {
     const carousel = document.getElementById('carousel');
-    carousel.style.display = this.value ? 'none' : 'block';
+    if (this.value) {
+        carousel.style.display = 'none';
+    } else {
+        carousel.style.display = 'flex'; // Cambia a 'flex' para asegurarte de que se mantenga el estilo
+        carousel.style.margin = '45px auto'; // Asegúrate de que el margen esté centrado
+    }
 });

@@ -30,6 +30,7 @@ main {
 .contenedor_producto {
     width: 100%;
     background-color: green;
+    margin:0;
     padding: 30px;
     display: flex;
     justify-content: center;
@@ -48,6 +49,7 @@ main {
     align-items: center;
     border-radius: 25px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+
 
 }
 

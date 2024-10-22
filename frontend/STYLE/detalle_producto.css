@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb{
 
 .icons {
     display:flex;
-    gap:30px;
+    gap:45px;
 }
 
 .contenedor_img{
@@ -142,22 +142,53 @@ button:hover{
 /* cambios */
 
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    min-width: 160px;
-    z-index: 1;
-}
-
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
+
+
+.dropdown-content {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    min-width: 160px;
+    z-index: 1;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#logoutButton , #pedidosButton{
+    min-width: 150px; /* Ajusta el valor según lo necesites */
+    background-color: #B80C09;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: block;
+    text-align: center;
+    margin:4px
+}
+
+#logoutButton:hover ,  #pedidosButton:hover {
+    background-color: #700606; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+

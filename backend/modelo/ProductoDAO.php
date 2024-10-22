@@ -6,26 +6,32 @@ class ProductoDao{
     public function obtenerProducto($id_repuesto) { 
         $connection = connection();
         $sql = "SELECT r.*, i.extension FROM repuesto r 
-                LEFT JOIN imagen i ON r.id_imagen = i.id_imagen 
+                INNER JOIN imagen i ON r.id_imagen = i.id_imagen 
                 WHERE r.id_repuesto = $id_repuesto";
         $respuesta = $connection->query($sql);
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
         return $productos;
     }
-
-
-    public function obtenerCatalogo(){  //Funcion para obtener todos los productos 
-        
+    
+    
+    public function obtenerCatalogo() {
         $connection = connection();
-        $sql = "SELECT * FROM repuesto";
+        $sql = "SELECT r.*, CONCAT('../IMG/', r.id_repuesto, '.', i.extension) AS imagen
+
+                INNER JOIN imagen i ON r.id_imagen = i.id_imagen"; 
         $respuesta = $connection->query($sql);
-        
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
-
-      
+        
+        // Debug: muestra las URLs generadas
+        foreach ($productos as $producto) {
+            var_dump($producto['imagen']);
+        }
+    
         return $productos;
-
     }
+    
+    
+    
 
 
 
@@ -64,7 +70,8 @@ class ProductoDao{
         $connection->query($sqlActualizarRepuesto);
     
         // Mover el archivo a la carpeta correspondiente
-        move_uploaded_file($rutaTemporal, "../IMG/$idRepuesto.$extension");
+        move_uploaded_file($rutaTemporal, "../IMG/$idRepuesto.$extension");     
+
     
         return new Respuesta(true, "Agregado correctamente", null);
     }

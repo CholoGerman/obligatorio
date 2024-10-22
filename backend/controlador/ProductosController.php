@@ -52,12 +52,7 @@ function agregarProducto() { //Funcion para publicar un producto
 
 }
 
-// function eliminarProducto() { //Funcion para eliminar un producto
-//     $id_repuesto = $_POST["id_repuesto"];
-//     $respuesta = (new ProductoDao())->eliminarProducto($id_repuesto);
-//     echo json_encode($respuesta);
 
-// }
 
 
 function eliminarProducto() {
@@ -65,7 +60,7 @@ function eliminarProducto() {
 
     // Leer el cuerpo de la solicitud JSON
     $data = json_decode(file_get_contents('php://input'), true);
-    $id_repuesto = $data["id_repuesto"] ?? null; // Usa null si no está definido
+    $id_repuesto = $data["id_repuesto"] ; // Usa null si no está definido
 
     if (empty($id_repuesto)) {
         echo json_encode(new Respuesta(false, "ID del producto no proporcionado", null));

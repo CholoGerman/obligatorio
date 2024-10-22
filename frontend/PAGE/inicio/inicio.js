@@ -35,9 +35,8 @@ document.addEventListener('click', function(event) {
 
 
 
-
 function mostrarCatalogo(catalogo) {
-    console.log("Catálogo recibido:", catalogo);  
+    console.log("Catálogo recibido:", catalogo);
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }
@@ -45,17 +44,25 @@ function mostrarCatalogo(catalogo) {
     tbodyElement.innerHTML = "";  
 
     catalogo.forEach((repuesto) => {
+        console.log(repuesto); 
         tbodyElement.innerHTML += ` 
-            <div class="contenedor_producto2"  data-nombre="${repuesto.nombre.toLowerCase()}" >                                                      
-          <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}"><img src="${repuesto.imagen}"></a>
-
-                <div class="detalles">
-                    <p>${repuesto.nombre}</p>
-                    <p>$${repuesto.precio}</p>
-                </div>
+        <div class="contenedor_producto2" data-nombre="${repuesto.nombre.toLowerCase()}">                                                      
+            <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}">
+                <img src="${repuesto.imagen}"> <!-- Asegúrate de que esto esté correcto -->
+            </a>
+            <div class="detalles">
+                <p>${repuesto.nombre}</p>
+                <p>$${repuesto.precio}</p>
             </div>
-        `;
-    }); 
+        </div>
+    `;
+    
+    });
+}
+
+
+
+
 
     // Añadir el evento click a los enlaces
     let link = document.querySelectorAll('.producto-link');
@@ -66,7 +73,7 @@ function mostrarCatalogo(catalogo) {
             window.open(`detalle_Producto.html?id=${id}`, '_blank'); // Abre la nueva pestaña
         });
     });
-}
+
 
 
 

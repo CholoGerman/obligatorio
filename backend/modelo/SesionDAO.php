@@ -57,7 +57,7 @@ class SesionDao {
             return new Respuesta(false, "Error al agregar el usuario: " . $connection->error, null);
         }
     
-        $id_persona = $connection->insert_id; // Obtiene el ID
+        $id_persona = $connection->insert_id; // Obtiene el ID de la persona reciena gregada
     
         // Inserta en la tabla admin
         $sqlAdmin = "INSERT INTO admin (id_persona) VALUES ('$id_persona')";

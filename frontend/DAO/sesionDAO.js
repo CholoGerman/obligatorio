@@ -1,28 +1,19 @@
 class SesionDao {
 
-    // Método para realizar una solicitud fetch
+    // Funcion para realizar una solicitud fetch
     async fetchRequest(url, method, body) {
       // Configura la solicitud
       let config = {
           method: method,
-          body: body // El cuerpo de la solicitud (puede ser FormData)
+          body: body 
       };
       
       // Realiza la solicitud fetch
       let respuesta = await fetch(url, config);
-      
-      // Verifica si la respuesta fue exitosa
-      if (!respuesta.ok) {
-          const errorText = await respuesta.text(); // Obtener el texto completo de la respuesta
-          console.error(`HTTP error! status: ${respuesta.status}, response: ${errorText}`); // Log del error
-          throw new Error(`HTTP error! status: ${respuesta.status}`); // Lanzar error si la solicitud falla
-      }
-      
-      // Retorna la respuesta en formato JSON
       return await respuesta.json();
   }
   
-    // Método para registrar un nuevo administrador
+    // Funcion para registrar un nuevo administrador
     async registerAdmin(correo, password, nombre, apellido) {
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=registerAdmin"; 
         let formData = new FormData(); // Crear un nuevo objeto FormData
@@ -33,17 +24,17 @@ class SesionDao {
     
         // Realiza la solicitud para registrar al administrador
         let respuestaJson = await this.fetchRequest(url, "POST", formData);
-        console.log("Respuesta del servidor:", respuestaJson); // Log de la respuesta del servidor
+       
     
         // Verifica si la respuesta indica éxito
         if (respuestaJson.status) {
-            alert("Admin registrado correctamente"); // Mensaje de éxito
+            alert("Admin registrado correctamente"); // Si el admin se registra correctamente
         } else {
             alert("Error: " + (respuestaJson.mensaje || "Ocurrió un problema inesperado")); // Mensaje de error
         }
     }
   
-    // Método para registrar un nuevo usuario
+    // Funcion para registrar un nuevo usuario
     async register(correo, password, nombre, apellido) {
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=register"; 
         let formData = new FormData(); // Crear un nuevo objeto FormData
@@ -54,7 +45,6 @@ class SesionDao {
     
         // Realiza la solicitud para registrar al usuario
         let respuestaJson = await this.fetchRequest(url, "POST", formData);
-        console.log("Respuesta del servidor:", respuestaJson); // Log de la respuesta del servidor
     
         // Verifica si la respuesta indica éxito
         if (respuestaJson.status) {
@@ -64,7 +54,7 @@ class SesionDao {
         }
     }
   
-    // Método para iniciar sesión
+    // Funcion para iniciar sesión
     async login(correo, password) {
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
         let formData = new FormData(); // Crear un nuevo objeto FormData
@@ -73,8 +63,7 @@ class SesionDao {
         
         // Realiza la solicitud para iniciar sesión
         let respuestaJson = await this.fetchRequest(url, "POST", formData);
-        console.log("Respuesta del servidor:", respuestaJson); // Log de la respuesta del servidor
-    
+ 
         // Verifica si la respuesta indica éxito
         if (respuestaJson.status) {
             console.log("isAdmin:", respuestaJson.datos.isAdmin); // Log del estado de administrador
@@ -89,7 +78,7 @@ class SesionDao {
         }
     }
   
-    // Método para cerrar sesión
+    // Funcion para cerrar sesión
     async logOut() {
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut"; // URL para cerrar sesión
         let respuesta = await fetch(url); // Realiza la solicitud para cerrar sesión
@@ -101,8 +90,8 @@ class SesionDao {
             
             // Verifica si la respuesta indica éxito
             if (respuestaJson.status) {
-                // Redirigir al login sin mostrar alerta
-                window.location.href = "../../PAGE/login/login.html"; // Ajusta la ruta según sea necesario
+                // Redirigir al login
+                window.location.href = "../../PAGE/login/login.html";
             } else {
                 console.error(respuestaJson.mensaje); // Log del mensaje de error
             }
@@ -112,6 +101,6 @@ class SesionDao {
     }
   }
   
-  // Exporta la clase SesionDao para su uso en otros módulos
+
   export default SesionDao;
   

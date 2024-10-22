@@ -18,8 +18,8 @@ window.onload = async () => {
 }
 
 
-const menuToggle = document.getElementById('menuToggle');
-const dropdownMenu = document.getElementById('dropdownMenu');
+let menuToggle = document.getElementById('menuToggle');
+let dropdownMenu = document.getElementById('dropdownMenu');
 
 menuToggle.addEventListener('click', function(event) {
     event.preventDefault(); // Evita que el enlace recargue la página
@@ -91,11 +91,11 @@ function showSlides() {
 document.getElementById('searchInput').addEventListener('input', filtrarProductos);
 
 function filtrarProductos() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const productos = document.querySelectorAll('.contenedor_producto2');
+    let searchInput = document.getElementById('searchInput').value.toLowerCase();
+    let productos = document.querySelectorAll('.contenedor_producto2');
 
     productos.forEach(producto => {
-        const nombre = producto.getAttribute('data-nombre');
+        let nombre = producto.getAttribute('data-nombre');
         producto.style.display = nombre.includes(searchInput) ? 'block' : 'none';
     });
 }
@@ -103,7 +103,7 @@ function filtrarProductos() {
 
 
 document.getElementById('searchInput').addEventListener('input', function() {
-    const carousel = document.getElementById('carousel');
+    let carousel = document.getElementById('carousel');
     if (this.value) {
         carousel.style.display = 'none';
     } else {

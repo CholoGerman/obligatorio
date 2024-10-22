@@ -72,11 +72,16 @@ class ProductoDao{
     
     
 
-    public function eliminarProducto($id_repuesto){ //Funcion para eliminar un producto
+    public function eliminarProducto($id_repuesto) { // Función para eliminar un producto
         $sql = "DELETE FROM Repuesto WHERE id_repuesto = $id_repuesto;";
         $connection = connection();
         $respuesta = $connection->query($sql);
-        return $respuesta;
-        return new Respuesta(true, "Eliminado correctamente", null);
+    
+        if ($respuesta) {
+            return new Respuesta(true, "Eliminado correctamente", null);
+        } else {
+            return new Respuesta(false, "Error al eliminar el producto", null);
+        }
     }
+    
 }

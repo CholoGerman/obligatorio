@@ -3,8 +3,8 @@ import ProductoDao from "../../DAO/productoDAO.js";
 window.onload = async () => {
 
 
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id_repuesto'); 
+    let params = new URLSearchParams(window.location.search);
+    let productId = params.get('id_repuesto'); 
 
     if (productId) {
         try {
@@ -22,8 +22,8 @@ window.onload = async () => {
     }
 };
 
-const menuToggle = document.getElementById('menuToggle');
-const dropdownMenu = document.getElementById('dropdownMenu');
+let menuToggle = document.getElementById('menuToggle');
+let dropdownMenu = document.getElementById('dropdownMenu');
 
 menuToggle.addEventListener('click', function(event) {
     event.preventDefault();
@@ -58,7 +58,7 @@ function mostrarProducto(repuesto) {
     let tbodyElement = document.querySelector("#divProducto");
     tbodyElement.innerHTML = ""; 
 
-    const imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`; // Construir la ruta de la imagen
+    let imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`; // letruir la ruta de la imagen
 
     tbodyElement.innerHTML += ` 
         <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>

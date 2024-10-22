@@ -6,8 +6,9 @@ class SesionDao{
 
 
     function register($correo, $contraseña, $nombre, $apellido, $codigo_postal = null, $calle_dir = null, $num_dir = null) {
-        $hash = password_hash($contraseña, PASSWORD_DEFAULT);
-        $sqlPersona = "INSERT INTO persona(correo, contraseña, nombre, apellido) VALUES ('$correo', '$hash', '$nombre', '$apellido');";
+        $hash = password_hash($contraseña, PASSWORD_BCRYPT);
+        $sqlPersona = "INSERT INTO persona (correo, contraseña, nombre, apellido) VALUES ('$correo', '$hash', '$nombre', '$apellido')";
+        
         
         $connection = connection();
         $respuesta = $connection->query($sqlPersona);
@@ -32,21 +33,53 @@ class SesionDao{
     }
     
     
+    function registerAdmin() {
+    $correo = $_POST["correo"];
+    $contraseña = $_POST["contraseña"];
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+
+    // Inserta en la tabla persona
+    $sqlPersona = "INSERT INTO persona (correo, contraseña, nombre, apellido) VALUES ('$correo', '$contraseña', '$nombre', '$apellido')";
+    $connection = connection();
+    $connection->query($sqlPersona);
+
+    // Obtener el ID de la persona recién creada
+    $id_persona = $connection->insert_id;
+
+    // Inserta en la tabla admin
+    $sqlAdmin = "INSERT INTO admin (id_persona) VALUES ('$id_persona')";
+    $connection->query($sqlAdmin);
+
+    // Retornar respuesta
+    echo json_encode(["status" => true, "mensaje" => "Administrador registrado correctamente."]);
+}
+
     
     
-        function login($correo, $contraseña) { // Función para iniciar sesión
-            $sql = "SELECT * FROM persona WHERE correo='$correo'";
-            $connection = connection();
-            $respuesta = $connection->query($sql);
-            $usuario = $respuesta->fetch_assoc();
     
-            if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-                $_SESSION["session"] = $usuario;
-                return new Respuesta(true, "Inicio de sesión exitoso", null);
-            } else {
-                return new Respuesta(false, "Correo o contraseña incorrectos", null);
-            }
-        }
+    
+    
+    
+public function login($correo, $contraseña) {
+    $sql = "SELECT * FROM persona WHERE correo='$correo'";
+    $connection = connection();
+    $respuesta = $connection->query($sql);
+    $usuario = $respuesta->fetch_assoc();
+
+    // Verifica que el usuario exista y que la contraseña sea correcta
+    if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
+        return new Respuesta(true, "Inicio de sesión exitoso", $usuario);
+    } else {
+        return new Respuesta(false, "Correo o contraseña incorrectos", null);
+    }
+}
+
+
+
+    
+    
+    
     
         function logOut() {
             if (session_status() == PHP_SESSION_ACTIVE) {

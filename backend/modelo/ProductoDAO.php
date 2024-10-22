@@ -1,6 +1,7 @@
 <?php
 require_once "../conexion/conexion.php";
 require_once '../modelo/Repuesta.php';
+require_once '../conexion/origin.php';
 
 class ProductoDao{
     public function obtenerProducto($id_repuesto) { 
@@ -16,15 +17,25 @@ class ProductoDao{
     
     public function obtenerCatalogo() {
         $connection = connection();
-        $sql = "SELECT r.*, CONCAT('../IMG/', r.id_repuesto, '.', i.extension) AS imagen
+        $sql = "SELECT r.*, CONCAT('../IMG/', r.id_repuesto, '.', i.extension) AS imagen FROM repuesto r
 
                 INNER JOIN imagen i ON r.id_imagen = i.id_imagen"; 
         $respuesta = $connection->query($sql);
-        $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
-        
-        // Debug: muestra las URLs generadas
-        foreach ($productos as $producto) {
-            var_dump($producto['imagen']);
+        $productos = [];
+      
+        while ($result = $respuesta->fetch_assoc()) {
+            $imagen = $result['imagen'];
+            $origen = getOrigin();
+            $productos[] = [
+                'id_repuesto' => $result['id_repuesto'],
+                'nombre' => $result['nombre'],
+                'precio' => $result['precio'],
+                'color' => $result['color'],
+                'estado' => $result['estado'],
+                'stock' => $result['stock'],
+                'descripcion' => $result['descripcion'],
+                'imagen' => "$origen/backend/IMG/$imagen"
+            ];
         }
     
         return $productos;
@@ -92,3 +103,4 @@ class ProductoDao{
     }
     
 }
+

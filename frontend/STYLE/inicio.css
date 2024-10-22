@@ -214,9 +214,9 @@ cambio  */
     min-width: 160px;
     z-index: 1;
     flex-direction: column;
-    gap: 8px;
     text-align: center;
-    padding: 5px;
+    justify-content: center;
+    padding: 15px;
     border-radius: 5px;
 
 }
@@ -234,6 +234,7 @@ cambio  */
     transition: background-color 0.3s, transform 0.3s;
     display: block;
     text-align: center;
+    margin:4px
     
 }
 

@@ -73,19 +73,23 @@ class SesionDao {
 
     // Método para iniciar sesión
     public function login($correo, $contraseña) {
-        // Consulta SQL para buscar al usuario por correo
         $sql = "SELECT * FROM persona WHERE correo='$correo'";
         $connection = connection();
         $respuesta = $connection->query($sql);
-        $usuario = $respuesta->fetch_assoc();
-
-        // Verifica que el usuario exista y que la contraseña sea correcta
-        if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-            return new Respuesta(true, "Inicio de sesión exitoso", $usuario);
+    
+        if ($respuesta) {
+            $usuario = $respuesta->fetch_assoc();
+            if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
+                return new Respuesta(true, "Inicio de sesión exitoso", $usuario);
+            } else {
+                return new Respuesta(false, "Correo o contraseña incorrectos", null);
+            }
         } else {
-            return new Respuesta(false, "Correo o contraseña incorrectos", null);
+            error_log("Error en consulta de login: " . $connection->error);
+            return new Respuesta(false, "Error en la consulta", null);
         }
     }
+    
 
     // Método para cerrar sesión
     function logOut() {

@@ -12,12 +12,13 @@ class SesionDao {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
     
-            return await response.json(); // Asegúrate de que devuelve el JSON
+            return await response.json();
         } catch (error) {
             console.error("Error en la solicitud:", error);
-            return { status: false, mensaje: "Error en la solicitud." }; // Retorna un objeto en caso de error
+            return { status: false, mensaje: "Error en la solicitud: " + error.message };
         }
     }
+    
     
   
     // Funcion para registrar un nuevo administrador

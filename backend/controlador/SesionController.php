@@ -76,26 +76,23 @@ function registerAdmin() {
 
 // Función para iniciar sesión
 function login() {
-    // Captura los datos del formulario
     $correo = $_POST["correo"];
     $contraseña = $_POST["contraseña"];
 
-    // Verifica que los datos no estén vacíos
     if (empty($correo) || empty($contraseña)) {
-        jsonResponse(false, "Correo y contraseña son requeridos."); // Respuesta si faltan datos
-        return; // Asegúrate de terminar la ejecución
+        jsonResponse(false, "Correo y contraseña son requeridos.");
+        return;
     }
 
-    // Llama a la función de inicio de sesión en el modelo
     $respuesta = (new SesionDao())->login($correo, $contraseña);
 
-    // Si el inicio de sesión es exitoso
     if ($respuesta->status) {
-        $isAdmin = isAdmin($respuesta->datos['id_persona']); // Verifica si es admin
-        $respuesta->datos['isAdmin'] = $isAdmin; // Añade el estado de admin a los datos
+        $isAdmin = isAdmin($respuesta->datos['id_persona']);
+        $respuesta->datos['isAdmin'] = $isAdmin;
+    } else {
+        error_log("Error de inicio de sesión para $correo: " . $respuesta->mensaje);
     }
 
-    // Devuelve la respuesta en formato JSON
     echo json_encode($respuesta);
 }
 

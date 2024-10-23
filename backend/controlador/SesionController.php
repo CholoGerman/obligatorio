@@ -33,8 +33,11 @@ function register() {
 
     // Llama a la función para registrar al cliente en el modelo SesionDAO.php
     $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
-    echo json_encode($respuesta); // Devuelve la respuesta en formato JSON
+    
+    // Devuelve la respuesta en formato JSON
+    echo json_encode($respuesta);
 }
+
 
 // Función para verificar si la sesión actual es de un administrador
 function isAdminSession() {
@@ -79,20 +82,24 @@ function login() {
 
     // Verifica que los datos no estén vacíos
     if (empty($correo) || empty($contraseña)) {
-        return jsonResponse(false, "Correo y contraseña son requeridos."); // Respuesta si faltan datos
+        jsonResponse(false, "Correo y contraseña son requeridos."); // Respuesta si faltan datos
+        return; // Asegúrate de terminar la ejecución
     }
 
     // Llama a la función de inicio de sesión en el modelo
     $respuesta = (new SesionDao())->login($correo, $contraseña);
 
-    // Si el inicio de sesión es exitoso, verifica si el usuario es administrador
+    // Si el inicio de sesión es exitoso
     if ($respuesta->status) {
         $isAdmin = isAdmin($respuesta->datos['id_persona']); // Verifica si es admin
         $respuesta->datos['isAdmin'] = $isAdmin; // Añade el estado de admin a los datos
     }
 
-    echo json_encode($respuesta); // Devuelve la respuesta en formato JSON
+    // Devuelve la respuesta en formato JSON
+    echo json_encode($respuesta);
 }
+
+
 
 // Función para cerrar sesión
 function logOut() {

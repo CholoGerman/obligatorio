@@ -2,16 +2,23 @@ class SesionDao {
 
     // Funcion para realizar una solicitud fetch
     async fetchRequest(url, method, body) {
-      // Configura la solicitud
-      let config = {
-          method: method,
-          body: body 
-      };
-      
-      // Realiza la solicitud fetch
-      let respuesta = await fetch(url, config);
-      return await respuesta.json();
-  }
+        try {
+            let response = await fetch(url, {
+                method: method,
+                body: body,
+            });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+    
+            return await response.json(); // Asegúrate de que devuelve el JSON
+        } catch (error) {
+            console.error("Error en la solicitud:", error);
+            return { status: false, mensaje: "Error en la solicitud." }; // Retorna un objeto en caso de error
+        }
+    }
+    
   
     // Funcion para registrar un nuevo administrador
     async registerAdmin(correo, password, nombre, apellido) {
@@ -55,52 +62,59 @@ class SesionDao {
     }
   
     // Funcion para iniciar sesión
-    async login(correo, password) {
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
-        let formData = new FormData(); // Crear un nuevo objeto FormData
-        formData.append("correo", correo); // Agregar correo
-        formData.append("contraseña", password); // Agregar contraseña
-        
-        // Realiza la solicitud para iniciar sesión
+   // Función para iniciar sesión
+   async login(correo, password) {
+    let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
+    let formData = new FormData();
+    formData.append("correo", correo);
+    formData.append("contraseña", password);
+    
+    try {
         let respuestaJson = await this.fetchRequest(url, "POST", formData);
- 
-        // Verifica si la respuesta indica éxito
-        if (respuestaJson.status) {
-            console.log("isAdmin:", respuestaJson.datos.isAdmin); // Log del estado de administrador
-            // Verifica si es admin y redirige según corresponda
-            if (respuestaJson.datos && respuestaJson.datos.isAdmin) {
-                window.location.href = 'http://localhost/obligatorio/frontend/PAGE/admin/controlador_Admin.html'; // Redirigir al panel de admin
-            } else {
-                window.location.href = 'http://localhost/obligatorio/frontend/PAGE/inicio/index.html'; // Redirigir al home
-            }
-        } else {
-            alert(respuestaJson.mensaje); // Mensaje de error
-        }
+        console.log("Respuesta del servidor:", respuestaJson); // Verifica la respuesta
+        
+        // Devuelve la respuesta
+        return respuestaJson;
+    } catch (error) {
+        console.error('Error al procesar la solicitud:', error);
+        return { status: false, mensaje: "Error de conexión." }; // Manejo de error
     }
-  
+}
+
+
+
+    
+    
+    
+    
+    
+    
     // Funcion para cerrar sesión
     async logOut() {
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut"; // URL para cerrar sesión
-        let respuesta = await fetch(url); // Realiza la solicitud para cerrar sesión
+        // Lógica para cerrar sesión en el servidor (si aplica)
+        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut"; 
+        let respuesta = await fetch(url); 
         let respuestaJson;
     
         try {
-            respuestaJson = await respuesta.json(); // Intenta parsear la respuesta a JSON
-            console.log("Respuesta del servidor:", respuestaJson); // Log de la respuesta del servidor
+            respuestaJson = await respuesta.json(); 
             
-            // Verifica si la respuesta indica éxito
             if (respuestaJson.status) {
+                // Limpiar el sessionStorage
+                sessionStorage.removeItem('carrito');
+                sessionStorage.removeItem('usuarioId');
                 // Redirigir al login
                 window.location.href = "../../PAGE/login/login.html";
             } else {
-                console.error(respuestaJson.mensaje); // Log del mensaje de error
+                console.error(respuestaJson.mensaje);
             }
         } catch (error) {
-            console.error("Error al parsear JSON:", error); // Log del error al parsear
+            console.error("Error al parsear JSON:", error);
         }
     }
+    
   }
-  
 
-  export default SesionDao;
+    export default SesionDao;
+
   

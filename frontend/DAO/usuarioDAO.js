@@ -6,13 +6,29 @@ window.onload = () => {
  class UsuarioDao {
 
     async obtenerUsuarios() {
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerAll";
         let respuesta = await fetch(url);
         let clientes = await respuesta.json();
         return clientes;
 
     }
 
+    async eliminarUsuario(correo) {
+        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+        let formData = new FormData();
+        formData.append("email",correo);
+        let config = {
+            method:"POST",
+            body:formData
+        }
+        let respuesta = await fetch(url,config);
+        if(respuesta.ok){
+            alert("Usuario obtenido correctamente");
+        } else {
+            alert("Error al eliminar el usuario");
+        }
+
+    }
 
     async eliminarUsuario(correo) {
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
@@ -36,20 +52,6 @@ window.onload = () => {
 
 
 
-function mostrarUsuarios(clientes) {
-    let tbodyElement = document.querySelector("#divCatalogo");
-    tbodyElement.innerHTML = "";
-    clientes.forEach((cliente) => { // Aca va el html que ve el admin para administrar los clientes (debe tener boton eliminar)
-        tbodyElement.innerHTML += ` 
-     
-         
-                                                                             <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
 
-   
- `;
-        
-    }
-)
-}
 
 export default UsuarioDao;

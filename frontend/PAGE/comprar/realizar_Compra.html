@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,35 +11,64 @@
     
     <nav>
         <h1>Realizar Compra</h1>
-        <a href="../../PAGE/inicio/index.html"><img src="../../../backend/IMG/logo_german.png" height="45px"></a>
+        <a href="../../PAGE/inicio/index.html">
+            <img src="../../../backend/IMG/logo_german.png" height="45px" alt="Logo">
+        </a>
     </nav>
 
     <main>
         <div class="contenedor_Detalles">
-            <div class="primera_columna">
-                <div class="fila">
-                    <label>Departamento</label>
-                    <input type="text" name="" id="">
+            <form id="formCompra">
+                <div class="primera_columna">
+                    <div class="fila">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="fila">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    
+                    <div class="fila">
+                        <label for="departamento">Departamento</label>
+                        <input type="text" id="departamento" name="departamento" required>
+                    </div>
+                    <div class="fila">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="fila">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="calle" required>
+                    </div>
+                    <div class="fila">
+                        <label for="numero">Número</label>
+                        <input type="number" id="numero" name="numero" required>
+                    </div>
                 </div>
-                <div class="fila">
-                    <label>Ciudad</label>
-                    <input type="text" name="" id="">
+                <div class="segunda_columna">
+                    <div class="fila">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="fila">
+                        <label>Método de Pago</label>
+                        <select id="metodo_pago" name="metodo_pago" required>
+                            <option value="">Selecciona un método</option>
+                            <option value="tarjeta">Tarjeta de Crédito</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="fila">
-                    <label>Direccion</label>
-                    <input type="text" name="" id="">
+                <input type="hidden" id="id_repuesto" name="id_repuesto" value="ID_DEL_REPUESTO">
+                <input type="hidden" id="cantidad" name="cantidad" value="CANTIDAD_DE_REPUESTO">
+                <input type="hidden" id="id_envio" name="id_envio" value="ID_DEL_ENVIO">
+                <input type="hidden" id="id_cliente" name="id_cliente" value="ID_DEL_CLIENTE">
+                <div class="btn">
+                    <button type="submit">Comprar</button>
                 </div>
-            </div>
-            <div class="segunda_columna">
-                <div class="fila">
-                    <label>Telefono</label>
-                    <input type="text" name="" id="">
-                </div>
-                <label>Metodo de Pago:...</label>
-            </div>
-            <div class="btn">
-                <button>Comprar</button>
-            </div>
+            </form>
             
         </div>
     </main>

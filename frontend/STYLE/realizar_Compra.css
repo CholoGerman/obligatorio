@@ -1,63 +1,66 @@
-*{
+* {
     font-family: 'Roboto', sans-serif;  
 }
 
-
 body {
-    margin:0;
+    margin: 0;
     background-color: #1C1C1C;
 }
 
-h1{
-    margin:0;
+h1 {
+    margin: 0;
     letter-spacing: 5px;
     cursor: default;
-    color:white;
+    color: white;
+    text-align: center; /* Centramos el título */
 }
 
 nav {
     background: linear-gradient(100deg, #A00A08, #600404, #000000);
     height: 70px;
-    padding:12px;
-    display:flex;
-    justify-content: space-around;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between; /* Cambiamos a space-between */
     align-items: center;
-    margin-bottom: 90px;
+    margin-bottom: 20px; /* Ajustamos el margen */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-main{
-    display:flex;
-    justify-content: center;
-
+nav img {
+    height: 45px; /* Definimos un tamaño fijo para el logo */
 }
 
-.contenedor_Detalles{
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_Detalles {
     background: linear-gradient(135deg, #B7B5B3, #928f8f);
-    height: 300px;
     width: 60%;
-    margin: 0 35px 0 35px;
+    margin: 0 35px;
     box-sizing: border-box;
-    padding:40px;
-    display:flex;
+    padding: 40px;
+    display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start; /* Cambiamos a flex-start para alinear la parte superior */
     border-radius: 20px;
     position: relative;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.primera_columna , .segunda_columna{
+.primera_columna, .segunda_columna {
     display: flex;
     flex-direction: column;
-    gap:30px;   
+    gap: 20px; /* Ajustamos el espacio entre elementos */
 }
 
-input {
+input, select {
     border-radius: 5px;
     border: 1px solid black;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px; /* Agregamos un padding */
+    width: 100%; /* Aseguramos que ocupen todo el ancho */
 }
 
 .fila {
@@ -67,30 +70,29 @@ input {
 }
 
 label {
-    letter-spacing: 4px;
+    letter-spacing: 2px; /* Reducimos el espacio para un mejor ajuste */
     min-width: 150px;
+    color: white; /* Color blanco para mejor contraste */
 }
-
-
 
 .btn {
-    margin-top: 80px;
+    text-align: center; /* Centra el botón */
+    margin-top: 20px; /* Ajustamos el margen */
 }
 
-
 button {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 30px;
     border-radius: 5px;
     padding: 10px 20px; 
     width: 150px; 
     font-size: 16px; 
-    background-color: red; 
+    background-color: #A00A08; /* Usamos el mismo color que el nav */
     border: none; 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     color: white; 
     cursor: pointer; 
+    transition: background-color 0.3s; /* Añadimos transición para el hover */
+}
+
+button:hover {
+    background-color: #600404; /* Color más oscuro al pasar el mouse */
 }

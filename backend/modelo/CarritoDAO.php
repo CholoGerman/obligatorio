@@ -25,8 +25,10 @@ class CarritoDao{
             // Generar y retornar la factura
             return $this->generarFactura($id_nuevo_pedido);
         }
+    
         return new Respuesta(false, "Error al realizar la compra", null);
     }
+    
     
 
     

@@ -93,8 +93,22 @@ function agregarAlCarrito(repuesto) {
     // Guardar el carrito actualizado en sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // Mostrar una alerta o realizar otra acción
-    alert("Producto agregado al carrito.");
+    // // Mostrar una alerta o realizar otra acción
+    // alert("Producto agregado al carrito.");
+
+    const notificacion = document.getElementById('notificacion');
+    notificacion.classList.remove('ocultar');
+
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+        notificacion.classList.add('ocultar');
+    }, 3000);
+
+
+
+
+
+    
 }
 
 

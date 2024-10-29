@@ -22,6 +22,38 @@ window.onload = async () => {
     obtenerIdUsuario();
 };
 
+
+
+
+let menuToggle = document.getElementById('menuToggle');
+let dropdownMenu = document.getElementById('dropdownMenu');
+
+menuToggle.addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Cierra el menú si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let cantidad = 1; 
 
 function aumentarCantidad() {
@@ -103,10 +135,6 @@ function agregarAlCarrito(repuesto) {
     setTimeout(() => {
         notificacion.classList.add('ocultar');
     }, 3000);
-
-
-
-
 
     
 }

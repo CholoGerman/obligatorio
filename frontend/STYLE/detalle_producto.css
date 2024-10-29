@@ -248,13 +248,22 @@ button:hover{
 
 .contenedor_descripcion {
     margin-top: 25px;
+    margin-left: 20px;
     background: rgba(255, 255, 255, 0.1);  
-    border-radius: 3px;
-    padding:10px;
+    border-radius: 8px;
+    padding:10px; 
+
+        max-width: 100%; /* Establece un ancho máximo según tu diseño */
+        overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
+        word-wrap: break-word; /* Para navegadores más antiguos */
+        overflow: hidden; /* Opcional: oculta el desbordamiento */
+    
+
 } 
 
 .contenedor_descripcion p {
     color:wheat;
+
 }
 
 

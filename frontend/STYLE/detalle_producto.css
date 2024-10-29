@@ -5,9 +5,16 @@
 
 body{
     margin:0;
-    background-color: #1C1C1C;
+    /* background-color: #1C1C1C; */
     position: relative;
     min-height: 100vh; 
+
+    background-image: url(../../backend/IMG/fondo\ pagina.jpg);
+
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center; /* Esto centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0; /* Asegúrate de que no haya márgenes */
 }
 
 h1{

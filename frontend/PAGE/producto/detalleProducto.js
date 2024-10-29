@@ -77,10 +77,13 @@ function mostrarProducto(repuesto) {
     let imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`;
 
     tbodyElement.innerHTML += ` 
+
         <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
         <div class="contenedor_img">
             <img src="${imagenSrc}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
+
+
         <div class="product-info">
             <div class="primera_fila">
                 <h1 class="product-title">${repuesto.nombre}</h1>
@@ -88,13 +91,21 @@ function mostrarProducto(repuesto) {
             </div>
             <p class="product-details">Estado: ${repuesto.estado}</p>
             <p class="product-details">Color: ${repuesto.color}</p>
-            <p class="product-details">Descripción: ${repuesto.descripcion}</p>
+            
             <div class="product-buttons">
                 <button onclick="disminuirCantidad()">-</button>
                 <label id="cantidad" style="color:white">1</label>
                 <button onclick="aumentarCantidad()">+</button>
                 <button id="agregarCarrito">Agregar al Carrito</button>
             </div>
+
+
+
+        <div class="contenedor_descripcion">
+                <p class="product-details">Descripción: ${repuesto.descripcion}</p>
+
+        </div>
+
         </div>
     `;
 

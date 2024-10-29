@@ -16,7 +16,7 @@ body{
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     margin: 0; /* Asegúrate de que no haya márgenes */
 
-    
+
 }
 
 h1{
@@ -224,4 +224,7 @@ button:hover{
     opacity: 0;
     transform: translate(-50%, -50%) translateY(-20px);
 }
+/* 
+background: rgba(255, 255, 255, 0.1);  */
+
 

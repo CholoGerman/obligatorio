@@ -1,67 +1,67 @@
 *{
-    font-family: 'Roboto', sans-serif;  
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #1C1C1C;
+  background-color: #1C1C1C;
     margin:0;
 }
 
 nav{
-    background: linear-gradient(100deg, #A00A08, #600404, #000000);
+  background: linear-gradient(100deg, #A00A08, #600404, #000000);
     display:Flex;
-    justify-content: space-around;
-    height: 70px;
+  justify-content: space-around;
+  height: 70px;
     padding:10px;
-    align-items: center;
-    border-bottom: 2px solid #600404;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    margin-bottom: 30px;
+  align-items: center;
+  border-bottom: 2px solid #600404;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
 }
 
 h2 {
-    text-align: center;
-    letter-spacing: 2px;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 nav img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 main {
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .informacion {
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
-    height: 450px;
-    width: 400px;
-    border-radius: 10px;
+  background: linear-gradient(135deg, #B7B5B3, #9A9997);
+  height: 450px;
+  width: 400px;
+  border-radius: 10px;
     padding:10px;
-    box-sizing: border-box;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
 .otro {
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
-    height: 450px;
-    width: 400px;
-    border-radius: 10px;
+  background: linear-gradient(135deg, #B7B5B3, #9A9997);
+  height: 450px;
+  width: 400px;
+  border-radius: 10px;
     padding:25px;
-    box-sizing: border-box;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 h1{
-    text-align: center;
-    cursor: default;
+  text-align: center;
+  cursor: default;
 }
 
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 .tooltip-container {
   position: relative;
   cursor: pointer;
@@ -174,18 +174,18 @@ h1{
   justify-content: center;
   background: -webkit-linear-gradient(
     45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
     #bc1888 100%
   );
   background: linear-gradient(
     45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
     #bc1888 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
@@ -222,53 +222,53 @@ h1{
   padding-top: 5px;
 }
 
-/* From Uiverse.io by JaydipPrajapati1910 */ 
+/* From Uiverse.io by JaydipPrajapati1910 */
 button {
-    background: transparent;
-    position: relative;
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
     border: 1px solid rgb(255,0,0);
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden;
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
     color: rgb(255,0,0);
-    transition: color 0.3s 0.1s ease-out;
-    text-align: center;
-  }
-  
-  button span {
-    margin: 10px;
-  }
-  
-  button::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    content: '';
-    border-radius: 50%;
-    display: block;
-    width: 20em;
-    height: 20em;
-    left: -5em;
-    text-align: center;
-    transition: box-shadow 0.5s ease-out;
-    z-index: -1;
-  }
-  
-  button:hover {
-    color: #fff;
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+
+button span {
+  margin: 10px;
+}
+
+button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+button:hover {
+  color: #fff;
     border: 1px solid rgb(255,0,0);
-  }
-  
-  button:hover::before {
-    box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
-  }
+}
+
+button:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
+}

@@ -132,7 +132,7 @@ function agregarAlCarrito(repuesto) {
     // // Mostrar una alerta o realizar otra acción
     // alert("Producto agregado al carrito.");
 
-    const notificacion = document.getElementById('notificacion');
+    let notificacion = document.getElementById('notificacion');
     notificacion.classList.remove('ocultar');
 
     // Ocultar la notificación después de 3 segundos

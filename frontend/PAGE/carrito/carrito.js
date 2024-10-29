@@ -1,5 +1,10 @@
+let datosCarrito =[];
+
 window.onload = () => {
     mostrarCarrito();
+
+
+
 };
 
 
@@ -7,7 +12,9 @@ window.onload = () => {
 // Función para mostrar los productos en el carrito
 function mostrarCarrito() {
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    datosCarrito = carrito;
     let divCarrito = document.getElementById('divCarrito');
+
     divCarrito.innerHTML = "";
 
     if (carrito.length === 0) {
@@ -27,9 +34,9 @@ function mostrarCarrito() {
 
                  <div class="product-buttons">
 
-                <button onclick="disminuirCantidad()">-</button>
+                <button onclick="disminuirCantidad(${producto.id_repuesto})">-</button>
                 <label id="cantidad" style="color:white">${producto.cantidad}</label>
-                <button onclick="aumentarCantidad()">+</button>
+                <button onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
 
 
             </div>
@@ -44,19 +51,49 @@ function mostrarCarrito() {
     document.getElementById('total').innerText = `Total: $${total}`;
 }
 
+//  let cantidad = 
 
+function aumentarCantidad(id) {
 
-function aumentarCantidad() {
-    cantidad += 1; 
-    document.getElementById('cantidad').innerHTML = cantidad; 
+    console.log(id); 
+    let carrito = datosCarrito.map(producto => {
+        if (producto.id_repuesto == id) {
+            producto.cantidad++;
+            // console.log(producto);
+        }
+        return producto;
+    });
+   
+    guardarCarrito(carrito);
+    mostrarCarrito();
+
+    // cantidad += 1; 
+    // document.getElementById('cantidad').innerHTML = cantidad; 
 }
 
-function disminuirCantidad() {
-    if (cantidad > 1) {
-        cantidad -= 1; 
-        document.getElementById('cantidad').innerHTML = cantidad; 
-    }
+function guardarCarrito(carrito){
+    console.log(carrito);
+window.sessionStorage.setItem("carrito",JSON.stringify(carrito));
+
+
 }
+
+function disminuirCantidad(id) {
+
+    console.log(id); 
+    let carrito = datosCarrito.map(producto => {
+        if (producto.id_repuesto == id && producto.cantidad > 1) {
+            producto.cantidad--;
+            // console.log(producto);
+        }
+        return producto;
+    });
+   id
+   
+    guardarCarrito(carrito);
+    mostrarCarrito();
+}
+
 window.aumentarCantidad = aumentarCantidad;
 window.disminuirCantidad = disminuirCantidad;
 

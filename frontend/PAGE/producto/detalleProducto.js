@@ -22,6 +22,38 @@ window.onload = async () => {
     obtenerIdUsuario();
 };
 
+
+
+
+let menuToggle = document.getElementById('menuToggle');
+let dropdownMenu = document.getElementById('dropdownMenu');
+
+menuToggle.addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Cierra el menú si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let cantidad = 1; 
 
 function aumentarCantidad() {
@@ -45,10 +77,15 @@ function mostrarProducto(repuesto) {
     let imagenSrc = `../../../backend/IMG/${repuesto.id_repuesto}.${repuesto.extension}`;
 
     tbodyElement.innerHTML += ` 
-        <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
+
+    <div class="producto">
+
+        <a class="volver" href="#" onclick="window.history.back();"> Volver</a>
         <div class="contenedor_img">
             <img src="${imagenSrc}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
+
+
         <div class="product-info">
             <div class="primera_fila">
                 <h1 class="product-title">${repuesto.nombre}</h1>
@@ -56,14 +93,24 @@ function mostrarProducto(repuesto) {
             </div>
             <p class="product-details">Estado: ${repuesto.estado}</p>
             <p class="product-details">Color: ${repuesto.color}</p>
-            <p class="product-details">Descripción: ${repuesto.descripcion}</p>
+            
             <div class="product-buttons">
                 <button onclick="disminuirCantidad()">-</button>
                 <label id="cantidad" style="color:white">1</label>
                 <button onclick="aumentarCantidad()">+</button>
                 <button id="agregarCarrito">Agregar al Carrito</button>
             </div>
+
         </div>
+
+        </div>
+
+          <div class="contenedor_descripcion">
+                <p class="product-details">Descripción: ${repuesto.descripcion}</p>
+
+        </div>
+
+
     `;
 
     document.getElementById('agregarCarrito').addEventListener('click', () => {
@@ -93,8 +140,18 @@ function agregarAlCarrito(repuesto) {
     // Guardar el carrito actualizado en sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // Mostrar una alerta o realizar otra acción
-    alert("Producto agregado al carrito.");
+    // // Mostrar una alerta o realizar otra acción
+    // alert("Producto agregado al carrito.");
+
+    const notificacion = document.getElementById('notificacion');
+    notificacion.classList.remove('ocultar');
+
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+        notificacion.classList.add('ocultar');
+    }, 3000);
+
+    
 }
 
 

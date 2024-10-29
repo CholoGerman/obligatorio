@@ -23,7 +23,18 @@ function mostrarCarrito() {
             <div class="producto">
                 <h4>${producto.nombre}</h4>
                 <p>Precio: $${producto.precio}</p>
-                <p>Cantidad: ${producto.cantidad}</p>
+
+
+                 <div class="product-buttons">
+
+                <button onclick="disminuirCantidad()">-</button>
+                <label id="cantidad" style="color:white">${producto.cantidad}</label>
+                <button onclick="aumentarCantidad()">+</button>
+
+
+            </div>
+        
+
                 <p>Subtotal: $${producto.precio * producto.cantidad}</p>
             </div>
         `;
@@ -35,7 +46,19 @@ function mostrarCarrito() {
 
 
 
+function aumentarCantidad() {
+    cantidad += 1; 
+    document.getElementById('cantidad').innerHTML = cantidad; 
+}
 
+function disminuirCantidad() {
+    if (cantidad > 1) {
+        cantidad -= 1; 
+        document.getElementById('cantidad').innerHTML = cantidad; 
+    }
+}
+window.aumentarCantidad = aumentarCantidad;
+window.disminuirCantidad = disminuirCantidad;
 
 
 

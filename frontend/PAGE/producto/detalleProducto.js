@@ -43,17 +43,6 @@ document.addEventListener('click', function(event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 let cantidad = 1; 
 
 function aumentarCantidad() {

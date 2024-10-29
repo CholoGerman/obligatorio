@@ -78,7 +78,9 @@ function mostrarProducto(repuesto) {
 
     tbodyElement.innerHTML += ` 
 
-        <a href="#" onclick="window.history.back();" style="color:white; text-decoration: none; font-size: 12px;"> Volver</a>
+    <div class="producto">
+
+        <a class="volver" href="#" onclick="window.history.back();"> Volver</a>
         <div class="contenedor_img">
             <img src="${imagenSrc}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
@@ -99,14 +101,16 @@ function mostrarProducto(repuesto) {
                 <button id="agregarCarrito">Agregar al Carrito</button>
             </div>
 
+        </div>
 
+        </div>
 
-        <div class="contenedor_descripcion">
+          <div class="contenedor_descripcion">
                 <p class="product-details">Descripción: ${repuesto.descripcion}</p>
 
         </div>
 
-        </div>
+
     `;
 
     document.getElementById('agregarCarrito').addEventListener('click', () => {

@@ -306,3 +306,10 @@ cambio  */
         font-size: 24px; /* Reduce aún más el tamaño del título */
     }
 }
+
+
+.contador {
+    font-weight: bold; 
+    color: #FF0000; 
+    font-size: 1.2em; 
+}

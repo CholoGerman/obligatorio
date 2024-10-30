@@ -18,7 +18,7 @@ function mostrarCarrito() {
     divCarrito.innerHTML = "";
 
     if (carrito.length === 0) {
-        divCarrito.innerHTML = "<p>El carrito está vacío.</p>";
+        divCarrito.innerHTML = "<p class='aviso_carritoVacio'>El carrito está vacío.</p>";
         document.getElementById('total').innerText = "Total: $0";
         return;
     }

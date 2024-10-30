@@ -36,12 +36,26 @@ main {
 
 .informacion {
   background: linear-gradient(135deg, #B7B5B3, #9A9997);
-  height: 450px;
+  height: auto;
   width: 400px;
   border-radius: 10px;
-    padding:10px;
+  padding:20px;
   box-sizing: border-box;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+  text-align: center; 
+}
+
+.informacion h1 {
+  color: #333; 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+}
+
+.informacion p {
+  color: #444; 
+  line-height: 1.5; 
+  font-size: 16px; 
 }
 
 

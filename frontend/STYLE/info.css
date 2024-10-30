@@ -75,7 +75,8 @@ h1{
   cursor: default;
 }
 
-/* From Uiverse.io by vinodjangid07 */
+/* logos redes sociales: */
+
 .tooltip-container {
   position: relative;
   cursor: pointer;
@@ -277,6 +278,13 @@ button::before {
   transition: box-shadow 0.5s ease-out;
   z-index: -1;
 }
+
+
+.destacar{
+  color:red;
+  font-weight: bold;
+}
+
 
 button:hover {
   color: #fff;

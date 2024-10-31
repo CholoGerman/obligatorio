@@ -1,48 +1,61 @@
 <?php
 require_once "../conexion/conexion.php";
 require_once '../modelo/Repuesta.php';
-class CarritoDao{
 
-    function realizarCompra($cantidad, $id_repuesto, $metodo_pago, $id_envio, $id_cliente) {
-        // Inserción en la tabla pedido
-        $sql = "INSERT INTO pedido(id_cliente, fecha, metodo, id_envio) VALUES ($id_cliente, CURRENT_DATE, '$metodo_pago', $id_envio)"; 
-    
+class CarritoDao {
+
+    function realizarCompra($productos, $metodo_pago, $calle, $numero, $telefono, $codigo_postal, $id_cliente) {
         $connection = connection();
-        $respuesta = $connection->query($sql);
         
-        if ($respuesta) {
-            // Obtener el ID del nuevo pedido
-            $id_nuevo_pedido = $connection->insert_id;
+        $sql_envio = "INSERT INTO envio (num_dir, calle_dir, codigo_postal, moneda) VALUES ('$numero', '$calle', '$codigo_postal', 'UYU')";
+        if (!$connection->query($sql_envio)) {
+            die("Error en la consulta de envío: " . $connection->error);
+        }
+        $id_envio = $connection->insert_id;
     
-            // Agregar el detalle del pedido
-            $detalle = $this->agregarDetalle($id_nuevo_pedido, $id_repuesto, $cantidad);
+        $sql_pedido = "INSERT INTO pedido (id_cliente, fecha, metodo, id_envio) VALUES ('$id_cliente', CURRENT_DATE, '$metodo_pago', '$id_envio')";
+
+        if (!$connection->query($sql_pedido)) {
+            die("Error en la consulta de pedido: " . $connection->error);
+        }
+        $id_nuevo_pedido = $connection->insert_id;
     
-            if ($detalle) {
-                // Modificar el stock del repuesto
-                $this->modificarStock($id_repuesto, $cantidad);
+        foreach ($productos as $producto) {
+            $id_repuesto = $producto->id_repuesto; 
+            $cantidad = $producto->cantidad;
+            if (!$this->agregarDetalle($id_nuevo_pedido, $id_repuesto, $cantidad)) {
+                die("Error al agregar detalle para el producto: $id_repuesto");
             }
-    
-            // Generar y retornar la factura
-            return $this->generarFactura($id_nuevo_pedido);
+            if (!$this->modificarStock($id_repuesto, $cantidad)) {
+                die("Error al modificar stock para el producto: $id_repuesto");
+            }
         }
     
-        return new Respuesta(false, "Error al realizar la compra", null);
+        $sql_telefono = "INSERT INTO cliente_telefono (id_cliente, telefono) VALUES ($id_cliente, '$telefono')";
+        if (!$connection->query($sql_telefono)) {
+            die("Error al insertar teléfono del cliente: " . $connection->error);
+        }
+    
+        return $id_nuevo_pedido;
     }
     
     
-
     
+    
+    
+    
+    
+    
+
     function agregarDetalle($id_pedido, $id_repuesto, $cantidad) {
         // Inserta el detalle del pedido
         $precio = $this->obtenerPrecioRepuesto($id_repuesto);
-        $sql = "INSERT INTO detalle(id_pedido, cantidad, precio, estado) VALUES ($id_pedido, $cantidad, $precio, 'activo')";
-    
+        $sql = "INSERT INTO detalle (id_pedido, id_repuesto, cantidad, precio, estado) VALUES ($id_pedido, $id_repuesto, $cantidad, $precio, 'activo')";
+
         $connection = connection();
-        $respuesta = $connection->query($sql);
-    
-        return $respuesta;  // Retorna si se agregó correctamente
+        return $connection->query($sql);  // Retorna si se agregó correctamente
     }
-    
+
     function obtenerPrecioRepuesto($id_repuesto) {
         $sql = "SELECT precio FROM repuesto WHERE id_repuesto = $id_repuesto";
         $connection = connection();
@@ -54,48 +67,11 @@ class CarritoDao{
         }
         return 0;  // Retorna 0 si no se encuentra el repuesto
     }
-    
+
     function modificarStock($id_repuesto, $cantidad) {
         // Actualiza el stock del repuesto
         $sql = "UPDATE repuesto SET stock = stock - $cantidad WHERE id_repuesto = $id_repuesto"; 
         $connection = connection();
-        $respuesta = $connection->query($sql);
-        return $respuesta;  // Retorna si se actualizó correctamente
+        return $connection->query($sql);  // Retorna si se actualizó correctamente
     }
-    
-    function generarFactura($id_pedido) {
-        $sql = "SELECT 
-            p.nombre AS Nombre_Cliente,
-            p.apellido AS Apellido_Cliente,
-            o.id_pedido AS ID_Pedido,
-            o.fecha AS Fecha_Pedido,
-            d.cantidad AS Cantidad,
-            r.nombre AS Nombre_Repuesto,
-            r.precio AS Precio_Unitario,
-            (d.cantidad * r.precio) AS Total_Por_Item,
-            SUM(d.cantidad * r.precio) OVER (PARTITION BY o.id_pedido) AS Total_Factura
-        FROM 
-            cliente c
-        JOIN 
-            persona p ON c.id_persona = p.id_persona
-        JOIN 
-            pedido o ON c.id_cliente = o.id_cliente
-        JOIN 
-            detalle d ON o.id_pedido = d.id_pedido
-        JOIN 
-            detalle_repuesto dr ON d.id_detalle = dr.id_detalle
-        JOIN 
-            repuesto r ON dr.id_repuesto = r.id_repuesto
-        WHERE 
-            o.id_pedido = $id_pedido LIMIT 0, 25;";  
-    
-        $connection = connection(); 
-        $respuesta = $connection->query($sql);
-        $resultado = $respuesta->fetch_all(MYSQLI_ASSOC); 
-        return $resultado;  // Retorna los detalles de la factura
-    }
-    
-    
-
-
 }

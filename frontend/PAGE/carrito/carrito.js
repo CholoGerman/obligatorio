@@ -1,13 +1,13 @@
-let datosCarrito =[];
+let datosCarrito = [];
 
 window.onload = () => {
     mostrarCarrito();
-
-
-
+    document.getElementById('realizarCompra').addEventListener('click', realizarCompra);
 };
 
-
+window.irAFomularioCompra = function() {
+    window.location.href = '../comprar/realizar_compra.html'; 
+}
 
 // Función para mostrar los productos en el carrito
 function mostrarCarrito() {
@@ -30,18 +30,11 @@ function mostrarCarrito() {
             <div class="producto">
                 <h4>${producto.nombre}</h4>
                 <p>Precio: $${producto.precio}</p>
-
-
-                 <div class="product-buttons">
-
-                <button onclick="disminuirCantidad(${producto.id_repuesto})">-</button>
-                <label id="cantidad" style="color:white">${producto.cantidad}</label>
-                <button onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
-
-
-            </div>
-        
-
+                <div class="product-buttons">
+                    <button onclick="disminuirCantidad(${producto.id_repuesto})">-</button>
+                    <label id="cantidad" style="color:white">${producto.cantidad}</label>
+                    <button onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
+                </div>
                 <p>Subtotal: $${producto.precio * producto.cantidad}</p>
             </div>
         `;
@@ -51,44 +44,29 @@ function mostrarCarrito() {
     document.getElementById('total').innerText = `Total: $${total}`;
 }
 
-//  let cantidad = 
-
 function aumentarCantidad(id) {
-
-    console.log(id); 
     let carrito = datosCarrito.map(producto => {
         if (producto.id_repuesto == id) {
             producto.cantidad++;
-            // console.log(producto);
         }
         return producto;
     });
    
     guardarCarrito(carrito);
     mostrarCarrito();
-
-    // cantidad += 1; 
-    // document.getElementById('cantidad').innerHTML = cantidad; 
 }
 
-function guardarCarrito(carrito){
-    console.log(carrito);
-window.sessionStorage.setItem("carrito",JSON.stringify(carrito));
-
-
+function guardarCarrito(carrito) {
+    window.sessionStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 function disminuirCantidad(id) {
-
-    console.log(id); 
     let carrito = datosCarrito.map(producto => {
         if (producto.id_repuesto == id && producto.cantidad > 1) {
             producto.cantidad--;
-            // console.log(producto);
         }
         return producto;
     });
-   id
    
     guardarCarrito(carrito);
     mostrarCarrito();
@@ -97,6 +75,25 @@ function disminuirCantidad(id) {
 window.aumentarCantidad = aumentarCantidad;
 window.disminuirCantidad = disminuirCantidad;
 
+async function realizarCompra() {
+    let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. Agrega productos para continuar.");
+        return;
+    }
+
+    // Crear un array para almacenar los IDs de los repuestos y las cantidades
+    let datosCompra = carrito.map(producto => ({
+        id_repuesto: producto.id_repuesto,
+        cantidad: producto.cantidad
+    }));
+
+    // Almacenar los datos de la compra en sessionStorage
+    sessionStorage.setItem('datosCompra', JSON.stringify(datosCompra));
+
+    // Redirige al formulario de compra
+    window.location.href = '../comprar/realizar_compra.html';
+}
 
 
 

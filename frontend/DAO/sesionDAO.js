@@ -20,6 +20,7 @@ class SesionDao {
     }
     
     
+    
   
     // Funcion para registrar un nuevo administrador
     async registerAdmin(correo, password, nombre, apellido) {
@@ -62,30 +63,29 @@ class SesionDao {
         }
     }
   
-    // Funcion para iniciar sesión
-   // Función para iniciar sesión
-   async login(correo, password) {
-    let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
-    let formData = new FormData();
-    formData.append("correo", correo);
-    formData.append("contraseña", password);
-    
-    try {
-        let respuestaJson = await this.fetchRequest(url, "POST", formData);
-        console.log("Respuesta del servidor:", respuestaJson); // Verifica la respuesta
+    async login(correo, password) {
+        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
+        let formData = new FormData();
+        formData.append("correo", correo);
+        formData.append("contraseña", password);
         
-        // Devuelve la respuesta
-        return respuestaJson;
-    } catch (error) {
-        console.error('Error al procesar la solicitud:', error);
-        return { status: false, mensaje: "Error de conexión." }; // Manejo de error
+        try {
+            let respuestaJson = await this.fetchRequest(url, "POST", formData);
+            console.log("Respuesta del servidor:", respuestaJson); // Verifica la respuesta
+            
+            if (respuestaJson.status) {
+                sessionStorage.setItem('usuarioId', respuestaJson.datos.id_persona); // Almacena el ID
+                // ... resto del código ...
+            }
+            
+    
+            // Devuelve la respuesta
+            return respuestaJson;
+        } catch (error) {
+            console.error('Error al procesar la solicitud:', error);
+            return { status: false, mensaje: "Error de conexión." }; // Manejo de error
+        }
     }
-}
-
-
-
-    
-    
     
     
     

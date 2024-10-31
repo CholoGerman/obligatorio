@@ -6,6 +6,7 @@
     <title>Realizar Compra</title>
     <link rel="stylesheet" href="../../STYLE/realizar_Compra.css">
     <script type="module" src="comprar.js"></script>
+    <script type="module" src="../../DAO/carritoDAO.js"></script>
 </head>
 <body>
     
@@ -19,56 +20,44 @@
     <main>
         <div class="contenedor_Detalles">
             <form id="formCompra">
-                <div class="primera_columna">
-                    <div class="fila">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="fila">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" required>
-                    </div>
-                    
-                    <div class="fila">
-                        <label for="departamento">Departamento</label>
-                        <input type="text" id="departamento" name="departamento" required>
-                    </div>
-                    <div class="fila">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" id="ciudad" name="ciudad" required>
-                    </div>
-                    <div class="fila">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" name="calle" required>
-                    </div>
-                    <div class="fila">
-                        <label for="numero">Número</label>
-                        <input type="number" id="numero" name="numero" required>
-                    </div>
-                </div>
-                <div class="segunda_columna">
-                    <div class="fila">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required>
-                    </div>
-                    <div class="fila">
-                        <label>Método de Pago</label>
-                        <select id="metodo_pago" name="metodo_pago" required>
-                            <option value="">Selecciona un método</option>
-                            <option value="tarjeta">Tarjeta de Crédito</option>
-                            <option value="paypal">PayPal</option>
-                            <option value="transferencia">Transferencia Bancaria</option>
-                        </select>
-                    </div>
-                </div>
-                <input type="hidden" id="id_repuesto" name="id_repuesto" value="ID_DEL_REPUESTO">
-                <input type="hidden" id="cantidad" name="cantidad" value="CANTIDAD_DE_REPUESTO">
-                <input type="hidden" id="id_envio" name="id_envio" value="ID_DEL_ENVIO">
-                <input type="hidden" id="id_cliente" name="id_cliente" value="ID_DEL_CLIENTE">
-                <div class="btn">
-                    <button type="submit">Comprar</button>
-                </div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                
+                <label for="departamento">Departamento:</label>
+                <input type="text" id="departamento" name="departamento" required>
+                
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+                
+                <label for="direccion">Calle:</label>
+                <input type="text" id="direccion" name="calle" required>
+                
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" required>
+                
+                <label for="codigo_postal">Código Postal:</label>
+                <input type="text" id="codigo_postal" name="codigo_postal" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+                
+                <label for="metodo_pago">Método de Pago:</label>
+                <select id="metodo_pago" name="metodo_pago" required>
+                    <option value="tarjeta">Tarjeta</option>
+                    <option value="efectivo">Efectivo</option>
+                </select>
+                
+                <button type="submit">Realizar Compra</button>
             </form>
+            
+            
+            
+            <div id="mensajeExito" style="display:none; color: green; margin-top: 20px;">
+                Compra realizada con éxito. ¡Ya puedes verla en tu carrito!
+            </div>
             
         </div>
     </main>

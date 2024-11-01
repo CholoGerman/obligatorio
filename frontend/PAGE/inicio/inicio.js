@@ -41,7 +41,7 @@ function mostrarCatalogo(catalogo) {
     // Filtrar los productos con stock mayor a 0
     let productosDisponibles = catalogo.filter(repuesto => {
         console.log(`Repuesto: ${repuesto.nombre}, Stock: ${repuesto.stock}, Type: ${typeof repuesto.stock}`); // Depuración adicional
-        const stockValue = parseInt(repuesto.stock, 10); // Convertir a número
+        let stockValue = parseInt(repuesto.stock, 10); // Convertir a número
         return stockValue > 0; // Asegúrate de que esta comparación funcione
     });
 

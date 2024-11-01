@@ -29,13 +29,15 @@ class ProductoDao {
 
     async obtenerCatalogo() {
         let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
-
+    
         let respuesta = await fetch(url);
         let productos = await respuesta.json();
         console.log(productos);
-        return productos;
-
+    
+        // Filtrar los productos para incluir solo aquellos con stock mayor a 0
+        return productos.filter(producto => producto.stock > 0);
     }
+    
 
 
     async agregarProducto(){

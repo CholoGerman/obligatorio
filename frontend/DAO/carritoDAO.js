@@ -1,41 +1,53 @@
 class CarritoDao {
-    async realizarCompra(datos) {
-        let formData = new FormData();
-
-        // Agregar datos del formulario
-        formData.append("nombre", datos.nombre);
-        formData.append("apellido", datos.apellido);
-        formData.append("departamento", datos.departamento);
-        formData.append("ciudad", datos.ciudad);
-        formData.append("calle", datos.calle);
-        formData.append("numero", datos.numero);
-        formData.append("telefono", datos.telefono);
-        formData.append("metodo_pago", datos.metodo_pago);
-        formData.append("id_cliente", datos.id_cliente); // Asegúrate de que esto sea correcto
-        formData.append("codigo_postal", datos.codigo_postal); 
-
-        // Agregar todos los productos del carrito
-        datos.productos.forEach(producto => {
-            formData.append("productos[]", JSON.stringify(producto)); // Enviar cada producto como un JSON
+    async realizarCompra() {
+        let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
+        if (datosCompra.length === 0) {
+            alert("No hay productos para comprar.");
+            return;
+        }
+    
+        // Obtener los datos del formulario
+        let metodoPago = document.getElementById('metodo_pago').value;
+        let nombre = document.getElementById('nombre').value;
+        let apellido = document.getElementById('apellido').value;
+        let calle = document.getElementById('direccion').value;
+        let numero = document.getElementById('numero').value;
+        let telefono = document.getElementById('telefono').value;
+        let codigoPostal = document.getElementById('codigo_postal').value;
+        let id_cliente = sessionStorage.getItem('usuarioId'); // Debería devolver '8'
+    
+        if (!id_cliente) {
+            alert("No se encontró el ID de cliente. Por favor, inicia sesión.");
+            return; // Detiene la ejecución si no hay ID de cliente
+        }
+    
+        console.log("Iniciando la compra...");
+    
+        let formData = new URLSearchParams();
+        formData.append('productos', JSON.stringify(datosCompra)); // Convertir productos a JSON string
+        formData.append('metodo_pago', metodoPago);
+        formData.append('nombre', nombre);
+        formData.append('apellido', apellido);
+        formData.append('calle', calle);
+        formData.append('numero', numero);
+        formData.append('telefono', telefono);
+        formData.append('codigo_postal', codigoPostal);
+        formData.append('id_cliente', id_cliente); // Agrega el id_cliente también
+    
+        let response = await fetch('http://localhost/obligatorio/backend/controlador/CarritoController.php?funcion=comprar', {
+            method: 'POST',
+            body: formData // Envía el URLSearchParams
         });
-
-        try {
-            let respuesta = await fetch('http://localhost/obligatorio/backend/controlador/CarritoController.php?funcion=comprar', {
-                method: 'POST',
-                body: formData,
-            });
     
-            // Imprimir la respuesta del servidor para depuración
-            let textResponse = await respuesta.text(); // Obtener la respuesta como texto
-            console.log("Respuesta del servidor:", textResponse); // Ver la respuesta
-    
-            let resultado = JSON.parse(textResponse); // Intentar parsear el JSON
-            return resultado; // Devolver el resultado
-        } catch (error) {
-            console.error("Error al enviar datos:", error);
-            throw error; // Propagar el error
+        if (response.ok) {
+            let result = await response.json();
+            console.log(result);
+            document.getElementById('mensajeExito').style.display = 'block'; // Mostrar mensaje de éxito
+        } else {
+            console.error("Error en la compra");
         }
     }
+    
     }
 
 

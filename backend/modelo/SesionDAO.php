@@ -33,8 +33,10 @@ class SesionDao {
         
         // Ejecuta la consulta
         if (!$stmt->execute()) {
+            error_log("Error al agregar la persona: " . $connection->error);
             return new Respuesta(false, "Error al agregar el usuario: " . $connection->error, null);
         }
+        
         
         // Obtener el ID de la persona recién creada
         $idPersona = $connection->insert_id;

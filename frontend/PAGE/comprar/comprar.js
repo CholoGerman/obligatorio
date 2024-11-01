@@ -1,56 +1,64 @@
-import CarritoDao from "../../DAO/carritoDAO.js"; 
-
 window.onload = () => {
-    let formCompra = document.getElementById('formCompra');
+    console.log("Script comprar.js cargado");
     
-    // Inicializa carritoDao aquí
-    let carritoDao = new CarritoDao();
+    let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
+    
+    if (datosCompra.length === 0) {
+        alert("No hay productos en la compra.");
+        window.location.href = '../carrito.html';
+        return;
+    }
 
-    formCompra.addEventListener('submit', async (event) => {
+    document.getElementById('formCompra').addEventListener('submit', async (event) => {
         event.preventDefault();
-
-        let nombre = document.getElementById('nombre').value.trim();
-        let apellido = document.getElementById('apellido').value.trim();
-        let departamento = document.getElementById('departamento').value.trim();
-        let ciudad = document.getElementById('ciudad').value.trim();
-        let calle = document.getElementById('direccion').value.trim();
-        let numero = document.getElementById('numero').value.trim();
-        let telefono = document.getElementById('telefono').value.trim();
-        let metodo_pago = document.getElementById('metodo_pago').value.trim();
-        let codigo_postal = document.getElementById('codigo_postal').value.trim();
-
-        // Obtén el ID del cliente desde la sesión
-        let id_cliente = sessionStorage.getItem('usuarioId'); // Debería ser el ID del cliente
-        console.log("ID de cliente al enviar:", id_cliente); 
-
-        let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
-
-        let datos = {
-            nombre,
-            apellido,
-            departamento,
-            ciudad,
-            calle,
-            numero,
-            codigo_postal,
-            telefono,
-            metodo_pago,
-            id_cliente, // Asegúrate de que esta variable se inicialice antes de su uso
-            productos: datosCompra
-        };
-
-        console.log("Datos a enviar:", datos);
-
-        try {
-            let respuesta = await carritoDao.realizarCompra(datos);
-            if (respuesta.success) {
-                sessionStorage.setItem('usuarioId', respuesta.id_cliente); // Guardar el id_cliente correcto
-            }
-            else {
-                alert("Error: " + respuesta.message); // Mensaje de error
-            }
-        } catch (error) {
-            console.error("Error al enviar datos:", error);
-        }
+        await realizarCompra();
     });
-};
+}
+
+async function realizarCompra() {
+    let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
+    if (datosCompra.length === 0) {
+        alert("No hay productos para comprar.");
+        return;
+    }
+
+    // Obtener los datos del formulario
+    let metodoPago = document.getElementById('metodo_pago').value;
+    let nombre = document.getElementById('nombre').value;
+    let apellido = document.getElementById('apellido').value;
+    let calle = document.getElementById('direccion').value;
+    let numero = document.getElementById('numero').value;
+    let telefono = document.getElementById('telefono').value;
+    let codigoPostal = document.getElementById('codigo_postal').value;
+    let id_cliente = sessionStorage.getItem('usuarioId');
+
+    if (!id_cliente) {
+        alert("No se encontró el ID de cliente. Por favor, inicia sesión.");
+        return;
+    }
+
+    // Crear un objeto FormData
+    let formData = new FormData();
+    formData.append('productos', JSON.stringify(datosCompra)); // Convertir productos a JSON
+    formData.append('metodo_pago', metodoPago);
+    formData.append('nombre', nombre);
+    formData.append('apellido', apellido);
+    formData.append('calle', calle);
+    formData.append('numero', numero);
+    formData.append('telefono', telefono);
+    formData.append('codigo_postal', codigoPostal);
+    formData.append('id_cliente', id_cliente);
+
+    let response = await fetch('http://localhost/obligatorio/backend/controlador/CarritoController.php?funcion=comprar', {
+        method: 'POST',
+        body: formData // Enviar como FormData
+    });
+
+    if (response.ok) {
+        let result = await response.json();
+        console.log(result);
+        document.getElementById('mensajeExito').style.display = 'block';
+    } else {
+        console.error("Error en la compra");
+    }
+}

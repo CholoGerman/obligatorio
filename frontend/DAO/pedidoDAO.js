@@ -8,7 +8,7 @@ window.onload =()=> {
  class PedidoDao{
 
     async  obtenerPedido(id_pedido){
-    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtener";
     let formData = new FormData();
     formData.append("id_pedido",id_pedido);
     let config = {
@@ -22,16 +22,15 @@ window.onload =()=> {
 
 }
 async  obtenerPedidos(){
-    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
+    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
     let pedidos = await respuesta.json();
     return pedidos;
 
-
 }
 async  cambiarEstadoPedido(id_detalle,estado){
 
-    let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=estado";
+    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=estado";
     let formData = new FormData();
     formData.append("estado",estado);
     formData.append("id_detalle",id_detalle);

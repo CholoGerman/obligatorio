@@ -16,31 +16,6 @@ body {
     padding: 40px;
 }
 
-.contenedor_productos {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    gap:40px;
- }
-
- .contenedor_resumen{
-    background: linear-gradient(135deg, #B7B5B3, #928f8f);
-    height: 450px;
-    position: sticky;
-    border-radius: 10px;
-    position: sticky;
-    top: 50%; /* Se mantiene a la mitad de la pantalla */
-    transform: translateY(-50%); /* Centra el div verticalmente */
-    padding:15px;
-    text-align: center;
-    display: flex;
-    margin-top: 250px;
-    flex-direction: column;
-    gap: 20px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    border:1px solid red;
-}
-
 .font{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;

@@ -13,10 +13,10 @@ function mostrarFavoritos(favoritos) {
         console.log("No se han recibido productos.");
     }
     let tbodyElement = document.querySelector("#contenedor_producto");
-    tbodyElement.innerHTML = "";  
+    tbodyElement.innerHTML = "";
 
     favoritos.forEach((favorito) => {
-        console.log(favorito); 
+        console.log(favorito);
         tbodyElement.innerHTML += ` 
         <div class="contenedor_producto2" data-nombre="${favorito.nombre.toLowerCase()}">                                                      
             <a href="../producto/detalle_Producto.html?id_repuesto=${favorito.id_repuesto}">
@@ -28,6 +28,6 @@ function mostrarFavoritos(favoritos) {
             </div>
         </div>
     `;
-    
+
     });
 }

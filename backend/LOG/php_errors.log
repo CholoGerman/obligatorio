@@ -1,0 +1,4 @@
+[01-Nov-2024 05:54:57 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[01-Nov-2024 17:18:00 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[01-Nov-2024 18:31:15 Europe/Berlin] Error de inicio de sesión para cliente1@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 18:31:19 Europe/Berlin] Error de inicio de sesión para cliente1@gmail.com: Correo o contraseña incorrectos

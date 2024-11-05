@@ -8,7 +8,6 @@ switch ($funcion) { // Le asignamos una funcion a cada posible variable de "func
         obtenerProducto();
         break;
     case "obtenerall": 
-        
         obtenerCatalogo();
         break;
     case "agregar":

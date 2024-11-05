@@ -27,16 +27,19 @@ main {
 }
 
 
-.contenedor_producto {
+.contenedor_pedidos {
     width: 100%;
-    background-color: green;
     margin:0;
     padding: 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 30px;
     border-radius: 25px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    display:flex;
+
 }
 
 .producto{
@@ -44,12 +47,12 @@ main {
     height: 190px;
     display:flex;
     width: 90%;
-    padding: 10px;
+    padding: 10px 30px ;
     justify-content: space-around;
     align-items: center;
     border-radius: 25px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-
+    gap: 30px;
 
 }
 

@@ -88,6 +88,7 @@ function mostrarProducto(repuesto) {
                 <label id="cantidad" style="color:white">1</label>
                 <button onclick="aumentarCantidad()">+</button>
                 <button id="agregarCarrito">Agregar al Carrito</button>
+                <button id="agregarCarrito">Agregar a Favoritos</button>
             </div>
 
         </div>

@@ -2,3 +2,47 @@
 [01-Nov-2024 17:18:00 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
 [01-Nov-2024 18:31:15 Europe/Berlin] Error de inicio de sesión para cliente1@gmail.com: Correo o contraseña incorrectos
 [01-Nov-2024 18:31:19 Europe/Berlin] Error de inicio de sesión para cliente1@gmail.com: Correo o contraseña incorrectos
+
+[01-Nov-2024 17:34:17 Europe/Berlin] Error al agregar la persona: Duplicate entry '0' for key 'PRIMARY'
+[01-Nov-2024 17:35:10 Europe/Berlin] Error al agregar la persona: Duplicate entry '0' for key 'PRIMARY'
+[01-Nov-2024 17:50:27 Europe/Berlin] Error de inicio de sesión para prueba@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:50:35 Europe/Berlin] Error de inicio de sesión para prueba@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:50:44 Europe/Berlin] Error de inicio de sesión para prueba@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:51:43 Europe/Berlin] Error de inicio de sesión para prueba2@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:51:50 Europe/Berlin] Error de inicio de sesión para prueba2@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:52:19 Europe/Berlin] Error de inicio de sesión para prueba2@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:52:22 Europe/Berlin] Error de inicio de sesión para prueba2@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 17:52:31 Europe/Berlin] Error de inicio de sesión para prueba2@gmail.com: Correo o contraseña incorrectos
+[01-Nov-2024 18:17:50 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[05-Nov-2024 21:00:12 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[05-Nov-2024 21:00:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:23
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(23): mysqli->query('SELECT r.*, CON...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(32): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(12): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 23
+[05-Nov-2024 21:00:21 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[05-Nov-2024 21:00:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:23
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(23): mysqli->query('SELECT r.*, CON...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(32): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(12): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 23
+[05-Nov-2024 21:00:33 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[05-Nov-2024 21:00:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:23
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(23): mysqli->query('SELECT r.*, CON...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(32): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(12): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 23
+[05-Nov-2024 21:00:40 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\obligatorio\backend\conexion\conexion.php on line 19
+[05-Nov-2024 21:00:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:23
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php(23): mysqli->query('SELECT r.*, CON...')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(32): ProductoDao->obtenerCatalogo()
+#2 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(12): obtenerCatalogo()
+#3 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 23

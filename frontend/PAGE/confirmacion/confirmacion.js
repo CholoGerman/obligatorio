@@ -69,3 +69,5 @@ document.querySelectorAll('.estado-pedido').forEach(select => {
         event.target.style.backgroundColor = 'lightgreen'; 
     });
 });
+
+

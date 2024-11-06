@@ -3,6 +3,8 @@ let datosCarrito = [];
 window.onload = () => {
     mostrarCarrito();
     document.getElementById('realizarCompra').addEventListener('click', realizarCompra);
+    document.getElementById('divCarrito').addEventListener('click', eliminarProducto);
+
 };
 
 window.irAFomularioCompra = function() {
@@ -27,7 +29,7 @@ function mostrarCarrito() {
 
     carrito.forEach(producto => {
         divCarrito.innerHTML += `
-            <div class="producto">
+            <div class="producto" data-id="${producto.id_repuesto}" >
                 <h4>${producto.nombre}</h4>
                 <p>Precio: $${producto.precio}</p>
                 <div class="product-buttons">
@@ -36,6 +38,11 @@ function mostrarCarrito() {
                     <button onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
                 </div>
                 <p>Subtotal: $${producto.precio * producto.cantidad}</p>
+
+                <div class="icon">
+                    <a class="eliminar"><img src="../../../backend/IMG/icon_eliminar.png" alt="Eliminar" height="45px"></a>
+                </div>
+
             </div>
         `;
         total += producto.precio * producto.cantidad;
@@ -43,6 +50,29 @@ function mostrarCarrito() {
 
     document.getElementById('total').innerText = `Total: $${total}`;
 }
+
+function eliminarProducto(event) {
+    // Verificar si el clic fue sobre un enlace con la clase "eliminar"
+    if (event.target.closest('a.eliminar')) {
+    
+        let productoId = event.target.closest('.producto').getAttribute('data-id');
+
+        // Eliminar el producto del carrito
+        datosCarrito = datosCarrito.filter(producto => producto.id_repuesto != productoId);
+
+        // Guardar los cambios en sessionStorage
+        guardarCarrito(datosCarrito);
+
+        // Mostrar el carrito actualizado
+        mostrarCarrito();
+    }
+}
+
+
+
+
+
+
 
 function aumentarCantidad(id) {
     let carrito = datosCarrito.map(producto => {

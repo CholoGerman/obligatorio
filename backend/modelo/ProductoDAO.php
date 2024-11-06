@@ -102,5 +102,55 @@ class ProductoDao{
         }
     }
     
+
+
+ public function modificarProducto($id_repuesto, $nombre, $precio, $color, $estado, $stock, $descripcion, $imagen = null) {  
+    $connection = connection();
+
+    // Iniciar la consulta de actualización de datos del producto
+    $sql = "UPDATE Repuesto SET 
+            nombre = '$nombre', 
+            precio = '$precio', 
+            color = '$color', 
+            estado = '$estado', 
+            stock = '$stock', 
+            descripcion = '$descripcion'
+            WHERE id_repuesto = $id_repuesto";
+
+    $respuesta = $connection->query($sql);
+    
+    if (!$respuesta) {
+        return new Respuesta(false, "Error al actualizar el producto: " . $connection->error, null);
+    }
+
+    // Si se ha proporcionado una nueva imagen
+    if ($imagen !== null) {
+        // Extraer el nombre del archivo de imagen
+        $nombreImagen = $imagen["name"];
+        $rutaTemporal = $imagen["tmp_name"];
+
+        // Procesar la nueva imagen
+        $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
+        $sqlImagen = "INSERT INTO imagen (extension) VALUES('$extension');";
+        $respuesta2 = $connection->query($sqlImagen);
+    
+        if (!$respuesta2) {
+            return new Respuesta(false, "Error al agregar la imagen: " . $connection->error, null);
+        }
+    
+        // Obtener el ID de la imagen insertada
+        $idImagen = $connection->insert_id;
+
+        // Actualizar la tabla Repuesto con el id_imagen
+        $sqlActualizarImagen = "UPDATE Repuesto SET id_imagen = $idImagen WHERE id_repuesto = $id_repuesto;";
+        $connection->query($sqlActualizarImagen);
+
+        // Mover el archivo a la carpeta correspondiente
+        move_uploaded_file($rutaTemporal, "../IMG/$id_repuesto.$extension");
+    }
+
+    return new Respuesta(true, "Producto modificado correctamente", null);
 }
 
+
+}

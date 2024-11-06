@@ -26,9 +26,13 @@ function obtenerPedidos(){ //Funcion para mostrar todos los pedidos
 
 }
 
-function cambiarEstadoPedido(){ //Funcion para modificar el estado de un pedido
-    $estado = $_POST["estado"];
-    $id_pedido = $_POST["id_pedido"];
-    $resultado = (new PedidoDao())->cambiarEstadoPedido($id_pedido, $estado);
-    echo json_encode($resultado);
+function cambiarEstadoPedido() { // Funcion para modificar el estado de un pedido
+
+
+        $estado = $_POST["estado"];
+        $id_pedido = $_POST["id_pedido"];
+
+        $resultado = (new PedidoDao())->cambiarEstadoPedido($id_pedido, $estado);
+        echo json_encode($resultado);
+    
 }

@@ -34,9 +34,9 @@ function obtenerPedidos() {
     return $pedidos;
 }
 
-function cambiarEstadoPedido($id_detalle, $estado) {
+function cambiarEstadoPedido($id_pedido, $estado) {
     $connection = connection();
-    $sql = "UPDATE detalle SET estado = '$estado' WHERE id_detalle = $id_detalle;";       
+    $sql = "UPDATE detalle SET estado = '$estado' WHERE id_pedido = $id_pedido;";       
     $respuesta = $connection->query($sql);
     return new Respuesta(true, "Estado actualizado", null);
 }

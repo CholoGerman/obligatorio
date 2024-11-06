@@ -38,36 +38,31 @@ function mostrarPedidos(pedidos) {
                     <option value="En camino">En camino</option>
                     <option value="Entregado">Entregado</option>
                 </select>
-                
-
-                <a class="eliminar" data-id="${pedido.id_pedido}">
-                    <img src="../../../backend/IMG/icon_eliminar.png" alt="Eliminar" height="45px">
-                </a>
+        
                 
                 <a>
                     <img src="../../../backend/IMG/info icon.png" alt="Información" height="55px">
                 </a>
 
-                <button>Aceptar</button>
+                <button class="aceptar" data-id="${pedido.id_pedido}">Aceptar</button>
             </div>  
         `;
     });
-
+    asignarEventListeners();
 }
 
-
-document.querySelectorAll('.estado-pedido').forEach(select => {
-    select.addEventListener('change', async (event) => {
-        let nuevoEstado = event.target.value;
-        let idPedido = event.target.getAttribute('data-id');
-        console.log(`Cambiar estado de pedido ID ${idPedido} a: ${nuevoEstado}`);
-
-
-        await new PedidoDao().cambiarEstadoPedido(idPedido, nuevoEstado);
-
-
-        event.target.style.backgroundColor = 'lightgreen'; 
+function asignarEventListeners() {
+    // Asignamos el eventListener a los botones "Aceptar"
+    document.querySelectorAll('.aceptar').forEach(button => {
+        button.addEventListener('click', async (event) => {
+            let idPedido = event.target.getAttribute('data-id');
+            let selectEstado = document.querySelector(`.estado-pedido[data-id="${idPedido}"]`);
+            let nuevoEstado = selectEstado ? selectEstado.value : 'Enviado';  // Obtener el estado seleccionado
+            
+            console.log(`Cambiando el estado del pedido ID ${idPedido} a: ${nuevoEstado}`);
+            
+            // Cambiar el estado del pedido usando la función cambiarEstadoPedido
+            await new PedidoDao().cambiarEstadoPedido(idPedido, nuevoEstado);
+        });
     });
-});
-
-
+}

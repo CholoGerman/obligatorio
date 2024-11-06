@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Producto</title>
     <link rel="stylesheet" href="../../STYLE/agregar_producto.css">
-
-    
-    <script src="../../DAO/productoDAO.js" type="module"></script>
-    <script src="editarProducto.js" type="module"></script>
+    <script type="module" src="../../DAO/productoDAO.js"></script>
+    <script type="module" src="editarProducto.js"></script>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <a href="../admin/controlador_Admin.html"><img src="../../../backend/IMG/logo completo ClickShop fondo remove.png" height="300px"></a>
+            <a href="../admin/controlador_Admin.html"><img src="../../../backend/IMG/logo completo ClickShop fondo remove.png" height="300px"></a>  
         </div>
     </nav>
 
@@ -22,28 +20,28 @@
         <div class="contenedor_datos">
             <div class="titulo">
                 <h1>Modificar Producto</h1>
-            </div> 
-        
-            <form id="modificarProductoForm" method="POST" enctype="multipart/form-data">
+            </div>
+
+            <form id="editarProductoForm" method="POST" enctype="multipart/form-data">
                 <div class="contenedor">
                     <div class="fila1">
                         <label for="nombre">Nombre Producto</label>
                         <input type="text" name="nombre" id="nombre" required>
-        
+            
                         <label for="stock">Stock</label>
                         <input type="number" name="stock" id="stock" required>
-        
+            
                         <label for="imagen">Adjuntar Imagen</label>
                         <input type="file" name="imagen" id="imagen" accept="image/*">
-        
+            
                         <label for="descripcion">Descripción</label>
                         <textarea name="descripcion" id="descripcion" rows="4" cols="50" required></textarea>
                     </div>
-        
+            
                     <div class="fila2">
                         <label for="precio">Precio</label>
                         <input type="number" name="precio" id="precio" required>
-        
+            
                         <label for="estado">Estado</label>
                         <select name="estado" id="estado" required>
                             <option value="">Seleccione...</option>
@@ -51,17 +49,19 @@
                             <option value="usado">Usado</option>
                             <option value="reacondicionado">Reacondicionado</option>
                         </select>
-        
+            
                         <label for="color">Color</label>
                         <input type="text" name="color" id="color" required>
                     </div>
                 </div>
-        
-                <button type="submit">Guardar Cambios</button>
+            
+                <button type="submit">Modificar Producto</button>
             </form>
+            
         </div>
     </main>
 
-
+ 
 </body>
 </html>
+

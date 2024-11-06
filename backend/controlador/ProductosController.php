@@ -71,27 +71,20 @@ function eliminarProducto() {
 
 // Función para modificar un producto
 function modificarProducto() {
-    // Leer los datos del producto desde POST
-    $id_repuesto = $_POST["id_repuesto"];  // Obtener el ID del producto a modificar
+    // Obtener los datos del formulario
+    $id_repuesto = $_POST["id_repuesto"];
     $nombre = $_POST["nombre"];
     $precio = $_POST["precio"];
     $color = $_POST["color"];
     $estado = $_POST["estado"];
     $stock = $_POST["stock"];
     $descripcion = $_POST["descripcion"];
-    $imagen = isset($_FILES["imagen"]) ? $_FILES["imagen"] : null;  // Si hay una nueva imagen, la tomamos
 
-    // Validar que se haya proporcionado el ID
-    if (empty($id_repuesto)) {
-        echo json_encode(new Respuesta(false, "ID del producto no proporcionado", null));
-        return;
-    }
-
-    // Llamar al método de ProductoDao para modificar el producto
-    $respuesta = (new ProductoDao())->modificarProducto($id_repuesto, $nombre, $precio, $color, $estado, $stock, $descripcion, $imagen);
-    
-    // Devolver la respuesta en formato JSON
+    // Aquí puedes agregar la lógica para actualizar los datos en la base de datos
+    $respuesta = (new ProductoDao())->modificarProducto($id_repuesto, $nombre, $precio, $color, $estado, $stock, $descripcion);
     echo json_encode($respuesta);
 }
+
+
 
 ?>

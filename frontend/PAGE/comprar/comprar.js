@@ -62,3 +62,31 @@ async function realizarCompra() {
         console.error("Error en la compra");
     }
 }
+
+
+
+// efecto alerta: 
+
+document.getElementById('formCompra').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    let mensajeExito = document.getElementById('mensajeExito');
+    
+    mensajeExito.style.display = "block";
+    
+ 
+    mensajeExito.offsetHeight; 
+    
+ 
+    mensajeExito.classList.add('show'); 
+    
+
+    setTimeout(function() {
+        mensajeExito.classList.remove('show');
+        
+
+        setTimeout(function() {
+            mensajeExito.style.display = "none"; 
+        }, 500); 
+    }, 4000); 
+});

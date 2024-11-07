@@ -51,6 +51,7 @@ function realizarCompra() {
     $telefono = $_POST["telefono"];
     $metodo_pago = $_POST["metodo_pago"];
     $productos = json_decode($_POST["productos"], true); // Decodifica los productos de JSON
+    error_log(print_r($productos, true));
     $codigo_postal = $_POST["codigo_postal"];
 
 

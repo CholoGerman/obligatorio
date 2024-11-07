@@ -85,7 +85,8 @@ async function realizarCompra() {
     // Crear un array para almacenar los IDs de los repuestos y las cantidades
     let datosCompra = carrito.map(producto => ({
         id_repuesto: producto.id_repuesto,
-        cantidad: producto.cantidad
+        cantidad: producto.cantidad,
+        precio: producto.precio
     }));
 
     // Almacenar los datos de la compra en sessionStorage

@@ -11,6 +11,7 @@ class CarritoDao
         // Validar productos
         if (is_string($productos)) {
             $productos = json_decode($productos, true);
+          
         }
         if (!is_array($productos) || empty($productos)) {
             error_log("Productos no es un array o está vacío.");
@@ -42,6 +43,7 @@ class CarritoDao
     
             $id_repuesto = $producto['id_repuesto'];
             $cantidad = $producto['cantidad'];
+            $precio = $producto['precio'];
     
             // Validar que el id_repuesto exista
             $sql_validar_producto = "SELECT COUNT(*) as count FROM repuesto WHERE id_repuesto = '$id_repuesto'";
@@ -54,7 +56,7 @@ class CarritoDao
             }
     
             // Insertar detalle
-            $sql_detalle = "INSERT INTO detalle (id_pedido, cantidad) VALUES ('$id_nuevo_pedido', '$cantidad')";
+            $sql_detalle = "INSERT INTO detalle (id_pedido, cantidad, precio) VALUES ('$id_nuevo_pedido', '$cantidad','$precio'  )";
             if (!$connection->query($sql_detalle)) {
                 error_log("Error al agregar detalle para el pedido: " . $connection->error);
                 return false;

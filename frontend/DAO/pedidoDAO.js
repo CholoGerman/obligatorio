@@ -52,37 +52,7 @@ async  cambiarEstadoPedido(id_detalle,estado){
     
 }
 
-// va a confirmacion,js y esas
 
-  function mostrarPedido(pedido) {
-    let tbodyElement = document.querySelector("#divProducto");
-    tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // aca va el html que se ve cuando abrimos un pedido en especifico (lo puede ver tanto el admin como el cliente)
-        tbodyElement.innerHTML += ` 
-     
-                                                 <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
-
-   
- `;
-        
-    }
-)
-}
-function mostrarPedidos(productos) {
-    let tbodyElement = document.querySelector("#divProducto");
-    tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // aca ve el html que ve el admin cuando ve todos los pedidos
-        tbodyElement.innerHTML += ` 
-     
-          
-                                                 <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
-
-   
- `;
-        
-    }
-)
-}
 
 
 export default PedidoDao;

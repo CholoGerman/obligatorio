@@ -30,15 +30,6 @@ body::-webkit-scrollbar-thumb{
     border-right: 2px solid black;
 }
 
-input{
-    width: 360px;
-    height: 25px;
-    border-radius: 8px;
-    border: 2px solid black;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    background-color: #1C1C1C;
-}
-
 
 
 
@@ -115,6 +106,13 @@ button{
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     
 }
+
+.btn_stock {
+    margin:8px; 
+    text-align: center;
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    border: 1px solid white;
+} 
 
 
 h2 , h4{

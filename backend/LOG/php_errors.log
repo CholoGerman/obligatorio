@@ -27,3 +27,39 @@
 [07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 56
 [07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 57
 [07-Nov-2024 20:29:40 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[07-Nov-2024 21:13:19 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 25
+            [cantidad] => 2
+            [precio] => 23.00
+        )
+
+)
+
+[07-Nov-2024 21:13:19 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[07-Nov-2024 21:13:49 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 25
+            [cantidad] => 2
+            [precio] => 23.00
+        )
+
+)
+
+[07-Nov-2024 21:13:49 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[07-Nov-2024 21:14:04 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 25
+            [cantidad] => 2
+            [precio] => 23.00
+        )
+
+)
+
+[07-Nov-2024 21:14:04 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'

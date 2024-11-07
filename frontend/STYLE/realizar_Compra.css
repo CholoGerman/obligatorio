@@ -50,11 +50,7 @@ main {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.primera_columna, .segunda_columna {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Ajustamos el espacio entre elementos */
-}
+
 
 input, select {
     border-radius: 5px;
@@ -65,22 +61,12 @@ input, select {
     margin:6px;
 }
 
-.fila {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
 label {
     letter-spacing: 2px; /* Reducimos el espacio para un mejor ajuste */
     min-width: 150px;
     color: white; /* Color blanco para mejor contraste */
 
-}
-
-.btn {
-    text-align: center; /* Centra el botón */
-    margin-top: 20px; /* Ajustamos el margen */
 }
 
 button {

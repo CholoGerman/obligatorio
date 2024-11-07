@@ -1,0 +1,266 @@
+*{
+    font-family: 'Roboto', sans-serif;  
+}
+
+
+body{
+    margin:0;
+    background-color: #1C1C1C;
+    position: relative;
+    min-height: 100vh; 
+
+
+}
+
+h1{
+    text-align: center;
+    letter-spacing: 4px;
+    margin:0;
+    color:white;
+    cursor: default;
+}
+
+
+nav{
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
+    display:Flex;
+    justify-content: space-around;
+    height: 70px;
+    padding:10px;
+    align-items: center;
+    border-bottom: 2px solid #600404;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+    border-radius: 10px;
+    border-right: 2px solid black;
+}
+
+
+.contenedor_producto{
+    display: flex;
+    justify-content: space-around;
+    padding:90px;
+    flex-direction: column;
+}
+
+
+.product-info{
+    /* background: linear-gradient(135deg, #B7B5B3, #9A9997); */
+    border-radius: 20px;
+    padding:15px;
+    height: 50%;
+    color:white;
+    background: rgba(255, 255, 255, 0.1);    
+    width: 600px; 
+    height: 350px; 
+
+
+}
+
+
+.icons {
+    display:flex;
+    gap:45px;
+}
+
+.contenedor_img{
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.contenedor_img img {
+    width: 100%;
+    height: 120%; 
+    position: absolute; 
+    object-fit: contain;
+    top: -10%; 
+    left: 0;
+}
+
+
+.icon_carrito{
+    position: absolute;
+    bottom: 2vh;
+    right: 2vw;
+    
+    
+}
+
+.primera_fila {
+    display:flex;
+    gap:50px;
+    align-items: center;
+}
+
+
+.product-buttons {
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+    gap:8px;
+}
+
+.product-buttons button {
+    height: 30px;
+    width: 170px;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+nav img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+}
+
+button{
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    border: 1px solid black;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:white;
+}
+
+
+button:hover{
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+/* cambios */
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+.dropdown-content {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    min-width: 160px;
+    z-index: 1;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#logoutButton , #pedidosButton{
+    min-width: 150px; /* Ajusta el valor según lo necesites */
+    background-color: #B80C09;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: block;
+    text-align: center;
+    margin:4px
+}
+
+#logoutButton:hover ,  #pedidosButton:hover {
+    background-color: #700606; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+
+/* confirmacion carrito: */
+
+.notificacion {
+    position: absolute;
+    top: 15%; /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #700606;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    cursor:default;
+}
+
+.notificacion.ocultar {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+}
+
+
+
+
+.volver {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease; 
+    font-size: 14px;
+}
+
+.volver:hover {
+    color: #700606;
+}
+
+
+.contenedor_descripcion {
+    margin-top: 25px;
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.1);  
+    border-radius: 8px;
+    padding:10px; 
+
+        max-width: 100%; /* Establece un ancho máximo según tu diseño */
+        overflow-wrap: break-word; /* Permite que las palabras largas se rompan */
+        word-wrap: break-word; /* Para navegadores más antiguos */
+        overflow: hidden; /* Opcional: oculta el desbordamiento */
+    
+
+} 
+
+.contenedor_descripcion p {
+    color:wheat;
+
+}
+
+
+.producto {
+    display:flex;
+    justify-content: space-around;
+}

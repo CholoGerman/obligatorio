@@ -1,4 +1,5 @@
 import ProductoDao from "../../DAO/productoDAO.js";
+import SesionDao from '../../../frontend/DAO/sesionDAO.js';
 
 window.onload = async () => {
     let params = new URLSearchParams(window.location.search);
@@ -20,6 +21,15 @@ window.onload = async () => {
     }
     
     obtenerIdUsuario();
+
+
+    document.getElementById('logoutButton').addEventListener('click', async () => {
+        let sesionDao = new SesionDao();
+        await sesionDao.logOut(); // Llama a la función de cierre de sesión
+  
+    });
+
+
 };
 
 

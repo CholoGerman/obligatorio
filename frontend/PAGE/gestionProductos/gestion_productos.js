@@ -1,4 +1,4 @@
-import ProductoDao from '../../../frontend/DAO/productoDAO.js'; 
+import ProductoDao from '../../DAO/productoDAO.js'; 
 
 // Se asegura de que el código se ejecute después de que el DOM haya cargado completamente
 window.onload = async () => {
@@ -54,11 +54,18 @@ function mostrarCatalogo(catalogo) {
         });
     });
 
-    // Asignar el evento de eliminación después de que se haya cargado el catálogo
     document.querySelectorAll('.eliminar').forEach((botonEliminar) => {
         botonEliminar.addEventListener('click', async (event) => {
             let id_repuesto = event.target.closest('.eliminar').dataset.id;
-            await ProductoDao.eliminarProducto(id_repuesto);
+            
+            
+            let productoDao = new ProductoDao();
+            
+        
+            await productoDao.eliminarProducto(id_repuesto);
+            
+       
+            event.target.closest('.producto').remove(); 
         });
     });
 }

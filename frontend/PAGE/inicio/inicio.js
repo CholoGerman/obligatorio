@@ -31,6 +31,7 @@ document.addEventListener('click', function(event) {
 
 function mostrarCatalogo(catalogo) {
     console.log("Catálogo recibido:", catalogo);
+
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }
@@ -40,8 +41,8 @@ function mostrarCatalogo(catalogo) {
 
     // Filtrar los productos con stock mayor a 0
     let productosDisponibles = catalogo.filter(repuesto => {
-        console.log(`Repuesto: ${repuesto.nombre}, Stock: ${repuesto.stock}, Type: ${typeof repuesto.stock}`); // Depuración adicional
         let stockValue = parseInt(repuesto.stock, 10); // Convertir a número
+        console.log(`Repuesto: ${repuesto.nombre}, Stock: ${repuesto.stock}, Stock (num): ${stockValue}`); // Depuración adicional
         return stockValue > 0; // Asegúrate de que esta comparación funcione
     });
 
@@ -55,7 +56,7 @@ function mostrarCatalogo(catalogo) {
             tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2" data-nombre="${repuesto.nombre.toLowerCase()}">                                                      
                 <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}">
-                    <img src="${repuesto.imagen}"> <!-- Asegúrate de que esto esté correcto -->
+                    <img src="${repuesto.imagen}" alt="${repuesto.nombre}"> <!-- Asegúrate de que esto esté correcto -->
                 </a>
                 <div class="detalles">
                     <p>${repuesto.nombre}</p>
@@ -66,6 +67,7 @@ function mostrarCatalogo(catalogo) {
         });
     }
 }
+
 
 
 

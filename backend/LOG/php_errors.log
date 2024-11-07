@@ -1,20 +1,28 @@
-[07-Nov-2024 18:08:07 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 6
-[07-Nov-2024 18:08:28 Europe/Berlin] PHP Warning:  Undefined array key "funcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 6
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 42
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "precio" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 43
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "color" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 44
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 45
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 46
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "descripcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 47
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 48
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 53
-[07-Nov-2024 18:08:33 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 54
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 42
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "precio" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 43
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "color" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 44
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 45
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 46
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "descripcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 47
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 48
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 53
-[07-Nov-2024 18:33:48 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 54
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 42
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "precio" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 43
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "color" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 44
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 45
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 46
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "descripcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 47
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 48
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 54
+[07-Nov-2024 19:52:36 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 55
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 42
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "precio" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 43
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "color" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 44
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 45
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 46
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "descripcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 47
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 48
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 54
+[07-Nov-2024 19:54:35 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 55
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 42
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "precio" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 43
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "color" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 44
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 45
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 46
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "descripcion" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 47
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 48
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 52
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 56
+[07-Nov-2024 19:56:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 57

@@ -102,5 +102,19 @@ class ProductoDao{
         }
     }
     
-}
 
+
+    public function modificarProducto($id_repuesto, $nombre, $precio, $color, $estado, $stock, $descripcion) {
+        $connection = connection();
+    
+        // Actualizar los datos en la tabla Repuesto
+        $sql = "UPDATE Repuesto SET nombre = '$nombre', precio = '$precio', color = '$color', estado = '$estado', stock = '$stock', descripcion = '$descripcion' WHERE id_repuesto = $id_repuesto";
+        $respuesta = $connection->query($sql);
+    
+        if ($respuesta) {
+            return new Respuesta(true, "Producto actualizado correctamente", null);
+        } else {
+            return new Respuesta(false, "Error al actualizar el producto", null);
+        }
+    }
+}    

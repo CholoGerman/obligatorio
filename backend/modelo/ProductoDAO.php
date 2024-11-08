@@ -98,18 +98,34 @@ class ProductoDao{
     
     
 
-    public function eliminarProducto($id_repuesto) { // Función para eliminar un producto
-        $sql = "DELETE FROM Repuesto WHERE id_repuesto = $id_repuesto;";
+    public function eliminarProducto($id_repuesto) {
         $connection = connection();
-        $respuesta = $connection->query($sql);
-    
-        if ($respuesta) {
-            return new Respuesta(true, "Eliminado correctamente", null);
+
+
+        // Primero, eliminamos los registros en la tabla 'favorito' que dependen del producto
+        $sqlFavorito = "DELETE FROM favorito WHERE id_repuesto = $id_repuesto";
+
+        if ($connection->query($sqlFavorito) === FALSE) {
+            return ['status' => false, 'mensaje' => 'Error al eliminar los favoritos asociados al producto: ' . $connection->error];
+        }
+
+        // Luego, eliminamos los detalles asociados en la tabla 'detalle_repuesto'
+        $sqlDetalle = "DELETE FROM detalle_repuesto WHERE ID_Repuesto = $id_repuesto";
+
+        if ($connection->query($sqlDetalle) === FALSE) {
+            return ['status' => false, 'mensaje' => 'Error al eliminar los detalles asociados al producto: ' . $connection->error];
+        }
+
+        // Finalmente, eliminamos el producto de la tabla 'repuesto'
+        $sqlRepuesto = "DELETE FROM Repuesto WHERE id_repuesto = $id_repuesto";
+
+        if ($connection->query($sqlRepuesto) === TRUE) {
+            return ['status' => true, 'mensaje' => 'Producto eliminado correctamente'];
         } else {
-            return new Respuesta(false, "Error al eliminar el producto", null);
+            return ['status' => false, 'mensaje' => 'Error al eliminar el producto: ' . $connection->error];
         }
     }
-    
+
 
 
     public function modificarProducto($id_repuesto, $nombre, $precio, $color, $estado, $stock, $descripcion) {

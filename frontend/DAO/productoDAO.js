@@ -61,18 +61,35 @@ class ProductoDao {
     
     // Eliminar un producto
     async eliminarProducto(id_repuesto) {
-        let url = `http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar`;
+        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        
+        // Crear FormData y agregar el id_repuesto
         let formData = new FormData();
-        formData.append("id_repuesto", id_repuesto);
+        formData.append("id_repuesto", id_repuesto);  // Asegúrate de que id_repuesto es un número válido
 
         let config = {
             method: "POST",
             body: formData
         };
 
-        let respuesta = await fetch(url, config);
-        let producto = await respuesta.json();
-        return producto;
+        try {
+            let respuesta = await fetch(url, config);
+
+            // Verificar si la respuesta fue exitosa
+            if (!respuesta.ok) {
+                throw new Error("Error al eliminar el producto, estado HTTP: " + respuesta.status);
+            }
+
+            // Intentamos parsear la respuesta como JSON
+            let producto = await respuesta.json();
+            
+            // Retornar la respuesta del backend
+            return producto;
+
+        } catch (error) {
+            console.error("Error al eliminar el producto:", error);
+            throw new Error("Error al eliminar el producto");
+        }
     }
 
 

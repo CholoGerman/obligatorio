@@ -2,7 +2,8 @@ import ProductoDao from '../../DAO/productoDAO.js';
 
 // Se asegura de que el código se ejecute después de que el DOM haya cargado completamente
 window.onload = async () => {
-    let catalogo = await new ProductoDao().obtenerCatalogo();
+    // Obtener todos los productos (sin filtrar por stock)
+    let catalogo = await new ProductoDao().obtenerCatalogo(false);  // 'false' para no filtrar productos por stock
     mostrarCatalogo(catalogo);
 
 
@@ -24,26 +25,24 @@ function mostrarCatalogo(catalogo) {
     let tbodyElement = document.querySelector("#contenedor_productos");
     tbodyElement.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevos productos
 
-    // Iterar sobre el catálogo para agregar cada producto a la tabla o contenedor
+    // Iterar sobre el catálogo para agregar cada producto al contenedor
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
             <div class="producto" data-id="${repuesto.id_repuesto}">
-              
-                <p>${repuesto.nombre}</p>
-                <p>Stock: ${repuesto.stock}</p>
-                <a class="eliminar" data-id="${repuesto.id_repuesto}">
-                    <img src="../../../backend/IMG/icon_eliminar.png" alt="Eliminar" height="45px">
-                </a>
-                  <a class="modificar" data-id="${repuesto.id_repuesto}">
-                    <img src="../../../backend/IMG/modificar icon.png" alt="Modificar" height="43px">
-                </a>
-                <a>
-                    <img src="../../../backend/IMG/info icon.png" alt="Información" height="55px">
-                </a>
+               <p>${repuesto.nombre}</p>
+               <p>Stock: ${repuesto.stock}</p>
+               <a class="eliminar" data-id="${repuesto.id_repuesto}">
+                   <img src="../../../backend/IMG/icon_eliminar.png" alt="Eliminar" height="45px">
+               </a>
+               <a class="modificar" data-id="${repuesto.id_repuesto}"> 
+                   <img src="../../../backend/IMG/modificar icon.png" alt="Modificar" height="43px">
+               </a>
+               <a>
+                   <img src="../../../backend/IMG/info icon.png" alt="Información" height="55px">
+               </a>
             </div>
         `;
     });
-
     // Asignar evento de clic a los enlaces de "modificar"
     document.querySelectorAll('.modificar').forEach((botonModificar) => {
         botonModificar.addEventListener('click', (event) => {
@@ -63,18 +62,32 @@ function mostrarCatalogo(catalogo) {
     document.querySelectorAll('.eliminar').forEach((botonEliminar) => {
         botonEliminar.addEventListener('click', async (event) => {
             let id_repuesto = event.target.closest('.eliminar').dataset.id;
-            
-            
+            console.log("ID del producto a eliminar:", id_repuesto);
+
+            // Confirmación antes de eliminar
+            if (!confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+                return; // Si el usuario cancela, no hacer nada
+            }
+
             let productoDao = new ProductoDao();
-            
-        
-            await productoDao.eliminarProducto(id_repuesto);
-            
-       
-            event.target.closest('.producto').remove(); 
+
+            try {
+                let respuesta = await productoDao.eliminarProducto(id_repuesto);
+
+                if (respuesta.status) {
+                    alert('Producto eliminado correctamente');
+                    event.target.closest('.producto').remove();
+                } else {
+                    alert('Hubo un problema al eliminar el producto');
+                }
+            } catch (error) {
+                console.error('Error al eliminar el producto:', error);
+                alert('Hubo un problema al eliminar el producto');
+            }
         });
     });
 }
+
 
 
 // Función para filtrar productos según el texto ingresado en el campo de búsqueda

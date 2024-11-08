@@ -4,6 +4,12 @@ import ProductoDao from '../../DAO/productoDAO.js';
 window.onload = async () => {
     let catalogo = await new ProductoDao().obtenerCatalogo();
     mostrarCatalogo(catalogo);
+
+
+     // Añadir el evento para filtrar productos por nombre
+     document.getElementById('buscar_producto').addEventListener('input', (event) => {
+        filtrarProductos(event, catalogo);
+    });
 };
 
 // Función que recibe el catálogo de productos y lo muestra en el HTML
@@ -68,4 +74,14 @@ function mostrarCatalogo(catalogo) {
             event.target.closest('.producto').remove(); 
         });
     });
+}
+
+
+// Función para filtrar productos según el texto ingresado en el campo de búsqueda
+function filtrarProductos(event, catalogo) {
+    const query = event.target.value.toLowerCase(); // Obtener el texto de búsqueda
+    const productosFiltrados = catalogo.filter(producto => 
+        producto.nombre.toLowerCase().includes(query)
+    );
+    mostrarCatalogo(productosFiltrados); // Mostrar los productos filtrados
 }

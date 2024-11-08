@@ -63,3 +63,19 @@
 )
 
 [07-Nov-2024 21:14:04 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[08-Nov-2024 01:10:37 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:37 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:55 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:55 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:55 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:10:57 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:10 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:14 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:18 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61
+[08-Nov-2024 01:12:18 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php on line 61

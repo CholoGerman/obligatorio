@@ -33,6 +33,7 @@ nav img {
 main {
     display: flex;
     justify-content: center;
+
 }
 
 .contenedor_Detalles {
@@ -49,11 +50,7 @@ main {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.primera_columna, .segunda_columna {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Ajustamos el espacio entre elementos */
-}
+
 
 input, select {
     border-radius: 5px;
@@ -61,23 +58,15 @@ input, select {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     padding: 10px; /* Agregamos un padding */
     width: 100%; /* Aseguramos que ocupen todo el ancho */
+    margin:6px;
 }
 
-.fila {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
 label {
     letter-spacing: 2px; /* Reducimos el espacio para un mejor ajuste */
     min-width: 150px;
     color: white; /* Color blanco para mejor contraste */
-}
 
-.btn {
-    text-align: center; /* Centra el botón */
-    margin-top: 20px; /* Ajustamos el margen */
 }
 
 button {
@@ -97,6 +86,22 @@ button:hover {
     background-color: #600404; /* Color más oscuro al pasar el mouse */
 }
 
+
+form {
+    display:flex;
+    flex-direction: column;
+}
+
+.datos {
+    display:flex;
+    gap:40px;
+}
+
+
+.boton {
+    text-align: center;
+    margin-top: 20px;
+}
 
 /* alerta:*/
 

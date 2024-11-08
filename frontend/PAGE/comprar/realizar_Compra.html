@@ -21,6 +21,10 @@
     <main>
         <div class="contenedor_Detalles">
             <form id="formCompra">
+
+        <div class="datos">
+
+            <div>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 
@@ -36,6 +40,10 @@
                 <label for="direccion">Calle:</label>
                 <input type="text" id="direccion" name="calle" required>
                 
+            </div>
+
+
+            <div>
                 <label for="numero">Número:</label>
                 <input type="number" id="numero" name="numero" required>
                 
@@ -45,19 +53,31 @@
                 <label for="telefono">Teléfono:</label>
                 <input type="text" id="telefono" name="telefono" required>
                 
+
+
                 <label for="metodo_pago">Método de Pago:</label>
                 <select id="metodo_pago" name="metodo_pago" required>
                     <option value="tarjeta">Tarjeta</option>
                     <option value="efectivo">Efectivo</option>
                 </select>
-                
+    
+            </div>
+
+        </div>
+           
+               
+               
+            <div class="boton">
                 <button type="submit">Realizar Compra</button>
+            </div>
+                
+
             </form>
             
             <div id="divProductos"></div> <!-- Agregado para mostrar productos -->
             
             <div id="mensajeExito" style="display:none">
-                <p>Compra realizada con éxito. ¡Ya puedes verla en tu carrito!</p>
+                <p>Compra realizada con éxito.</p>
             </div>
             
         </div>

@@ -54,19 +54,21 @@ function agregarProducto() {
 
 // Función para eliminar un producto
 function eliminarProducto() {
-    header('Content-Type: application/json'); // Aseguramos que la respuesta sea en JSON
+    // Verificamos que se haya pasado el ID del producto
+    if (isset($_POST['id_repuesto'])) {
+        $id_repuesto = $_POST['id_repuesto'];
 
-    // Leer el cuerpo de la solicitud JSON
-    $data = json_decode(file_get_contents('php://input'), true);
-    $id_repuesto = $data["id_repuesto"]; // Usamos null si no está definido
+        // Creamos una instancia del modelo
+        $productoDao = new ProductoDao();
+        
+        // Llamamos a la función eliminarProducto del modelo y le pasamos el ID del producto
+        $respuesta = $productoDao->eliminarProducto($id_repuesto);
 
-    if (empty($id_repuesto)) {
-        echo json_encode(new Respuesta(false, "ID del producto no proporcionado", null));
-        return;
+        // Devolvemos la respuesta al cliente
+        echo json_encode($respuesta);
+    } else {
+        echo json_encode(['status' => false, 'mensaje' => 'ID de producto no proporcionado']);
     }
-
-    $respuesta = (new ProductoDao())->eliminarProducto($id_repuesto);
-    echo json_encode($respuesta);
 }
 
 // Función para modificar un producto

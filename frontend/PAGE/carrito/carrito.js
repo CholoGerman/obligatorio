@@ -33,9 +33,9 @@ function mostrarCarrito() {
                 <h4>${producto.nombre}</h4>
                 <p>Precio: $${producto.precio}</p>
                 <div class="product-buttons">
-                    <button onclick="disminuirCantidad(${producto.id_repuesto})">-</button>
+                    <button class="btn_stock" onclick="disminuirCantidad(${producto.id_repuesto})">-</button>
                     <label id="cantidad" style="color:white">${producto.cantidad}</label>
-                    <button onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
+                    <button class="btn_stock" onclick="aumentarCantidad(${producto.id_repuesto})">+</button>
                 </div>
                 <p>Subtotal: $${producto.precio * producto.cantidad}</p>
 

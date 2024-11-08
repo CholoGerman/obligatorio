@@ -1,3 +1,9 @@
+window.onload = async () => { 
+    let agregar = new ProductoDao();
+    agregar.agregarProducto(); 
+}
+
+
 class ProductoDao {
 
     // Obtener un producto por su ID
@@ -28,46 +34,64 @@ class ProductoDao {
     }
 
     // Agregar un nuevo producto
-    async agregarProducto() {
-        let formElement = document.querySelector("#agregarProductoForm");
-        formElement.onsubmit = async (e) => {
-            e.preventDefault();  // Evitar el comportamiento por defecto (recarga de la página)
-    
-            let formFormData = new FormData(formElement);
-            let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
-    
-            let config = {
-                method: "POST",
-                body: formFormData
-            };
-    
-            try {
-                let respuesta = await fetch(url, config);
-                let repuestos = await respuesta.json();
-                console.log(repuestos);
-                alert("Producto agregado correctamente");
-                formElement.reset();
-            } catch (error) {
-                console.error("Error en el envío del producto:", error);
-            }
+    async agregarProducto(formData) {
+        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar"; 
+
+        // Configuración de la solicitud (POST)
+        let config = {
+            method: "POST",
+            body: formData  // Enviar los datos del formulario (incluyendo la imagen)
         };
+
+        try {
+            let respuesta = await fetch(url, config);
+            let data = await respuesta.json();
+
+            if (respuesta.ok) {
+                return data;  // Retornar la respuesta del backend
+            } else {
+                throw new Error("No se pudo agregar el producto.");
+            }
+        } catch (error) {
+            console.error("Error al agregar el producto:", error);
+            return { status: false, mensaje: "Error al agregar el producto" };
+        }
     }
+    
     
     // Eliminar un producto
     async eliminarProducto(id_repuesto) {
         let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        
+        // Crear FormData y agregar el id_repuesto
         let formData = new FormData();
-        formData.append("id_repuesto", id_repuesto);
+        formData.append("id_repuesto", id_repuesto);  // Asegúrate de que id_repuesto es un número válido
 
         let config = {
             method: "POST",
             body: formData
-        }
+        };
 
-        let respuesta = await fetch(url, config);
-        let producto = await respuesta.json();
-        return producto;
+        try {
+            let respuesta = await fetch(url, config);
+
+            // Verificar si la respuesta fue exitosa
+            if (!respuesta.ok) {
+                throw new Error("Error al eliminar el producto, estado HTTP: " + respuesta.status);
+            }
+
+            // Intentamos parsear la respuesta como JSON
+            let producto = await respuesta.json();
+            
+            // Retornar la respuesta del backend
+            return producto;
+
+        } catch (error) {
+            console.error("Error al eliminar el producto:", error);
+            throw new Error("Error al eliminar el producto");
+        }
     }
+
 
     // Modificar un producto existente
     async modificarProducto(formData) {

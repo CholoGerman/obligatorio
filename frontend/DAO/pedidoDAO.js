@@ -30,6 +30,20 @@ async  obtenerPedidos(){
 }
 
 
+async  obtenerPedidosCliente(){
+    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerCliente";
+    let formData = new FormData();
+    formData.append("id_cliente",id_cliente);
+    let config = {
+        method:"POST",
+        body:formData
+    }
+    let respuesta = await fetch(url,config);
+    let pedido = await respuesta.json();
+    return pedido;
+}
+
+
 
 async cambiarEstadoPedido(id_pedido, estado) {
     let url = "http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=estado";

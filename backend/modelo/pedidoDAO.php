@@ -42,15 +42,14 @@ function obtenerPedidosCliente($id_cliente){
                e.num_dir, e.calle_dir, e.codigo_postal
         FROM Pedido p
         JOIN detalle d ON p.id_pedido = d.id_pedido
-        JOIN envio e ON p.id_envio = e.id_envio;
+        JOIN envio e ON p.id_envio = e.id_envio
         WHERE p.id_cliente = $id_cliente;
     ";
     $respuesta = $connection->query($sql);
     $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $pedidos;
-
-
 }
+
 
 function cambiarEstadoPedido($id_pedido, $estado) {
     $connection = connection();

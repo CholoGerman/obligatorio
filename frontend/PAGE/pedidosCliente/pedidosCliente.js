@@ -1,12 +1,20 @@
 import PedidoDao from "../../DAO/pedidoDAO.js";
 
 window.onload = async () => {
-    let pedidos = await new PedidoDao().obtenerPedidosCliente();
-    mostrarPedidos(pedidos);
+    // Obtener el ID del cliente desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const clienteId = urlParams.get('id_cliente');  // Asegúrate de que 'id_cliente' esté en la URL
+
+    if (clienteId) {
+        let pedidos = await new PedidoDao().obtenerPedidosCliente(clienteId);
+        mostrarPedidos(pedidos);
+    } else {
+        console.error("No se encontró el ID del cliente en la URL.");
+    }
 };
 
 function mostrarPedidos(pedidos) {
-    console.log("Catálogo recibido:", pedidos);  
+    console.log("Pedidos recibidos:", pedidos);  
     if (pedidos.length === 0) {
         console.log("No se han recibido pedidos.");
         return; 
@@ -16,10 +24,7 @@ function mostrarPedidos(pedidos) {
     tbodyElement.innerHTML = "";  // Limpiar el contenedor antes de agregar nuevos pedidos
 
     pedidos.forEach((pedido) => {
-        let precio = parseFloat(pedido.precio);  // Convertir a número
-        console.log("Precio:", precio, "Tipo:", typeof precio);  // Verifica el valor y el tipo
-
-        // Crear el HTML para cada pedido
+        let precio = parseFloat(pedido.precio);
         tbodyElement.innerHTML += `
             <div class="producto" data-id="${pedido.id_pedido}">
                 <p>ID Pedido: ${pedido.id_pedido}</p>
@@ -30,31 +35,7 @@ function mostrarPedidos(pedidos) {
                 <p>Número de Dirección: ${pedido.num_dir}</p>
                 <p>Calle: ${pedido.calle_dir}</p>
                 <p>Código Postal: ${pedido.codigo_postal}</p>
-
-        
-                
-                <a>
-                    <img src="../../../backend/IMG/info icon.png" alt="Información" height="55px">
-                </a>
-
             </div>  
         `;
-    });
-    asignarEventListeners();
-}
-
-function asignarEventListeners() {
-    // Asignamos el eventListener a los botones "Aceptar"
-    document.querySelectorAll('.aceptar').forEach(button => {
-        button.addEventListener('click', async (event) => {
-            let idPedido = event.target.getAttribute('data-id');
-            let selectEstado = document.querySelector(`.estado-pedido[data-id="${idPedido}"]`);
-            let nuevoEstado = selectEstado ? selectEstado.value : 'Enviado';  // Obtener el estado seleccionado
-            
-            console.log(`Cambiando el estado del pedido ID ${idPedido} a: ${nuevoEstado}`);
-            
-            // Cambiar el estado del pedido usando la función cambiarEstadoPedido
-            await new PedidoDao().cambiarEstadoPedido(idPedido, nuevoEstado);
-        });
     });
 }

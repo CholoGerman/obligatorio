@@ -31,7 +31,7 @@ function obtenerPedidos()
 function obtenerPedidosCliente()
 { //Funcion para mostrar todos los pedidos
     $id_cliente = $_POST["id_cliente"];
-    $resultado = (new PedidoDao())->obtenerPedidos($id_cliente);
+    $resultado = (new PedidoDao())->obtenerPedidosCliente($id_cliente);  // Llama al método correcto
     echo json_encode($resultado);
 }
 

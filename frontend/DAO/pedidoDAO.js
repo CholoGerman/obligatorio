@@ -30,7 +30,7 @@ async  obtenerPedidos(){
 }
 
 
-async  obtenerPedidosCliente(){
+async  obtenerPedidosCliente(id_cliente){
     let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerCliente";
     let formData = new FormData();
     formData.append("id_cliente",id_cliente);

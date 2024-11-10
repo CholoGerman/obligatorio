@@ -5,6 +5,7 @@ window.onload = async () => {
     let catalogo = await new ProductoDao().obtenerCatalogo();
     mostrarCatalogo(catalogo);
 
+
     // Agregar el evento al botón de cerrar sesión
     document.getElementById('logoutButton').addEventListener('click', async () => {
         let sesionDao = new SesionDao();

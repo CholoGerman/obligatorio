@@ -35,9 +35,6 @@ function obtenerPedidos() {
 }
 
 function obtenerPedidosCliente($id_cliente){
-    if ($id_cliente == NULL) {
-        return []; // O lanzar un error si prefieres
-    }
     $connection = connection();
     $sql = "
         SELECT p.id_pedido, p.fecha, p.metodo, 
@@ -49,15 +46,9 @@ function obtenerPedidosCliente($id_cliente){
         WHERE p.id_cliente = $id_cliente;
     ";
     $respuesta = $connection->query($sql);
-    if (!$respuesta) {
-        // Log de error si la consulta falla
-        error_log("Error en la consulta SQL: " . $connection->error);
-        return []; // Retorna un arreglo vacío si la consulta falla
-    }
     $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $pedidos;
 }
-
 
 
 function cambiarEstadoPedido($id_pedido, $estado) {

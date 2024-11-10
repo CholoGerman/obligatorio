@@ -1,12 +1,10 @@
 import PedidoDao from "../../DAO/pedidoDAO.js";
 
 window.onload = async () => {
-    // Obtener el ID del cliente desde la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const clienteId = urlParams.get('id'); // Cambié a 'id' en lugar de 'id_cliente'
+    // Obtener el ID del cliente desde sessionStorage
+    const clienteId = sessionStorage.getItem('clienteId');
 
-
-
+    console.log("Cliente ID obtenido de sessionStorage:", clienteId);
 
     if (clienteId) {
         try {
@@ -16,8 +14,8 @@ window.onload = async () => {
             console.error("Error al obtener los pedidos:", error);
         }
     } else {
-        console.error("No se encontró el ID del cliente en la URL.");
-        alert("Error: No se encontró el ID del cliente en la URL.");
+        console.error("No se encontró el ID del cliente en sessionStorage.");
+        alert("Error: No se encontró el ID del cliente en la sesión.");
     }
 };
 

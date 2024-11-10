@@ -203,3 +203,15 @@ Stack trace:
   thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
 [10-Nov-2024 05:06:14 Europe/Berlin] Error en la consulta SQL: Unknown column 'c.id_persona' in 'where clause'
 [10-Nov-2024 05:06:16 Europe/Berlin] Error en la consulta SQL: Unknown column 'c.id_persona' in 'where clause'
+[10-Nov-2024 05:16:08 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 1
+            [precio] => 31231.00
+        )
+
+)
+
+[10-Nov-2024 05:16:08 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'

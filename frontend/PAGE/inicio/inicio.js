@@ -147,19 +147,16 @@ function mostrarMensajeResultados(searchInput, contador) {
 }
 
 
-const clienteId = localStorage.getItem('usuarioId'); // Asegúrate de que este valor esté guardado previamente
-
+let clienteId = sessionStorage.getItem('usuarioId'); // Cambiado a sessionStorage
 
 // Al hacer clic en el botón de "Pedidos", redirigir a la página de pedidos
 document.getElementById('pedidosButton').addEventListener('click', function(e) {
-    e.preventDefault(); // Evitar que se recargue la página
+    e.preventDefault();
 
-    // Obtener el ID del cliente desde localStorage o sesión
-    const clienteId = localStorage.getItem('usuarioId'); // Asegúrate de que este ID esté guardado en el almacenamiento
+    let clienteId = sessionStorage.getItem('usuarioId'); // Cambiado a sessionStorage
 
     if (clienteId) {
-        // Redirigir a la página de pedidos del cliente
-        window.location.href = `../PAGE/pedidosCliente.html?id=${clienteId}`;
+        window.location.href = `../pedidosCliente/pedidosCliente.html?id=${clienteId}`;
     } else {
         alert('No se pudo encontrar el ID del cliente. Por favor, inicia sesión.');
     }

@@ -3,21 +3,29 @@ import PedidoDao from "../../DAO/pedidoDAO.js";
 window.onload = async () => {
     // Obtener el ID del cliente desde la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const clienteId = urlParams.get('id_cliente');  // Asegúrate de que 'id_cliente' esté en la URL
+    const clienteId = urlParams.get('id'); // Cambié a 'id' en lugar de 'id_cliente'
+
+
+
 
     if (clienteId) {
-        let pedidos = await new PedidoDao().obtenerPedidosCliente(clienteId);
-        mostrarPedidos(pedidos);
+        try {
+            let pedidos = await new PedidoDao().obtenerPedidosCliente(clienteId);
+            mostrarPedidos(pedidos);
+        } catch (error) {
+            console.error("Error al obtener los pedidos:", error);
+        }
     } else {
         console.error("No se encontró el ID del cliente en la URL.");
+        alert("Error: No se encontró el ID del cliente en la URL.");
     }
 };
 
 function mostrarPedidos(pedidos) {
-    console.log("Pedidos recibidos:", pedidos);  
-    if (pedidos.length === 0) {
+    console.log("Pedidos recibidos:", pedidos);
+    if (!pedidos || pedidos.length === 0) {
         console.log("No se han recibido pedidos.");
-        return; 
+        return;
     }
 
     let tbodyElement = document.querySelector("#contenedor_pedidos");

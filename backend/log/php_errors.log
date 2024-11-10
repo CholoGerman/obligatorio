@@ -16,3 +16,190 @@
 
 [08-Nov-2024 18:29:19 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
 [09-Nov-2024 02:57:06 Europe/Berlin] Error de inicio de sesión para pruevas@gmail.com: Correo o contraseña incorrectos
+[10-Nov-2024 04:03:55 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 1
+            [precio] => 31231.00
+        )
+
+)
+
+[10-Nov-2024 04:03:55 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[10-Nov-2024 04:15:52 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:15:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:02 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:33 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:34 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:34 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:35 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:20:35 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:20:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:21:27 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:21:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:21:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:21:35 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:21:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:22:08 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:22:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:22:08 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:22:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:22:09 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:22:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:23:05 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:23:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:23:09 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:23:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:25:33 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:25:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:29:26 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:29:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:29:28 Europe/Berlin] PHP Warning:  Undefined array key "id_cliente" in C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php on line 33
+[10-Nov-2024 04:29:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:51:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 04:55:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php:49
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(34): PedidoDao->obtenerPedidosCliente(NULL)
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[10-Nov-2024 05:06:14 Europe/Berlin] Error en la consulta SQL: Unknown column 'c.id_persona' in 'where clause'
+[10-Nov-2024 05:06:16 Europe/Berlin] Error en la consulta SQL: Unknown column 'c.id_persona' in 'where clause'

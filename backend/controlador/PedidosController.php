@@ -29,11 +29,12 @@ function obtenerPedidos()
     echo json_encode($resultado);
 }
 function obtenerPedidosCliente()
-{ //Funcion para mostrar todos los pedidos
-    $id_cliente = $_POST["id_cliente"];
+{ // Funcion para mostrar todos los pedidos de un cliente
+    $id_cliente = $_GET['id_cliente'] ?? null;  // Usando null si no se encuentra el parámetro
     $resultado = (new PedidoDao())->obtenerPedidosCliente($id_cliente);  // Llama al método correcto
     echo json_encode($resultado);
 }
+
 
 function cambiarEstadoPedido()
 { // Funcion para modificar el estado de un pedido

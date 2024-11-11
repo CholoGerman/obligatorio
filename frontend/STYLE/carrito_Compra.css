@@ -1,0 +1,129 @@
+*{
+    font-family: 'Roboto', sans-serif;  
+}
+
+body{
+    margin:0;
+    background-color: #1C1C1C;
+}
+
+
+nav{
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
+    height: 120px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+    border-radius: 10px;
+    border-right: 2px solid black;
+}
+
+
+
+
+h1{
+    letter-spacing: 8px;
+    margin-right: 250px;
+    font-size: 30px;
+    cursor:default;
+    color:white;
+}
+
+main {
+    display:flex;
+    justify-content: space-between;
+    padding:50px;
+}
+
+.contenedor_productos {
+   width: 75%;
+   display: flex;
+   flex-direction: column;
+   gap:40px;
+}
+
+.producto{
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
+    height: 170px;
+    display:Flex;
+    border-radius: 18px;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 3px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid red;
+}
+
+
+.contenedor_resumen{
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
+    height: 450px;
+    position: sticky;
+    border-radius: 10px;
+    position: sticky;
+    top: 50%; /* Se mantiene a la mitad de la pantalla */
+    transform: translateY(-50%); /* Centra el div verticalmente */
+    padding:15px;
+    text-align: center;
+    display: flex;
+    margin-top: 250px;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border:1px solid red;
+}
+
+a img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+button{
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 30px;
+    letter-spacing: 3px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+.btn_stock {
+    margin:8px; 
+    text-align: center;
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    border: 1px solid white;
+} 
+
+
+h2 , h4{
+    cursor: default;
+}
+
+
+.aviso_carritoVacio {
+    color:red;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: default;
+}

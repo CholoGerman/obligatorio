@@ -1,0 +1,95 @@
+* {
+    font-family: 'Roboto', sans-serif;  
+}
+
+body {
+    background-color: #1C1C1C;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+nav {
+    background: linear-gradient(100deg, #007BA7, #005B82, #002740); 
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 2px solid #002740;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_datos {
+    background: linear-gradient(135deg, #B7B5B3, #928f8f);
+    width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los elementos dentro del contenedor */
+}
+
+
+h1 {
+    letter-spacing: 2px;
+}
+
+label {
+    margin: 5px;
+}
+
+input {
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.contenedor {
+    display: flex;
+    gap: 30px;
+}
+
+.fila1, .fila2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#descripcion {
+    width: 100%; 
+    max-width: 400px;
+    max-height: 150px;
+    resize: none; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura que el contenido esté centrado */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+button {
+    margin-top: 20px; /* Espacio superior */
+    padding: 10px 20px; /* Aumenta el área clickeable del botón */
+    background-color: #007BA7; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+button:hover {
+    background-color: #005B82; /* Color al pasar el mouse */
+}
+
+
+select {
+    border-radius: 7px;
+}

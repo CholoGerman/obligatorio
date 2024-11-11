@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: gray;
+}
+
+.productos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.font{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: solid black;
+    margin: 5px;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+    border-radius: 10px;
+    border-right: 2px solid black;
+}
+
+.navbar{
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
+    display:Flex;
+    justify-content: space-around;
+    height: 70px;
+    padding:10px;
+    align-items: center;
+    border-bottom: 2px solid #600404;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.icons{
+    display:flex;
+    justify-content: center;
+    gap:50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icons img#menuToggle {
+    border-radius: 50%; /* Ícono de perfil redondeado */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-content {
+    display: none; /*Oculto por defecto */
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Enlace "Mi favoritos" dentro del menú */
+.dropdown-content a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para los botones dentro del menú 
+.dropdown-content button {
+    background-color: #d10b0b;  Color rojo 
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #b50909;  Rojo más oscuro al pasar el cursor 
+}
+
+ Mostrar el menú cuando el usuario hace clic en el icono 
+.show {
+    display: block;
+} */
+
+/* Oculta el menú desplegable por defecto */
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 70px; /* Ajusta según la posición que necesites */
+    right: 20px;
+    z-index: 1;
+}
+
+/* Clase para mostrar el menú desplegable */
+.show-dropdown {
+    display: block;
+}
+
+
+/* Cambios generales para hacer la página más responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        padding: 5px;
+    }
+
+    .busqueda input {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-bottom: 10px; /* Agrega espacio debajo */
+    }
+
+    .icons {
+        flex-wrap: wrap; /* Permite que los íconos se envuelvan */
+        justify-content: space-between; /* Distribuye el espacio */
+    }
+
+    .carrusel {
+        margin: 20px; /* Reduce el margen en pantallas pequeñas */
+        max-height: 300px; /* Ajusta la altura máxima */
+    }
+
+    .pantufla {
+        height: auto; /* Ajusta la altura automáticamente */
+        width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    }
+
+    .contenedor_producto2 {
+        width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+        max-width: none; /* Remueve el ancho máximo */
+        margin: 10px 0; /* Agrega espacio vertical */
+    }
+
+    .productos_oferta > h1 {
+        font-size: 30px; /* Ajusta el tamaño del título */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: auto; /* Permite que el navbar se ajuste automáticamente */
+    }
+
+    .busqueda input {
+        width: 90%; /* Reduce un poco el ancho */
+    }
+
+    .icons {
+        gap: 20px; /* Reduce el espacio entre íconos */
+    }
+
+    .productos_oferta > h1 {
+        font-size: 24px; /* Reduce aún más el tamaño del título */
+    }
+}

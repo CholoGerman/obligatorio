@@ -94,9 +94,46 @@ class SesionDao {
     
     
     // Método para iniciar sesión
+    // public function login($correo, $contraseña) {
+    //     $connection = connection();
+    //     $sql = "SELECT * FROM persona WHERE correo=?";
+    //     $stmt = $connection->prepare($sql);
+    //     $stmt->bind_param("s", $correo);
+    //     $stmt->execute();
+    //     $respuesta = $stmt->get_result();
+    
+    //     if ($respuesta) {
+    //         $usuario = $respuesta->fetch_assoc();
+    //         if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
+    //             // Iniciar sesión y guardar datos del usuario
+    //             $_SESSION["session"] = [
+    //                 "id_persona" => $usuario['id_persona'],
+    //                 "correo" => $usuario['correo'],
+    //                 "nombre" => $usuario['nombre'],
+    //                 "apellido" => $usuario['apellido']
+    //             ];
+                
+    
+    //             return new Respuesta(true, "Inicio de sesión exitoso", $usuario);
+    //         } else {
+    //             return new Respuesta(false, "Correo o contraseña incorrectos", null);
+    //         }
+    //     } else {
+    //         error_log("Error en consulta de login: " . $connection->error);
+    //         return new Respuesta(false, "Error en la consulta", null);
+    //     }
+    // }
+    
+
     public function login($correo, $contraseña) {
         $connection = connection();
-        $sql = "SELECT * FROM persona WHERE correo=?";
+        
+        // Consulta para obtener los datos de la persona y el id_cliente asociado
+        $sql = "SELECT persona.*, cliente.id_cliente 
+                FROM persona 
+                LEFT JOIN cliente ON persona.id_persona = cliente.id_persona 
+                WHERE persona.correo=?";
+        
         $stmt = $connection->prepare($sql);
         $stmt->bind_param("s", $correo);
         $stmt->execute();
@@ -104,6 +141,7 @@ class SesionDao {
     
         if ($respuesta) {
             $usuario = $respuesta->fetch_assoc();
+            
             if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
                 // Iniciar sesión y guardar datos del usuario
                 $_SESSION["session"] = [
@@ -113,8 +151,13 @@ class SesionDao {
                     "apellido" => $usuario['apellido']
                 ];
                 
+                // Agregar id_cliente a la respuesta si existe
+                $usuario['id_cliente'] = $usuario['id_cliente'] ?? null;
     
                 return new Respuesta(true, "Inicio de sesión exitoso", $usuario);
+
+                // error_log("ID Cliente obtenido en login: " . ($usuario['id_cliente'] ?? 'null'));
+
             } else {
                 return new Respuesta(false, "Correo o contraseña incorrectos", null);
             }
@@ -124,6 +167,9 @@ class SesionDao {
         }
     }
     
+
+
+
     // Método para cerrar sesión
     function logOut() {
         if (session_status() == PHP_SESSION_ACTIVE) {

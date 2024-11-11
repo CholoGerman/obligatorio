@@ -73,6 +73,8 @@ function login() {
     if ($respuesta->status) {
         $isAdmin = isAdmin($respuesta->datos['id_persona']);
         $respuesta->datos['isAdmin'] = $isAdmin;
+
+        
     } else {
         error_log("Error de inicio de sesión para $correo: " . $respuesta->mensaje);
         echo json_encode(["status" => false, "mensaje" => $respuesta->mensaje]);

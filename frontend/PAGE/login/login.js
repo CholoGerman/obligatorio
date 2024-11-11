@@ -22,7 +22,8 @@ window.onload = () => {
 
             if (respuesta.status) {
                 sessionStorage.setItem('usuarioId', respuesta.datos.id_persona); // Guarda el ID de la persona
-    
+                sessionStorage.setItem('clienteId', respuesta.datos.id_cliente); // Guarda el ID de cliente si es necesario
+
                 // Verifica si es un administrador
                 if (respuesta.datos.isAdmin) {
                     // Redirige a la página de administrador

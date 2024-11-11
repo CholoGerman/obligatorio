@@ -2,7 +2,7 @@ window.onload = () => {
     console.log("Script comprar.js cargado");
     
     let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
-    
+    console.log(datosCompra);
     if (datosCompra.length === 0) {
         alert("No hay productos en la compra.");
         window.location.href = '../carrito.html';

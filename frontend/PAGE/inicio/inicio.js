@@ -5,6 +5,7 @@ window.onload = async () => {
     let catalogo = await new ProductoDao().obtenerCatalogo();
     mostrarCatalogo(catalogo);
 
+
     // Agregar el evento al botón de cerrar sesión
     document.getElementById('logoutButton').addEventListener('click', async () => {
         let sesionDao = new SesionDao();
@@ -145,3 +146,19 @@ function mostrarMensajeResultados(searchInput, contador) {
         resultadoBusqueda.style.display = 'none';
     }
 }
+
+
+let clienteId = sessionStorage.getItem('usuarioId'); // Cambiado a sessionStorage
+
+// Al hacer clic en el botón de "Pedidos", redirigir a la página de pedidos
+document.getElementById('pedidosButton').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    let clienteId = sessionStorage.getItem('usuarioId'); // Cambiado a sessionStorage
+
+    if (clienteId) {
+        window.location.href = `../pedidosCliente/pedidosCliente.html?id=${clienteId}`;
+    } else {
+        alert('No se pudo encontrar el ID del cliente. Por favor, inicia sesión.');
+    }
+});

@@ -86,3 +86,19 @@ input {
     width: 400px;
     
 }
+
+
+.estado-pedido{
+    border-radius: 20px;
+    padding:4px;
+;
+}
+
+.aceptar{
+    border-radius:10px;
+    width: 120px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: #007BA7;
+    color: #000000;
+}

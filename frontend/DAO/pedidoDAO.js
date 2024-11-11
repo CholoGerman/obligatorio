@@ -21,13 +21,34 @@ window.onload =()=> {
 
 
 }
-async  obtenerPedidos(){
-    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
+async obtenerPedidos() {
+    let url = "http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
     let pedidos = await respuesta.json();
+    console.log("Pedidos recibidos:", pedidos);  // Verifica los datos recibidos
     return pedidos;
-
 }
+
+
+
+
+async obtenerPedidosCliente(id_cliente) {
+    let url = `http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerCliente&id_cliente=${id_cliente}`;
+    let config = {
+        method: "GET",  // Cambiado a GET
+    };
+
+    try {
+        let respuesta = await fetch(url, config);
+        let pedido = await respuesta.json();
+        console.log("Respuesta de la API:", pedido); // Verifica la respuesta
+        return pedido;
+    } catch (error) {
+        console.error("Error al obtener los pedidos:", error);
+        return [];
+    }
+}
+
 
 
 

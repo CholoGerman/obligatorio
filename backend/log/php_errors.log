@@ -1,0 +1,2327 @@
+[11-Nov-2024 18:51:32 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-01-10
+            [metodo] => Tarjeta de crédito
+            [precio_total] => 61.48
+            [cantidad_total] => 3
+            [num_dir] => 10
+            [calle_dir] => Calle de la Estrella
+            [codigo_postal] => 28001
+        )
+
+    [1] => Array
+        (
+            [id_pedido] => 2
+            [id_cliente] => 2
+            [fecha] => 2024-02-15
+            [metodo] => PayPal
+            [precio_total] => 30.00
+            [cantidad_total] => 3
+            [num_dir] => 5
+            [calle_dir] => Avenida de la Libertad
+            [codigo_postal] => 08002
+        )
+
+    [2] => Array
+        (
+            [id_pedido] => 3
+            [id_cliente] => 3
+            [fecha] => 2024-03-20
+            [metodo] => Transferencia bancaria
+            [precio_total] => 45.00
+            [cantidad_total] => 1
+            [num_dir] => 20
+            [calle_dir] => Calle del Sol
+            [codigo_postal] => 46003
+        )
+
+    [3] => Array
+        (
+            [id_pedido] => 4
+            [id_cliente] => 4
+            [fecha] => 2024-04-25
+            [metodo] => Efectivo
+            [precio_total] => 29.95
+            [cantidad_total] => 5
+            [num_dir] => 15
+            [calle_dir] => Calle de la Paz
+            [codigo_postal] => 41004
+        )
+
+    [4] => Array
+        (
+            [id_pedido] => 6
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [5] => Array
+        (
+            [id_pedido] => 8
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [6] => Array
+        (
+            [id_pedido] => 9
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [7] => Array
+        (
+            [id_pedido] => 10
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [8] => Array
+        (
+            [id_pedido] => 11
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [9] => Array
+        (
+            [id_pedido] => 12
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [10] => Array
+        (
+            [id_pedido] => 13
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [11] => Array
+        (
+            [id_pedido] => 14
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [12] => Array
+        (
+            [id_pedido] => 15
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [13] => Array
+        (
+            [id_pedido] => 16
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [14] => Array
+        (
+            [id_pedido] => 17
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [15] => Array
+        (
+            [id_pedido] => 18
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [16] => Array
+        (
+            [id_pedido] => 19
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [17] => Array
+        (
+            [id_pedido] => 20
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [18] => Array
+        (
+            [id_pedido] => 21
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [19] => Array
+        (
+            [id_pedido] => 22
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [20] => Array
+        (
+            [id_pedido] => 23
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [21] => Array
+        (
+            [id_pedido] => 24
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [22] => Array
+        (
+            [id_pedido] => 25
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [23] => Array
+        (
+            [id_pedido] => 26
+            [id_cliente] => 18
+            [fecha] => 2024-11-08
+            [metodo] => efectivo
+            [precio_total] => 4000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [24] => Array
+        (
+            [id_pedido] => 27
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 3000.00
+            [cantidad_total] => 3
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [25] => Array
+        (
+            [id_pedido] => 28
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [26] => Array
+        (
+            [id_pedido] => 29
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [27] => Array
+        (
+            [id_pedido] => 30
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [28] => Array
+        (
+            [id_pedido] => 31
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000.00
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [29] => Array
+        (
+            [id_pedido] => 32
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [30] => Array
+        (
+            [id_pedido] => 33
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [31] => Array
+        (
+            [id_pedido] => 34
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 4000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [32] => Array
+        (
+            [id_pedido] => 35
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 22
+            [num_dir] => 111111
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [33] => Array
+        (
+            [id_pedido] => 36
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [34] => Array
+        (
+            [id_pedido] => 37
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 12321313
+            [codigo_postal] => 70000
+        )
+
+)
+
+[11-Nov-2024 18:52:43 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-01-10
+            [metodo] => Tarjeta de crédito
+            [precio_total] => 61.48
+            [cantidad_total] => 3
+            [num_dir] => 10
+            [calle_dir] => Calle de la Estrella
+            [codigo_postal] => 28001
+        )
+
+    [1] => Array
+        (
+            [id_pedido] => 2
+            [id_cliente] => 2
+            [fecha] => 2024-02-15
+            [metodo] => PayPal
+            [precio_total] => 30.00
+            [cantidad_total] => 3
+            [num_dir] => 5
+            [calle_dir] => Avenida de la Libertad
+            [codigo_postal] => 08002
+        )
+
+    [2] => Array
+        (
+            [id_pedido] => 3
+            [id_cliente] => 3
+            [fecha] => 2024-03-20
+            [metodo] => Transferencia bancaria
+            [precio_total] => 45.00
+            [cantidad_total] => 1
+            [num_dir] => 20
+            [calle_dir] => Calle del Sol
+            [codigo_postal] => 46003
+        )
+
+    [3] => Array
+        (
+            [id_pedido] => 4
+            [id_cliente] => 4
+            [fecha] => 2024-04-25
+            [metodo] => Efectivo
+            [precio_total] => 29.95
+            [cantidad_total] => 5
+            [num_dir] => 15
+            [calle_dir] => Calle de la Paz
+            [codigo_postal] => 41004
+        )
+
+    [4] => Array
+        (
+            [id_pedido] => 6
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [5] => Array
+        (
+            [id_pedido] => 8
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [6] => Array
+        (
+            [id_pedido] => 9
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [7] => Array
+        (
+            [id_pedido] => 10
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [8] => Array
+        (
+            [id_pedido] => 11
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [9] => Array
+        (
+            [id_pedido] => 12
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [10] => Array
+        (
+            [id_pedido] => 13
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [11] => Array
+        (
+            [id_pedido] => 14
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [12] => Array
+        (
+            [id_pedido] => 15
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [13] => Array
+        (
+            [id_pedido] => 16
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [14] => Array
+        (
+            [id_pedido] => 17
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [15] => Array
+        (
+            [id_pedido] => 18
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [16] => Array
+        (
+            [id_pedido] => 19
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [17] => Array
+        (
+            [id_pedido] => 20
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [18] => Array
+        (
+            [id_pedido] => 21
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [19] => Array
+        (
+            [id_pedido] => 22
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [20] => Array
+        (
+            [id_pedido] => 23
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [21] => Array
+        (
+            [id_pedido] => 24
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [22] => Array
+        (
+            [id_pedido] => 25
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [23] => Array
+        (
+            [id_pedido] => 26
+            [id_cliente] => 18
+            [fecha] => 2024-11-08
+            [metodo] => efectivo
+            [precio_total] => 4000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [24] => Array
+        (
+            [id_pedido] => 27
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 3000.00
+            [cantidad_total] => 3
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [25] => Array
+        (
+            [id_pedido] => 28
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [26] => Array
+        (
+            [id_pedido] => 29
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [27] => Array
+        (
+            [id_pedido] => 30
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [28] => Array
+        (
+            [id_pedido] => 31
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000.00
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [29] => Array
+        (
+            [id_pedido] => 32
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [30] => Array
+        (
+            [id_pedido] => 33
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000.00
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [31] => Array
+        (
+            [id_pedido] => 34
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 4000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [32] => Array
+        (
+            [id_pedido] => 35
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 0.00
+            [cantidad_total] => 22
+            [num_dir] => 111111
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [33] => Array
+        (
+            [id_pedido] => 36
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [34] => Array
+        (
+            [id_pedido] => 37
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000.00
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 12321313
+            [codigo_postal] => 70000
+        )
+
+)
+
+[11-Nov-2024 18:57:14 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-01-10
+            [metodo] => Tarjeta de crédito
+            [precio_total] => 61.48
+            [cantidad_total] => 3
+            [num_dir] => 10
+            [calle_dir] => Calle de la Estrella
+            [codigo_postal] => 28001
+        )
+
+    [1] => Array
+        (
+            [id_pedido] => 2
+            [id_cliente] => 2
+            [fecha] => 2024-02-15
+            [metodo] => PayPal
+            [precio_total] => 30
+            [cantidad_total] => 3
+            [num_dir] => 5
+            [calle_dir] => Avenida de la Libertad
+            [codigo_postal] => 08002
+        )
+
+    [2] => Array
+        (
+            [id_pedido] => 3
+            [id_cliente] => 3
+            [fecha] => 2024-03-20
+            [metodo] => Transferencia bancaria
+            [precio_total] => 45
+            [cantidad_total] => 1
+            [num_dir] => 20
+            [calle_dir] => Calle del Sol
+            [codigo_postal] => 46003
+        )
+
+    [3] => Array
+        (
+            [id_pedido] => 4
+            [id_cliente] => 4
+            [fecha] => 2024-04-25
+            [metodo] => Efectivo
+            [precio_total] => 29.95
+            [cantidad_total] => 5
+            [num_dir] => 15
+            [calle_dir] => Calle de la Paz
+            [codigo_postal] => 41004
+        )
+
+    [4] => Array
+        (
+            [id_pedido] => 6
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [5] => Array
+        (
+            [id_pedido] => 8
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [6] => Array
+        (
+            [id_pedido] => 9
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [7] => Array
+        (
+            [id_pedido] => 10
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [8] => Array
+        (
+            [id_pedido] => 11
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [9] => Array
+        (
+            [id_pedido] => 12
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [10] => Array
+        (
+            [id_pedido] => 13
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [11] => Array
+        (
+            [id_pedido] => 14
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [12] => Array
+        (
+            [id_pedido] => 15
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [13] => Array
+        (
+            [id_pedido] => 16
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [14] => Array
+        (
+            [id_pedido] => 17
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [15] => Array
+        (
+            [id_pedido] => 18
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [16] => Array
+        (
+            [id_pedido] => 19
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [17] => Array
+        (
+            [id_pedido] => 20
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [18] => Array
+        (
+            [id_pedido] => 21
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [19] => Array
+        (
+            [id_pedido] => 22
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [20] => Array
+        (
+            [id_pedido] => 23
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [21] => Array
+        (
+            [id_pedido] => 24
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [22] => Array
+        (
+            [id_pedido] => 25
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [23] => Array
+        (
+            [id_pedido] => 26
+            [id_cliente] => 18
+            [fecha] => 2024-11-08
+            [metodo] => efectivo
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [24] => Array
+        (
+            [id_pedido] => 27
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 3000
+            [cantidad_total] => 3
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [25] => Array
+        (
+            [id_pedido] => 28
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [26] => Array
+        (
+            [id_pedido] => 29
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [27] => Array
+        (
+            [id_pedido] => 30
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [28] => Array
+        (
+            [id_pedido] => 31
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [29] => Array
+        (
+            [id_pedido] => 32
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [30] => Array
+        (
+            [id_pedido] => 33
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [31] => Array
+        (
+            [id_pedido] => 34
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [32] => Array
+        (
+            [id_pedido] => 35
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 22
+            [num_dir] => 111111
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [33] => Array
+        (
+            [id_pedido] => 36
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [34] => Array
+        (
+            [id_pedido] => 37
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 12321313
+            [codigo_postal] => 70000
+        )
+
+)
+
+[11-Nov-2024 18:57:19 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-01-10
+            [metodo] => Tarjeta de crédito
+            [precio_total] => 61.48
+            [cantidad_total] => 3
+            [num_dir] => 10
+            [calle_dir] => Calle de la Estrella
+            [codigo_postal] => 28001
+        )
+
+    [1] => Array
+        (
+            [id_pedido] => 2
+            [id_cliente] => 2
+            [fecha] => 2024-02-15
+            [metodo] => PayPal
+            [precio_total] => 30
+            [cantidad_total] => 3
+            [num_dir] => 5
+            [calle_dir] => Avenida de la Libertad
+            [codigo_postal] => 08002
+        )
+
+    [2] => Array
+        (
+            [id_pedido] => 3
+            [id_cliente] => 3
+            [fecha] => 2024-03-20
+            [metodo] => Transferencia bancaria
+            [precio_total] => 45
+            [cantidad_total] => 1
+            [num_dir] => 20
+            [calle_dir] => Calle del Sol
+            [codigo_postal] => 46003
+        )
+
+    [3] => Array
+        (
+            [id_pedido] => 4
+            [id_cliente] => 4
+            [fecha] => 2024-04-25
+            [metodo] => Efectivo
+            [precio_total] => 29.95
+            [cantidad_total] => 5
+            [num_dir] => 15
+            [calle_dir] => Calle de la Paz
+            [codigo_postal] => 41004
+        )
+
+    [4] => Array
+        (
+            [id_pedido] => 6
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [5] => Array
+        (
+            [id_pedido] => 8
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [6] => Array
+        (
+            [id_pedido] => 9
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [7] => Array
+        (
+            [id_pedido] => 10
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [8] => Array
+        (
+            [id_pedido] => 11
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [9] => Array
+        (
+            [id_pedido] => 12
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [10] => Array
+        (
+            [id_pedido] => 13
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [11] => Array
+        (
+            [id_pedido] => 14
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [12] => Array
+        (
+            [id_pedido] => 15
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [13] => Array
+        (
+            [id_pedido] => 16
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [14] => Array
+        (
+            [id_pedido] => 17
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [15] => Array
+        (
+            [id_pedido] => 18
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [16] => Array
+        (
+            [id_pedido] => 19
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [17] => Array
+        (
+            [id_pedido] => 20
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [18] => Array
+        (
+            [id_pedido] => 21
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [19] => Array
+        (
+            [id_pedido] => 22
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [20] => Array
+        (
+            [id_pedido] => 23
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [21] => Array
+        (
+            [id_pedido] => 24
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [22] => Array
+        (
+            [id_pedido] => 25
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [23] => Array
+        (
+            [id_pedido] => 26
+            [id_cliente] => 18
+            [fecha] => 2024-11-08
+            [metodo] => efectivo
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [24] => Array
+        (
+            [id_pedido] => 27
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 3000
+            [cantidad_total] => 3
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [25] => Array
+        (
+            [id_pedido] => 28
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [26] => Array
+        (
+            [id_pedido] => 29
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [27] => Array
+        (
+            [id_pedido] => 30
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [28] => Array
+        (
+            [id_pedido] => 31
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [29] => Array
+        (
+            [id_pedido] => 32
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [30] => Array
+        (
+            [id_pedido] => 33
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [31] => Array
+        (
+            [id_pedido] => 34
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [32] => Array
+        (
+            [id_pedido] => 35
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 22
+            [num_dir] => 111111
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [33] => Array
+        (
+            [id_pedido] => 36
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [34] => Array
+        (
+            [id_pedido] => 37
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 12321313
+            [codigo_postal] => 70000
+        )
+
+)
+
+[11-Nov-2024 18:57:38 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 29
+            [cantidad] => 1
+            [precio] => 1000.00
+        )
+
+    [1] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 1
+            [precio] => 1000.00
+        )
+
+)
+
+[11-Nov-2024 18:57:38 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 18:57:40 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-01-10
+            [metodo] => Tarjeta de crédito
+            [precio_total] => 61.48
+            [cantidad_total] => 3
+            [num_dir] => 10
+            [calle_dir] => Calle de la Estrella
+            [codigo_postal] => 28001
+        )
+
+    [1] => Array
+        (
+            [id_pedido] => 2
+            [id_cliente] => 2
+            [fecha] => 2024-02-15
+            [metodo] => PayPal
+            [precio_total] => 30
+            [cantidad_total] => 3
+            [num_dir] => 5
+            [calle_dir] => Avenida de la Libertad
+            [codigo_postal] => 08002
+        )
+
+    [2] => Array
+        (
+            [id_pedido] => 3
+            [id_cliente] => 3
+            [fecha] => 2024-03-20
+            [metodo] => Transferencia bancaria
+            [precio_total] => 45
+            [cantidad_total] => 1
+            [num_dir] => 20
+            [calle_dir] => Calle del Sol
+            [codigo_postal] => 46003
+        )
+
+    [3] => Array
+        (
+            [id_pedido] => 4
+            [id_cliente] => 4
+            [fecha] => 2024-04-25
+            [metodo] => Efectivo
+            [precio_total] => 29.95
+            [cantidad_total] => 5
+            [num_dir] => 15
+            [calle_dir] => Calle de la Paz
+            [codigo_postal] => 41004
+        )
+
+    [4] => Array
+        (
+            [id_pedido] => 6
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [5] => Array
+        (
+            [id_pedido] => 8
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [6] => Array
+        (
+            [id_pedido] => 9
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [7] => Array
+        (
+            [id_pedido] => 10
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [8] => Array
+        (
+            [id_pedido] => 11
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [9] => Array
+        (
+            [id_pedido] => 12
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [10] => Array
+        (
+            [id_pedido] => 13
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [11] => Array
+        (
+            [id_pedido] => 14
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [12] => Array
+        (
+            [id_pedido] => 15
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [13] => Array
+        (
+            [id_pedido] => 16
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [14] => Array
+        (
+            [id_pedido] => 17
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [15] => Array
+        (
+            [id_pedido] => 18
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 21321
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [16] => Array
+        (
+            [id_pedido] => 19
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [17] => Array
+        (
+            [id_pedido] => 20
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [18] => Array
+        (
+            [id_pedido] => 21
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [19] => Array
+        (
+            [id_pedido] => 22
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [20] => Array
+        (
+            [id_pedido] => 23
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [21] => Array
+        (
+            [id_pedido] => 24
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 324
+            [calle_dir] => qwd
+            [codigo_postal] => 32424
+        )
+
+    [22] => Array
+        (
+            [id_pedido] => 25
+            [id_cliente] => 17
+            [fecha] => 2024-11-05
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 9
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [23] => Array
+        (
+            [id_pedido] => 26
+            [id_cliente] => 18
+            [fecha] => 2024-11-08
+            [metodo] => efectivo
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [24] => Array
+        (
+            [id_pedido] => 27
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 3000
+            [cantidad_total] => 3
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [25] => Array
+        (
+            [id_pedido] => 28
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [26] => Array
+        (
+            [id_pedido] => 29
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [27] => Array
+        (
+            [id_pedido] => 30
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [28] => Array
+        (
+            [id_pedido] => 31
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [29] => Array
+        (
+            [id_pedido] => 32
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [30] => Array
+        (
+            [id_pedido] => 33
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 5000
+            [cantidad_total] => 5
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [31] => Array
+        (
+            [id_pedido] => 34
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 4000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [32] => Array
+        (
+            [id_pedido] => 35
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 0
+            [cantidad_total] => 22
+            [num_dir] => 111111
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [33] => Array
+        (
+            [id_pedido] => 36
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 36aasdasd
+            [codigo_postal] => 70000
+        )
+
+    [34] => Array
+        (
+            [id_pedido] => 37
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => efectivo
+            [precio_total] => 10000
+            [cantidad_total] => 4
+            [num_dir] => 213
+            [calle_dir] => 12321313
+            [codigo_postal] => 70000
+        )
+
+    [35] => Array
+        (
+            [id_pedido] => 38
+            [id_cliente] => 17
+            [fecha] => 2024-11-11
+            [metodo] => tarjeta
+            [precio_total] => 2000
+            [cantidad_total] => 2
+            [num_dir] => 213
+            [calle_dir] => 105678
+            [codigo_postal] => 70000
+        )
+
+)
+

@@ -98,7 +98,7 @@ function mostrarProducto(repuesto) {
                 <label id="cantidad" style="color:white">1</label>
                 <button onclick="aumentarCantidad()">+</button>
                 <button id="agregarCarrito">Agregar al Carrito</button>
-                <button id="agregarCarrito">Agregar a Favoritos</button>
+                <button id="agregarFav">Agregar a Favoritos</button>
             </div>
 
         </div>
@@ -115,6 +115,10 @@ function mostrarProducto(repuesto) {
 
     document.getElementById('agregarCarrito').addEventListener('click', () => {
         agregarAlCarrito(repuesto);
+    });
+
+    document.getElementById('agregarFav').addEventListener('click', () => {
+        agregarAFavoritos(repuesto);
     });
 }
 
@@ -152,17 +156,23 @@ function agregarAlCarrito(repuesto) {
     }, 3000);
 
     
+    function agregarAFavoritos(repuesto) {
+        // Obtener el carrito actual del sessionStorage o crear uno nuevo
+        let favoritos = JSON.parse(sessionStorage.getItem('favoritos')) || [];
+    
+        // Guardar el carrito actualizado en sessionStorage
+        sessionStorage.setItem('favoritos', JSON.stringify(favoritos));
+    
+        // // Mostrar una alerta o realizar otra acción
+        // alert("Producto agregado al carrito.");
+    
+        let notificacion = document.getElementById('notificacion');
+        notificacion.classList.remove('ocultar');
+    
+        // Ocultar la notificación después de 3 segundos
+        setTimeout(() => {
+            notificacion.classList.add('ocultar');
+        }, 3000);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+}

@@ -34,42 +34,42 @@ class CarritoDao
         }
         $id_nuevo_pedido = $connection->insert_id;
     
-        // Agregar detalles del pedido
         foreach ($productos as $producto) {
-            if (!isset($producto['id_repuesto'], $producto['cantidad'])) {
+            if (!isset($producto['id_repuesto'], $producto['cantidad'], $producto['precio'])) {
                 error_log("Elemento de producto inválido: " . json_encode($producto));
                 continue;
             }
-    
+        
             $id_repuesto = $producto['id_repuesto'];
             $cantidad = $producto['cantidad'];
-            $precio = $producto['precio'];
-    
+            $precio_unitario = $producto['precio'];
+            $precio_total = $precio_unitario * $cantidad; // Calcular el precio total para este producto
+        
             // Validar que el id_repuesto exista
             $sql_validar_producto = "SELECT COUNT(*) as count FROM repuesto WHERE id_repuesto = '$id_repuesto'";
             $resultado_producto = $connection->query($sql_validar_producto);
             $producto_existente = $resultado_producto->fetch_assoc();
-    
+        
             if ($producto_existente['count'] == 0) {
                 error_log("Producto inválido: " . json_encode($producto));
                 continue;
             }
-    
-            // Insertar detalle
-            $sql_detalle = "INSERT INTO detalle (id_pedido, cantidad, precio) VALUES ('$id_nuevo_pedido', '$cantidad','$precio'  )";
+        
+            // Insertar detalle con el precio total
+            $sql_detalle = "INSERT INTO detalle (id_pedido, cantidad, precio, estado) VALUES ('$id_nuevo_pedido', '$cantidad', '$precio_total', 'pendiente')";
             if (!$connection->query($sql_detalle)) {
                 error_log("Error al agregar detalle para el pedido: " . $connection->error);
                 return false;
             }
             $id_nuevo_detalle = $connection->insert_id;
-    
+        
             // Insertar relación en detalle_repuesto
             $sql_detalle_repuesto = "INSERT INTO detalle_repuesto (ID_Detalle, ID_Repuesto) VALUES ('$id_nuevo_detalle', '$id_repuesto')";
             if (!$connection->query($sql_detalle_repuesto)) {
                 error_log("Error al agregar relación detalle_repuesto: " . $connection->error);
                 return false;
             }
-    
+        
             // Modificar stock
             $sql_modificar_stock = "UPDATE repuesto SET stock = stock - '$cantidad' WHERE id_repuesto = '$id_repuesto'";
             if (!$connection->query($sql_modificar_stock)) {
@@ -77,6 +77,7 @@ class CarritoDao
                 return false;
             }
         }
+        
     
         // Insertar teléfono del cliente
         $sql_telefono = "INSERT INTO cliente_telefono (id_cliente, telefono) VALUES ('$id_cliente', '$telefono')";

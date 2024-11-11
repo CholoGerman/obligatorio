@@ -21,13 +21,15 @@ window.onload =()=> {
 
 
 }
-async  obtenerPedidos(){
-    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
+async obtenerPedidos() {
+    let url = "http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
     let pedidos = await respuesta.json();
+    console.log("Pedidos recibidos:", pedidos);  // Verifica los datos recibidos
     return pedidos;
-
 }
+
+
 
 
 async obtenerPedidosCliente(id_cliente) {

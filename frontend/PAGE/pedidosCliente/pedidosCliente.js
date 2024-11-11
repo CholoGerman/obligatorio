@@ -2,7 +2,7 @@ import PedidoDao from "../../DAO/pedidoDAO.js";
 
 window.onload = async () => {
     // Obtener el ID del cliente desde sessionStorage
-    const clienteId = sessionStorage.getItem('clienteId');
+    let clienteId = sessionStorage.getItem('clienteId');
 
     console.log("Cliente ID obtenido de sessionStorage:", clienteId);
 
@@ -30,7 +30,9 @@ function mostrarPedidos(pedidos) {
     tbodyElement.innerHTML = "";  // Limpiar el contenedor antes de agregar nuevos pedidos
 
     pedidos.forEach((pedido) => {
-        let precio = parseFloat(pedido.precio);
+
+        let precio = parseFloat(pedido.precio);  // Convertir a número
+        console.log("Precio:", precio, "Tipo:", typeof precio);  // Verifica el valor y el tipo
         tbodyElement.innerHTML += `
             <div class="producto" data-id="${pedido.id_pedido}">
                 <p>ID Pedido: ${pedido.id_pedido}</p>

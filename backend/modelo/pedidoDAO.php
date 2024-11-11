@@ -38,7 +38,7 @@ function obtenerPedidosCliente($id_cliente){
     $connection = connection();
     $sql = "
         SELECT p.id_pedido, p.fecha, p.metodo, 
-               d.cantidad, d.precio, 
+               d.cantidad, d.precio,  d.estado,
                e.num_dir, e.calle_dir, e.codigo_postal
         FROM Pedido p
         JOIN detalle d ON p.id_pedido = d.id_pedido

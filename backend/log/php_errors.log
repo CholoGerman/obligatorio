@@ -10,3 +10,19 @@ Stack trace:
 #1 C:\xampp\htdocs\obligatorio\backend\controlador\PedidosController.php(13): obtenerPedidosCliente()
 #2 {main}
   thrown in C:\xampp\htdocs\obligatorio\backend\modelo\pedidoDAO.php on line 49
+[11-Nov-2024 17:07:32 Europe/Berlin] Error de inicio de sesión para prueba1122@gmail.com: Correo o contraseña incorrectos
+[11-Nov-2024 17:07:36 Europe/Berlin] Error de inicio de sesión para prueba1122@gmail.com: Correo o contraseña incorrectos
+[11-Nov-2024 17:07:38 Europe/Berlin] Error de inicio de sesión para prueba1122@gmail.com: Correo o contraseña incorrectos
+[11-Nov-2024 17:07:47 Europe/Berlin] Error de inicio de sesión para Hola12345@gmail.com: Correo o contraseña incorrectos
+[11-Nov-2024 17:26:14 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 29
+            [cantidad] => 3
+            [precio] => 1000.00
+        )
+
+)
+
+[11-Nov-2024 17:26:14 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'

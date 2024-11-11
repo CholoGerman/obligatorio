@@ -42,7 +42,7 @@ function mostrarPedidos(pedidos) {
                 <p>Precio: ${isNaN(precio) ? 'N/A' : precio.toFixed(2)} €</p>
                 <p>Número de Dirección: ${pedido.num_dir}</p>
                 <p>Calle: ${pedido.calle_dir}</p>
-                <p>Código Postal: ${pedido.estado}</p>
+                <p>Estado: ${pedido.estado}</p>
             </div>  
         `;
     });

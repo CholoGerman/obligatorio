@@ -1,11 +1,16 @@
+* {
+    font-family: 'Roboto', sans-serif;  
+}
+
 body {
     margin:0;
+    background-color: #1C1C1C;
 }
 
 
 nav {
     display:Flex;
-    background: linear-gradient(100deg, #B80C09, #700606, #000000);
+    background: linear-gradient(100deg, #A00A08, #600404, #000000);
     justify-content: space-evenly;
     align-items: center;
     height: 100px;
@@ -17,10 +22,19 @@ h1 {
     font-size: 30px;
 }
 
-
-
-
-.pedidos{
+.contenedor_pedidos {
     display: flex;
-    background-color: red;
+    flex-direction: column;
+    gap:20px;
+    padding:20px;
+}
+
+
+.producto{
+    display:flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    align-items: center;
+    height: 150px;
+    border-radius: 20px;
 }

@@ -26,3 +26,63 @@ Stack trace:
 )
 
 [11-Nov-2024 17:26:14 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 17:42:47 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 1
+            [precio] => 31231.00
+        )
+
+)
+
+[11-Nov-2024 17:42:47 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 17:42:47 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 1
+            [precio] => 31231.00
+        )
+
+)
+
+[11-Nov-2024 17:42:47 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 17:43:40 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 26
+            [cantidad] => 3
+            [precio] => 31231.00
+        )
+
+)
+
+[11-Nov-2024 17:43:40 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 18:00:44 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 25
+            [cantidad] => 1
+            [precio] => 23.00
+        )
+
+)
+
+[11-Nov-2024 18:00:44 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'
+[11-Nov-2024 18:03:15 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 25
+            [cantidad] => 2
+            [precio] => 23.00
+        )
+
+)
+
+[11-Nov-2024 18:03:15 Europe/Berlin] Error al insertar teléfono del cliente: Duplicate entry '0' for key 'PRIMARY'

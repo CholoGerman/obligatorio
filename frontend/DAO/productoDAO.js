@@ -1,25 +1,28 @@
 window.onload = async () => { 
     let agregar = new ProductoDao();
-    agregar.agregarProducto(); 
+    agregar.agregarProducto();  //llama al metodo para agregar un producto.
 }
 
+//Ejecuta la funcion cuando se cargue la pagina
 
+//Define la clase producto dao para gestionar las operaciones
 class ProductoDao {
 
-    // Obtener un producto por su ID
+    // Metodo para obtener producto usando su id por parametro
     async obtenerProducto(id_repuesto) {
         let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
-        let formData = new FormData();
-        formData.append("id_repuesto", id_repuesto);
+        //Guarda la url en un variable.
+        let formData = new FormData(); //Crea un formData para enviar datos
+        formData.append("id_repuesto", id_repuesto); //Añadir el id del producto al formData
 
-        let config = {
-            method: "POST",
-            body: formData
+        let config = { //Configura la solicitud HTTP
+            method: "POST", //Se aplica el motodo POST para enviar datos
+            body: formData //Cuerpo de la solicitud con los datos
         }
 
-        let respuesta = await fetch(url, config);
-        let producto = await respuesta.json();
-        return producto;
+        let respuesta = await fetch(url, config);   //Envia la solicitud y espera la respuesta
+        let producto = await respuesta.json();  //Convierte la respuesta a json
+        return producto; //Retorna el producto obtenido
     }
 
     // Obtener el catálogo de productos
@@ -32,12 +35,12 @@ class ProductoDao {
         try {
             let respuesta = await fetch(url, config);
             let productos = await respuesta.json();
-            console.log("Productos obtenidos:", productos);  // Aquí podemos ver qué datos llegan del servidor
+            console.log("Productos obtenidos:", productos); 
             
-        return productos.filter(producto => producto.stock > 0);
-        } catch (error) {
+        return productos.filter(producto => producto.stock > 0); //retorna solo productos con stock mayor a 0;
+        } catch (error) { //Muestra un error
             console.error("Error al obtener productos:", error);
-            return [];
+            return []; //Retorna un arreglo vacio
         }
     
     }

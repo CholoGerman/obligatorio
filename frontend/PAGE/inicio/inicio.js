@@ -1,18 +1,25 @@
 import SesionDao from '../../../frontend/DAO/sesionDAO.js';
 import ProductoDao from '../../../frontend/DAO/productoDAO.js'; 
+// Se importan las clases que se usen para autenticar la sesion y obtener el catalogo
+
 
 window.onload = async () => {
-    let catalogo = await new ProductoDao().obtenerCatalogo();
-    mostrarCatalogo(catalogo);
+    let catalogo = await new ProductoDao().obtenerCatalogo(); //Usa la clase ProductoDAO para obtener los catalogos
+    mostrarCatalogo(catalogo); //lo muestra en la pagina
 
 
     // Agregar el evento al botón de cerrar sesión
     document.getElementById('logoutButton').addEventListener('click', async () => {
-        let sesionDao = new SesionDao();
+        let sesionDao = new SesionDao(); //al hacer click llame al sesionDAO para cerrar session.
         await sesionDao.logOut(); // Llama a la función de cierre de sesión
   
     });
 }
+
+// Se ejecuta cuando se cargue la pagina por completo
+
+
+
 
 // menu(cerrar sesion,favoritos..):
 let menuToggle = document.getElementById('menuToggle');
@@ -30,14 +37,20 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+// Función para mostrar el catálogo en la página.
+//Recibe por paramentro el catalogo de productos
 function mostrarCatalogo(catalogo) {
     console.log("Catálogo recibido:", catalogo);
 
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
     }
+    //Una condicion para que muestre los producto con un stock mayor a "0"
 
+    //Seleciona el contenedor donde se va a insertar los datos del producto
     let tbodyElement = document.querySelector("#contenedor_producto");
+    //Para evitar duplicados
     tbodyElement.innerHTML = "";  
 
     // Filtrar los productos con stock mayor a 0
@@ -49,10 +62,15 @@ function mostrarCatalogo(catalogo) {
 
     console.log("Cantidad de productos disponibles:", productosDisponibles.length);
 
+
+    //una condicion de que muestra un mensaje que faltan productos disponibles
     if (productosDisponibles.length === 0) {
         console.log("No hay productos disponibles.");
         tbodyElement.innerHTML = '<div>No hay productos disponibles.</div>';
+
     } else {
+
+        //Con forEach recorre cada producto y genera un html para mostrarlo en pantalla
         productosDisponibles.forEach((repuesto) => {
             tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2" data-nombre="${repuesto.nombre.toLowerCase()}">                                                      

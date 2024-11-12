@@ -2,20 +2,31 @@
 require_once "../conexion/conexion.php";
 require_once '../modelo/Repuesta.php';
 require_once '../conexion/origin.php';
+//Incluye los archivos,ya sea conexion para conectar con la base de datos(crea funcion "connection")
+//Incluye la clase respuesta que maneja las respuestas de la apliacion,indicando si la operacion fue exitosa.
+//Incluye origin que seria la ruta de la imagen.
 
+//Crea la clase DAO Producto donde se define todo los metodos para interactuar con la base de datos
 class ProductoDao
 {
-    public function obtenerProducto($id_repuesto)
+ 
+    //Define el motodo,en este caso se recibe como parametro id_respuesto
+   public function obtenerProducto($id_repuesto)
     {
-        $connection = connection();
+        $connection = connection(); //Obtiene la conexion con la base de datos.
         // Consulta SQL directa para obtener el producto
         $sql = "SELECT r.*, i.extension FROM repuesto r 
                 INNER JOIN imagen i ON r.id_imagen = i.id_imagen 
-                WHERE r.id_repuesto = $id_repuesto";  // Inyección de datos directamente en la consulta
+                WHERE r.id_repuesto = $id_repuesto"; 
 
-        $respuesta = $connection->query($sql);
-        $productos = $respuesta->fetch_all(MYSQLI_ASSOC);
+        //Guarda en una variable:Contruye la consulta sql para obtener los datos y la extencion de la imagen
+        //(En la tabla imagen),Usa inner Join para relacionar ambas tablas 
+
+        $respuesta = $connection->query($sql); //Ejecuta la consulta SQL y almacena el resultado en una variable
+        $productos = $respuesta->fetch_all(MYSQLI_ASSOC); 
+        //Obtiene los resultados de la consulta como arrray asosiativa y lo guarda en una variable  
         return $productos;
+        //Devuelve el array productos al controlador que llamo al metodo.
     }
 
     public function obtenerCatalogo()
@@ -30,8 +41,12 @@ class ProductoDao
         $productos = [];
         $origen = getOrigin();
 
-        while ($result = $respuesta->fetch_assoc()) {
-            $imagen = $result['imagen'];
+        while ($result = $respuesta->fetch_assoc()) { 
+            //while que recorre todos los resultados obtenidos
+            $imagen = $result['imagen']; //Guarda la ruta de la imagen
+
+            //Contruye una array asosiativa con los datos del producto e imagen 
+            //y los agrega a la variable producto
             $productos[] = [
                 'id_repuesto' => $result['id_repuesto'],
                 'nombre' => $result['nombre'],
@@ -60,6 +75,9 @@ class ProductoDao
         $nombreImagen = $imagen["name"];
         $rutaTemporal = $imagen["tmp_name"];
         $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
+
+        //obtiene el nombre de la imagen,la ruta temporal y donde se encuentra y 
+        //la extension de la imagen
 
         // Insertamos el producto en la tabla Repuesto
         $sqlRepuesto = "INSERT INTO Repuesto(nombre, precio, color, estado, stock, descripcion) 
@@ -159,11 +177,11 @@ class ProductoDao
        SUM(d.cantidad) AS ventas_totales,
        SUM(d.cantidad * d.precio) AS ganancias_totales,
        i.extension AS imagen_extension
-FROM detalle d
-JOIN detalle_repuesto dr ON d.id_detalle = dr.ID_Detalle
-JOIN repuesto r ON dr.ID_Repuesto = r.id_repuesto
-JOIN imagen i ON r.id_imagen = i.id_imagen
-GROUP BY r.id_repuesto;
+    FROM detalle d
+    JOIN detalle_repuesto dr ON d.id_detalle = dr.ID_Detalle
+    JOIN repuesto r ON dr.ID_Repuesto = r.id_repuesto
+    JOIN imagen i ON r.id_imagen = i.id_imagen
+    GROUP BY r.id_repuesto;
 
         ";
 

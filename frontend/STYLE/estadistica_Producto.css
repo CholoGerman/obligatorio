@@ -24,9 +24,9 @@ nav {
 }
 
 main{
-    padding:20px;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    padding:20px;
 }
 
 .filtrado > button{
@@ -41,12 +41,15 @@ main{
     cursor: pointer;
 }
 
-.contenedor_producto{
+
+
+
+.contenedor_estadisticas{
     display:flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    gap: 35px;
+    padding:0px;
+    flex-wrap: wrap;
     justify-content: center;
-    gap:35px;
-    
 }
 
 .producto {

@@ -74,7 +74,9 @@ input {
 
 .productos_oferta > h1{
     letter-spacing: 5px;
-    font-size: 40px;
+    font-size: 38px;
+    text-decoration: underline;
+    cursor: default;
 }
 
 

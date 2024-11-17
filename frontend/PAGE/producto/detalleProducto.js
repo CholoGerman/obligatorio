@@ -92,6 +92,7 @@ function mostrarProducto(repuesto) {
             </div>
             <p class="product-details">Estado: ${repuesto.estado}</p>
             <p class="product-details">Color: ${repuesto.color}</p>
+             <p class="product-details">Stock: ${repuesto.stock}</p>
             
             <div class="product-buttons">
                 <button onclick="disminuirCantidad()">-</button>

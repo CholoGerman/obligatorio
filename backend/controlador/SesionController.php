@@ -5,6 +5,7 @@ require_once "../modelo/SesionDAO.php"; // Incluye el modelo de acceso a datos
 
 $funcion = $_GET["funcion"]; // Obtiene el valor de "funcion" de la URL
 
+// Determinar qué función ejecutar
 switch ($funcion) {
     case "register":
         register();
@@ -29,6 +30,7 @@ function register() {
     $contraseña = $_POST["contraseña"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
+
 
     $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
     jsonResponse($respuesta->status, $respuesta->mensaje);
@@ -66,7 +68,8 @@ function login() {
     if (empty($correo) || empty($contraseña)) {
         echo json_encode(["status" => false, "mensaje" => "Correo y contraseña son requeridos."]);
         return;
-    }
+    }   
+
 
     $respuesta = (new SesionDao())->login($correo, $contraseña);
 
@@ -91,6 +94,8 @@ function logOut() {
     jsonResponse($respuesta->status, $respuesta->mensaje);
 }
 
+
+//Funcion para enviar respuestas en formato jSON
 function jsonResponse($status, $mensaje) {
     echo json_encode(["status" => $status, "mensaje" => $mensaje]);
 }

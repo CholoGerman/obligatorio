@@ -1,11 +1,17 @@
 <?php
 
 require_once "../modelo/ProductoDAO.php";
+//Contiene funciones de accceso a la base de datos para interactuar 
+//Con la informacion del producto
 
-// Obtener la función a ejecutar desde la URL
+//Se obtiene el valor de la funcion desde la URL
+//usando GET.
 $funcion = $_GET["funcion"];
 
-switch ($funcion) { // Asignamos una función a cada posible valor de "funcion"
+switch ($funcion) {
+     //El switch evualua el valor de la funcion
+    //para ejecutar la operacin solicitada
+
     case "obtener":
         obtenerProducto();
         break;
@@ -30,8 +36,15 @@ switch ($funcion) { // Asignamos una función a cada posible valor de "funcion"
 function obtenerProducto()
 {
     $id_repuesto = $_POST["id_repuesto"];
+    //obtiene el id_respuesto del producto
+    //por el usuario mediante POST
+
     $respuesta = (new ProductoDao())->obtenerProducto($id_repuesto);
+    //Crea una instancia de ProductoDAO y llama al metodo 
+    //obtenerProducto pasando el id_respuesto
     echo json_encode($respuesta);
+    //Convierta la respuesta en formato JSON y la
+    //envia al Cliente
 }
 
 // Función para obtener todos los productos
@@ -44,6 +57,7 @@ function obtenerCatalogo()
 // Función para agregar un nuevo producto
 function agregarProducto()
 {
+    //Obtiene los datos usando POST
     $nombre = $_POST["nombre"];
     $precio = $_POST["precio"];
     $color = $_POST["color"];
@@ -52,6 +66,8 @@ function agregarProducto()
     $descripcion = $_POST["descripcion"];
     $imagen = $_FILES["imagen"];
 
+    //Pasa los datos obtenidos llamando al metodo agregarProducto
+    //del DAO producto
     $respuesta = (new ProductoDao())->agregarProducto($nombre, $precio, $color, $estado, $stock, $descripcion, $imagen);
 
     echo json_encode($respuesta);

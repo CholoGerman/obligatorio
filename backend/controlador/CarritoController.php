@@ -38,9 +38,16 @@ function realizarCompra() {
     $sql = "SELECT id_cliente FROM cliente WHERE id_persona = '$id_persona'";
     $connection = connection();
     $resultado = $connection->query($sql);
-    $cliente = $resultado->fetch_assoc();
+
+    // Verifica si se obtuvo un cliente válido
+    if ($resultado->num_rows == 0) {
+        error_log("Cliente no encontrado para id_persona: $id_persona");
+        echo json_encode(["success" => false, "message" => "Cliente no encontrado."]);
+        return;  // Termina la ejecución si no se encuentra un cliente
+    }
 
     // Almacena el id_cliente obtenido
+    $cliente = $resultado->fetch_assoc();
     $id_cliente = $cliente['id_cliente'];
 
     // Obtiene los datos de la compra del formulario
@@ -54,7 +61,12 @@ function realizarCompra() {
     error_log(print_r($productos, true));
     $codigo_postal = $_POST["codigo_postal"];
 
-
+    // Verifica que los productos sean válidos
+    if (!is_array($productos) || empty($productos)) {
+        error_log("Productos no son válidos o están vacíos.");
+        echo json_encode(["success" => false, "message" => "Productos no válidos o vacíos."]);
+        return;  // Termina la ejecución si no hay productos válidos
+    }
 
     // Intenta realizar la compra
     try {

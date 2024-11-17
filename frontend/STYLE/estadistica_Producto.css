@@ -70,3 +70,16 @@ main{
     display:flex;
     gap: 15px;
 }
+
+p {
+    font-weight: bold;
+}
+
+
+.producto img {
+    max-width: 100%;  
+    object-fit:cover; 
+    border-radius: 5px; 
+}
+
+

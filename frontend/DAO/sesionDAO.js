@@ -1,13 +1,19 @@
+
+//SE crea la clase sesionDAO
 class SesionDao {
 
     // Funcion para realizar una solicitud fetch
     async fetchRequest(url, method, body) {
+
         try {
             let response = await fetch(url, {
                 method: method,
                 body: body,
             });
     
+            //Si la la solicitud esta ok convierte en JSON
+            //Si esta mal se maneja con el bloque "catch"
+            //Que devulve un objeto jSON que incluye mensaje
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -19,18 +25,21 @@ class SesionDao {
         }
     }
     
-    
-    
-  
+
     // Funcion para registrar un nuevo administrador
     async registerAdmin(correo, password, nombre, apellido) {
+
+        //Usa la url del controlador para hacer peticiones de datos
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=registerAdmin"; 
+
+        // Crea un nuevo objeto FormData para enviar los datos del formulario al controlador
         let formData = new FormData(); // Crear un nuevo objeto FormData
         formData.append("correo", correo); // Agregar correo
         formData.append("contraseña", password); // Agregar contraseña
         formData.append("nombre", nombre); // Agregar nombre
         formData.append("apellido", apellido); // Agregar apellido
-    
+        
+
         // Realiza la solicitud para registrar al administrador
         let respuestaJson = await this.fetchRequest(url, "POST", formData);
        
@@ -64,15 +73,21 @@ class SesionDao {
     }
   
     async login(correo, password) {
+
+        // Usa la url del controlador para hacer peticiones de datos
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
+        
+        // Crea un nuevo objeto FormData para enviar los datos del formulario al controlador
         let formData = new FormData();
         formData.append("correo", correo);
         formData.append("contraseña", password);
         
+        // Realiza la solicitud para iniciar sesión
         try {
             let respuestaJson = await this.fetchRequest(url, "POST", formData);
             console.log("Respuesta del servidor:", respuestaJson); // Verifica la respuesta
             
+
             if (respuestaJson.status) {
                 sessionStorage.setItem('usuarioId', respuestaJson.datos.id_persona); // Almacena el ID
                 // ... resto del código ...
@@ -87,16 +102,18 @@ class SesionDao {
         }
     }
     
-    
-    
-    
     // Funcion para cerrar sesión
     async logOut() {
-        // Lógica para cerrar sesión en el servidor (si aplica)
+        
+        // Usa la url del controlador para hacer peticiones de datos
         let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut"; 
+        
+        // Realiza la solicitud para cerrar sesión
         let respuesta = await fetch(url); 
+        // Parsea la respuesta JSON
         let respuestaJson;
     
+        // Maneja la respuesta JSON en caso de éxito
         try {
             respuestaJson = await respuesta.json(); 
             
@@ -115,7 +132,7 @@ class SesionDao {
     }
     
   }
-
+  // Exportar la clase para usar en otros archivos
     export default SesionDao;
 
   

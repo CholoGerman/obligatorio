@@ -754,3 +754,20 @@ Stack trace:
 
 )
 
+[18-Nov-2024 18:15:57 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 1
+            [fecha] => 2024-11-18
+            [metodo] => tarjeta
+            [precio_total] => 2400
+            [cantidad_total] => 6
+            [num_dir] => 1312312
+            [calle_dir] => 12312
+            [codigo_postal] => 3123
+        )
+
+)
+

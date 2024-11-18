@@ -6,6 +6,7 @@ import ProductoDao from '../../../frontend/DAO/productoDAO.js';
 window.onload = async () => {
     let catalogo = await new ProductoDao().obtenerCatalogo(); //Usa la clase ProductoDAO para obtener los catalogos
     mostrarCatalogo(catalogo); //lo muestra en la pagina
+    console.log("id del cliente:" + sessionStorage.getItem('clienteId'));
 
 
     // Agregar el evento al botón de cerrar sesión

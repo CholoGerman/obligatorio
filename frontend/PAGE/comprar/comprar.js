@@ -1,6 +1,6 @@
 window.onload = () => {
     console.log("Script comprar.js cargado");
-    
+    console.log("id del cliente:" + sessionStorage.getItem('clienteId'));
     let datosCompra = JSON.parse(sessionStorage.getItem('datosCompra')) || [];
     console.log(datosCompra);
     if (datosCompra.length === 0) {

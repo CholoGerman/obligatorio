@@ -75,6 +75,7 @@ function realizarCompra() {
     } catch (Exception $e) {
         echo json_encode(["success" => false, "message" => $e->getMessage()]); // Captura errores y devuelve mensaje
     }
+    
 }
 
 

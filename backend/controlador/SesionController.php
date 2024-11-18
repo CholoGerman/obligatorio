@@ -31,10 +31,17 @@ function register() {
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
 
+    // Validación de campos vacíos
+    if (empty($correo) || empty($contraseña) || empty($nombre) || empty($apellido)) {
+        jsonResponse(false, "Todos los campos son obligatorios.");
+        return;
+    }
 
+    // Llamada al método para registrar al cliente
     $respuesta = (new SesionDao())->register($correo, $contraseña, $nombre, $apellido);
     jsonResponse($respuesta->status, $respuesta->mensaje);
 }
+
 
 function isAdminSession() {
     return isset($_SESSION["session"]) && isAdmin($_SESSION["session"]["id_persona"]);

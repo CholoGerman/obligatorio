@@ -14,7 +14,7 @@ class CarritoDao {
         let numero = document.getElementById('numero').value;
         let telefono = document.getElementById('telefono').value;
         let codigoPostal = document.getElementById('codigo_postal').value;
-        let id_cliente = sessionStorage.getItem('usuarioId'); // Debería devolver '8'
+        let id_cliente = sessionStorage.getItem('usuarioId');
     
         if (!id_cliente) {
             alert("No se encontró el ID de cliente. Por favor, inicia sesión.");

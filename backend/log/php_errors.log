@@ -1,0 +1,101 @@
+[18-Nov-2024 01:29:04 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:37:36 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:40:09 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:41:43 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:41:56 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:44:16 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:44:16 Europe/Berlin] El teléfono ya está registrado para el cliente con id_cliente: 1
+[18-Nov-2024 01:44:58 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:44:59 Europe/Berlin] El teléfono ya está registrado para el cliente con id_cliente: 1
+[18-Nov-2024 01:46:30 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+
+[18-Nov-2024 01:47:19 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 1
+            [cantidad] => 5
+            [precio] => 1000.00
+        )
+
+)
+

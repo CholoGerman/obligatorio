@@ -45,16 +45,6 @@ class CarritoDao
             $precio_unitario = $producto['precio'];
        
         
-            // Validar que el id_repuesto exista
-            $sql_validar_producto = "SELECT COUNT(*) as count FROM repuesto WHERE id_repuesto = '$id_repuesto'";
-            $resultado_producto = $connection->query($sql_validar_producto);
-            $producto_existente = $resultado_producto->fetch_assoc();
-        
-            if ($producto_existente['count'] == 0) {
-                error_log("Producto inválido: " . json_encode($producto));
-                continue;
-            }
-        
             // Insertar detalle con el precio total
             $sql_detalle = "INSERT INTO detalle (id_pedido, cantidad, precio, estado) VALUES ('$id_nuevo_pedido', '$cantidad', '$precio_unitario', 'pendiente')";
             if (!$connection->query($sql_detalle)) {
@@ -79,12 +69,24 @@ class CarritoDao
         }
         
     
-        // Insertar teléfono del cliente
-        $sql_telefono = "INSERT INTO cliente_telefono (id_cliente, telefono) VALUES ('$id_cliente', '$telefono')";
-        if (!$connection->query($sql_telefono)) {
-            error_log("Error al insertar teléfono del cliente: " . $connection->error);
-            return false;
-        }
+   // Verificar si el teléfono ya está registrado con el mismo id_cliente
+$sql_check_telefono = "SELECT COUNT(*) as count FROM cliente_telefono WHERE telefono = '$telefono' AND id_cliente = $id_cliente";
+$result_check = $connection->query($sql_check_telefono);
+$telefono_existente = $result_check->fetch_assoc();
+
+if ($telefono_existente['count'] > 0) {
+    // Si ya existe el teléfono para este cliente, no lo insertamos
+    error_log("El teléfono ya está registrado para el cliente con id_cliente: " . $id_cliente);
+    return false;  // O cualquier mensaje que quieras devolver
+} else {
+    // Si el teléfono no existe para este cliente, lo insertamos
+    $sql_telefono = "INSERT INTO cliente_telefono (id_cliente, telefono) VALUES ($id_cliente, '$telefono')";
+    if (!$connection->query($sql_telefono)) {
+        error_log("Error al insertar teléfono del cliente: " . $connection->error);
+        return false;
+    }
+    return true;  // O cualquier valor de éxito que quieras devolver
+}
     
         return $id_nuevo_pedido;
     }

@@ -1,104 +1,194 @@
-*{
-    font-family: 'Roboto', sans-serif;  
+/* Respetando la estructura original con la paleta de colores */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;  /* Asegura que el padding y border no afecten el ancho total de los elementos */
 }
-body{
-    margin:0;
-    display:flex;
+
+body {
+    margin: 0;
+    background-color: #2E2E2E;  /* Gris oscuro de fondo */
+    display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    justify-content:space-evenly;
-    background: linear-gradient(100deg, #B80C09, #700606, #000000);
-    background: linear-gradient(100deg, #00A2E8, #0070B8, #001F3F);
-    background: linear-gradient(100deg, #007BA7, #005B82, #002740); 
-
-
+    flex-direction: column;
+    color: white; /* Asegura que todo el texto sea visible */
 }
 
-.contenedor_Admin {
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);
-    height: 350px;
-    width: 320px;
-    padding:60px;
-    border-radius: 25px;
-    display:flex; 
-    flex-direction: column;
+h1 {
+    letter-spacing: 8px;
+    font-size: 30px;
+    cursor: default;
+    color: white;
+    margin: 0;
+}
+
+nav {
+    background: linear-gradient(100deg, #B80000, #9B0000, #5A0000);  /* Rojo oscuro */
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    margin-bottom: 50px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-h1{
-    text-align: center;
-    margin:0;
-    letter-spacing: 4px;
-    cursor: default;
-    margin-bottom: 25px;
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
 }
 
-.btn_Admin {
+.contenedor_productos {
+    width: 65%; /* Reducido para que el carrito y productos se ajusten bien */
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-    flex-grow: 1;
-
+    gap: 20px;
+    padding: 10px;
 }
 
-
-.img a img {
-    border-radius: 50%;
-}
-
-
-button{
-    display: block;
-    width: 250px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid black;
+.producto {
+    background: linear-gradient(135deg, #888888, #4A4A4A); /* Gris metálico para productos */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 18px;
     letter-spacing: 3px;
-    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333333; /* Gris oscuro en los bordes */
+    height: auto;
+    gap: 10px;
 }
 
-button:hover{
+.producto h4,
+.producto p {
+    margin: 5px 0;
+    color: white; /* Blanco para los textos */
+}
+
+.product-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.product-buttons button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #F1C40F;  /* Amarillo brillante para los botones */
+    border: none;
+}
+
+.product-buttons button:hover {
+    background-color: #D9A700;  /* Amarillo más oscuro al pasar el mouse */
+}
+
+.icon {
+    display: flex;
+    justify-content: flex-end; /* Alinea el icono de eliminar a la derecha */
+    width: 100%;
+}
+
+.icon img {
+    max-width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
     opacity: 0.8;
 }
 
-/* Cambios generales para hacer la página más responsive */
+.contenedor_resumen {
+    background: linear-gradient(135deg, #888888, #4A4A4A); /* Gris metálico */
+    height: auto;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #D9A700; /* Amarillo brillante */
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #B68900;  /* Amarillo más oscuro */
+}
+
+/* Para pantallas pequeñas (max-width 768px) */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-        align-items: center; /* Centra los elementos */
+    main {
+        flex-direction: column; /* Cambia la dirección para pantallas pequeñas */
+        align-items: center;
     }
 
-    .contenedor_Admin {
-        width: 90%; /* Aumenta el ancho en pantallas pequeñas */
-        padding: 40px; /* Reduce el padding */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
+    .contenedor_productos {
+        width: 100%; /* Los productos ocuparán el 100% del ancho */
+        gap: 10px;
+    }
+
+    .producto {
+        width: 100%;  /* Asegura que los productos ocupen todo el ancho disponible */
+        padding: 10px;
+    }
+
+    .contenedor_resumen {
+        width: 90%;  /* Hace que el resumen de la compra ocupe el 90% del ancho */
+        margin-top: 30px;
+    }
+
+    .icon img {
+        max-width: 30px; /* Reducción del tamaño del icono en pantallas pequeñas */
+        max-height: 30px;
     }
 
     button {
-        width: 100%; /* Asegúrate de que los botones ocupen todo el ancho */
-        height: 50px; /* Aumenta la altura de los botones */
-    }
-
-    h1 {
-        font-size: 24px; /* Ajusta el tamaño del título */
+        width: 100%; /* El botón ocupará todo el ancho */
+        padding: 12px;
+        font-size: 18px;
     }
 }
 
+/* Para pantallas más pequeñas (max-width 480px) */
 @media (max-width: 480px) {
-    .contenedor_Admin {
-        padding: 20px; /* Reduce aún más el padding */
+    .producto {
+        padding: 8px;
     }
 
-    h1 {
-        font-size: 20px; /* Reduce el tamaño del título */
+    .contenedor_resumen {
+        padding: 15px;
+    }
+
+    .icon img {
+        max-width: 25px;
+        max-height: 25px;
     }
 
     button {
-        height: 45px; /* Ajusta la altura de los botones */
-        letter-spacing: 2px; /* Reduce el espaciado de las letras */
+        padding: 14px;
     }
+}
+
+/* Para la barra de navegación */
+nav img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
 }

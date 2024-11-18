@@ -1,110 +1,163 @@
-
-body{
+body {
     background-color: #1C1C1C;
-    margin:0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
-    display:flex;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: blue;
     background: linear-gradient(100deg, #007BA7, #005B82, #002740); 
     height: 100px;
+    padding: 0 20px;
     margin-bottom: 50px;
 }
 
-
 h1 {
     letter-spacing: 3px;
+    color: white;
+    font-size: 24px;
 }
 
 main {
-    display:flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    padding: 20px;
 }
-
 
 .contenedor_pedidos {
     width: 100%;
-    margin:0;
+    max-width: 1100px;
     padding: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     border-radius: 25px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    display:flex;
-
-}
-
-.producto{
     background: linear-gradient(135deg, #B7B5B3, #9A9997);
-    height: 190px;
-    display:flex;
-    width: 90%;
-    padding: 10px 30px ;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 25px;
+}
+
+.producto {
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    border-radius: 15px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    gap: 30px;
-
 }
 
-
-p {
-    /* border: 0.5px solid grey; */
+.producto p {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+    margin: 5px 0;
 }
-
 
 input {
-    width: 350px;
-    height: 25px;
+    width: 100%;
+    max-width: 350px;
+    height: 35px;
     border-radius: 10px;
-    border:2px solid black;
+    border: 2px solid black;
+    padding: 0 10px;
     background-color: #1C1C1C;
-    background: linear-gradient(135deg, #B7B5B3, #9A9997);  
+    color: white;
+    background: linear-gradient(135deg, #B7B5B3, #9A9997);
+    margin-bottom: 20px;
 }
-
 
 .datos {
     display: flex;
-    justify-content: space-around;
-    gap:60px
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
 }
 
 .icon {
     display: flex;
-    gap:40px;
+    gap: 20px;
 }
 
-.buscar{
+.buscar {
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
 }
 
-.buscar input {
-    width: 400px;
-    
-}
-
-
-.estado-pedido{
+.estado-pedido {
     border-radius: 20px;
-    padding:4px;
-;
+    padding: 5px;
+    background-color: #2C2C2C;
+    color: white;
 }
 
-.aceptar{
-    border-radius:10px;
+.aceptar {
+    border-radius: 10px;
     width: 120px;
-    padding: 4px;
+    padding: 10px;
     cursor: pointer;
     background-color: #007BA7;
-    color: #000000;
+    color: #ffffff;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.aceptar:hover {
+    background-color: #005B82;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .producto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenedor_pedidos {
+        padding: 15px;
+    }
+
+    .buscar input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .datos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aceptar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .producto p {
+        font-size: 14px;
+    }
+
+    .buscar input {
+        font-size: 14px;
+    }
+
+    .aceptar {
+        padding: 12px;
+        font-size: 14px;
+    }
 }

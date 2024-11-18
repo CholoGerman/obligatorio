@@ -34,12 +34,13 @@ main {
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todos los elementos dentro del contenedor */
+    align-items: center;
 }
 
-
+/* Asegura que el título se vea bien en pantallas más pequeñas */
 h1 {
     letter-spacing: 2px;
+    text-align: center;
 }
 
 label {
@@ -71,25 +72,74 @@ input {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Asegura que el contenido esté centrado */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+    align-items: center;
+    width: 100%;
 }
 
 button {
-    margin-top: 20px; /* Espacio superior */
-    padding: 10px 20px; /* Aumenta el área clickeable del botón */
-    background-color: #007BA7; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BA7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #005B82; /* Color al pasar el mouse */
+    background-color: #005B82;
 }
-
 
 select {
     border-radius: 7px;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor_datos {
+        width: 80%; /* Ajusta el ancho del contenedor en pantallas medianas */
+        padding: 20px;
+    }
+
+    .contenedor {
+        flex-direction: column; /* Pone las filas una encima de otra */
+        gap: 20px;
+    }
+
+    .fila1, .fila2 {
+        width: 100%; /* Las filas ocupan todo el ancho disponible */
+    }
+
+    #descripcion {
+        max-width: 100%; /* Ajusta el textarea a todo el ancho */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    button {
+        width: 100%; /* El botón ocupa todo el ancho */
+        padding: 12px 0; /* Aumenta el área clickeable */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor_datos {
+        width: 90%; /* Ajusta aún más el ancho en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajusta el tamaño del título en dispositivos muy pequeños */
+    }
+
+    input, select, textarea {
+        font-size: 0.9em; /* Reduce el tamaño de los inputs y textarea */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1em;
+    }
 }

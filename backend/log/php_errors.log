@@ -788,3 +788,37 @@ Stack trace:
 
 )
 
+[18-Nov-2024 21:15:14 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 9
+            [fecha] => 2024-11-15
+            [metodo] => efectivo
+            [precio_total] => 8715
+            [cantidad_total] => 2
+            [num_dir] => 2783792
+            [calle_dir] => lalallala
+            [codigo_postal] => 70000
+        )
+
+)
+
+[18-Nov-2024 21:15:24 Europe/Berlin] Pedidos obtenidos: Array
+(
+    [0] => Array
+        (
+            [id_pedido] => 1
+            [id_cliente] => 9
+            [fecha] => 2024-11-15
+            [metodo] => efectivo
+            [precio_total] => 8715
+            [cantidad_total] => 2
+            [num_dir] => 2783792
+            [calle_dir] => lalallala
+            [codigo_postal] => 70000
+        )
+
+)
+

@@ -21,7 +21,7 @@ class CarritoDao {
             return; // Detiene la ejecución si no hay ID de cliente
         }
     
-        console.log("Iniciando la compra...");
+    
     
         let formData = new URLSearchParams();
         formData.append('productos', JSON.stringify(datosCompra)); // Convertir productos a JSON string
@@ -32,11 +32,11 @@ class CarritoDao {
         formData.append('numero', numero);
         formData.append('telefono', telefono);
         formData.append('codigo_postal', codigoPostal);
-        formData.append('id_cliente', id_cliente); // Agrega el id_cliente también
+        formData.append('id_cliente', id_cliente); // Agrega el id_cliente 
     
         let response = await fetch('http://localhost/obligatorio/backend/controlador/CarritoController.php?funcion=comprar', {
             method: 'POST',
-            body: formData // Envía el URLSearchParams
+            body: formData 
         });
     
         if (response.ok) {

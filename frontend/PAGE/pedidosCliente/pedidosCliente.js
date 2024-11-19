@@ -4,7 +4,7 @@ window.onload = async () => {
     // Obtener el ID del cliente desde sessionStorage
     let clienteId = sessionStorage.getItem('clienteId');
 
-    console.log("Cliente ID obtenido de sessionStorage:", clienteId);
+    console.log("Cliente ID obtenido:", clienteId);
 
     if (clienteId) {
         try {
@@ -32,7 +32,6 @@ function mostrarPedidos(pedidos) {
     pedidos.forEach((pedido) => {
 
         let precio = parseFloat(pedido.precio);  // Convertir a número
-        console.log("Precio:", precio, "Tipo:", typeof precio);  // Verifica el valor y el tipo
         tbodyElement.innerHTML += `
             <div class="producto" data-id="${pedido.id_pedido}">
                 <p>ID Pedido: ${pedido.id_pedido}</p>

@@ -25,7 +25,12 @@ class FavoritoDao
 
     function obtenerFavoritos($id_cliente){ //Funcion para mostrar los favoritos
     $connection = connection();
-    $sql = "SELECT * FROM Favorito WHERE id_cliente = $id_cliente;";
+    $sql = " SELECT r.*, i.extension FROM repuesto r 
+                INNER JOIN imagen i ON r.id_imagen = i.id_imagen 
+            FROM favorito f
+            JOIN repuesto r ON p.id_pedido = d.id_pedido
+            JOIN imagen i ON p.id_envio = e.id_envio
+            WHERE f.id_cliente = $id_cliente";
     $respuesta = $connection->query($sql);
     $favorito = $respuesta->fetch_all(MYSQLI_ASSOC);
     return $favorito;

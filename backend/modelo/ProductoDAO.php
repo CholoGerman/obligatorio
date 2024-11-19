@@ -20,7 +20,6 @@ class ProductoDao
                 WHERE r.id_repuesto = $id_repuesto"; 
 
         //Guarda en una variable:Contruye la consulta sql para obtener los datos y la extencion de la imagen
-        //(En la tabla imagen),Usa inner Join para relacionar ambas tablas 
 
         $respuesta = $connection->query($sql); //Ejecuta la consulta SQL y almacena el resultado en una variable
         $productos = $respuesta->fetch_all(MYSQLI_ASSOC); 

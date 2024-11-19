@@ -37,7 +37,7 @@ main {
     align-items: center;
 }
 
-/* Asegura que el título se vea bien en pantallas más pequeñas */
+
 h1 {
     letter-spacing: 2px;
     text-align: center;

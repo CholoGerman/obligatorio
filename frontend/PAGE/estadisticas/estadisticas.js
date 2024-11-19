@@ -12,7 +12,7 @@ function mostrarEstadisticas(estadisticas) {
     contenedorEstadisticas.innerHTML = '';  // Limpiar contenido previo
 
     estadisticas.forEach(producto => {
-        // Asegurarse de que las ganancias_totales son números antes de usar toFixed
+        // Asegurarse de que las ganancias_totales son números
         let gananciasTotales = parseFloat(producto.ganancias_totales) || 0;  // Si no es número, establecer como 0
 
         let imagenUrl = `../../../backend/IMG/${producto.id_repuesto}.${producto.imagen_extension}`;

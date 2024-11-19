@@ -1,6 +1,6 @@
 import SesionDao from '../../../frontend/DAO/sesionDAO.js';
 import ProductoDao from '../../../frontend/DAO/productoDAO.js'; 
-// Se importan las clases que se usen para autenticar la sesion y obtener el catalogo
+
 
 
 window.onload = async () => {
@@ -17,12 +17,11 @@ window.onload = async () => {
     });
 }
 
-// Se ejecuta cuando se cargue la pagina por completo
 
 
 
 
-// menu(cerrar sesion,favoritos..):
+// menu(cerrar sesion,favoritos y pedidos)
 let menuToggle = document.getElementById('menuToggle');
 let dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -40,7 +39,7 @@ document.addEventListener('click', function(event) {
 
 
 // Función para mostrar el catálogo en la página.
-//Recibe por paramentro el catalogo de productos
+
 function mostrarCatalogo(catalogo) {
     console.log("Catálogo recibido:", catalogo);
 
@@ -57,8 +56,7 @@ function mostrarCatalogo(catalogo) {
     // Filtrar los productos con stock mayor a 0
     let productosDisponibles = catalogo.filter(repuesto => {
         let stockValue = parseInt(repuesto.stock, 10); // Convertir a número
-        console.log(`Repuesto: ${repuesto.nombre}, Stock: ${repuesto.stock}, Stock (num): ${stockValue}`); // Depuración adicional
-        return stockValue > 0; // Asegúrate de que esta comparación funcione
+        return stockValue > 0; 
     });
 
     console.log("Cantidad de productos disponibles:", productosDisponibles.length);
@@ -71,12 +69,12 @@ function mostrarCatalogo(catalogo) {
 
     } else {
 
-        //Con forEach recorre cada producto y genera un html para mostrarlo en pantalla
+        //Con forEach recorremos cada producto y generamos un html para mostrarlo en pantalla
         productosDisponibles.forEach((repuesto) => {
             tbodyElement.innerHTML += ` 
             <div class="contenedor_producto2" data-nombre="${repuesto.nombre.toLowerCase()}">                                                      
                 <a href="../producto/detalle_Producto.html?id_repuesto=${repuesto.id_repuesto}">
-                    <img src="${repuesto.imagen}" alt="${repuesto.nombre}"> <!-- Asegúrate de que esto esté correcto -->
+                    <img src="${repuesto.imagen}" alt="${repuesto.nombre}">
                 </a>
                 <div class="detalles">
                     <p>${repuesto.nombre}</p>
@@ -149,8 +147,8 @@ document.getElementById('searchInput').addEventListener('input', function() {
     if (this.value) {
         carousel.style.display = 'none';
     } else {
-        carousel.style.display = 'flex'; // Cambia a 'flex' para asegurarte de que se mantenga el estilo
-        carousel.style.margin = '45px auto'; // Asegúrate de que el margen esté centrado
+        carousel.style.display = 'flex'; 
+        carousel.style.margin = '45px auto';
     }
 });
 

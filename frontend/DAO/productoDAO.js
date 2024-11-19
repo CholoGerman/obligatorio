@@ -1,11 +1,10 @@
 window.onload = async () => { 
     let agregar = new ProductoDao();
-    agregar.agregarProducto();  //llama al metodo para agregar un producto.
+    agregar.agregarProducto(); 
 }
 
-//Ejecuta la funcion cuando se cargue la pagina
 
-//Define la clase producto dao para gestionar las operaciones
+
 class ProductoDao {
 
     // Metodo para obtener producto usando su id por parametro
@@ -131,7 +130,7 @@ class ProductoDao {
                 return;
             }
     
-            // Llamamos al callback para mostrar las estadísticas
+          
             if (callback) {
                 callback(estadisticas);  // Llama a la función que pasó el usuario (mostrarEstadisticas)
             }

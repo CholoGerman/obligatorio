@@ -1,5 +1,5 @@
 
-import ProductoDao from "../../DAO/productoDAO.js"; // Si es necesario, importa el DAO
+import ProductoDao from "../../DAO/productoDAO.js"; 
 
 window.onload = () => {
     let formElement = document.getElementById('agregarProductoForm');

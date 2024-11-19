@@ -1,18 +1,18 @@
 * {
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;  /* Asegura que el padding y border no afecten el ancho total de los elementos */
+    box-sizing: border-box;  
 }
 
 body {
     margin: 0;
-    background-color: #2E2E2E;  /* Gris oscuro de fondo */
+    background-color: #2E2E2E; 
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
 nav {
-    background: linear-gradient(100deg, #B80000, #9B0000, #5A0000);  /* Rojo oscuro */
+    background: linear-gradient(100deg, #B80000, #9B0000, #5A0000); 
     height: 120px;
     display: flex;
     justify-content: space-around;
@@ -37,7 +37,7 @@ main {
 }
 
 .contenedor_productos {
-    width: 65%; /* Reducido para que el carrito y productos se ajusten bien */
+    width: 65%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -45,7 +45,7 @@ main {
 }
 
 .producto {
-    background: linear-gradient(135deg, #888888, #4A4A4A); /* Gris metálico para productos */
+    background: linear-gradient(135deg, #888888, #4A4A4A); 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -54,7 +54,7 @@ main {
     border-radius: 18px;
     letter-spacing: 3px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid #333333; /* Gris oscuro en los bordes */
+    border: 1px solid #333333; 
     height: auto;
     gap: 10px;
 }
@@ -62,7 +62,7 @@ main {
 .producto h4,
 .producto p {
     margin: 5px 0;
-    color: white; /* Blanco para los textos */
+    color: white; 
 }
 
 .product-buttons {
@@ -75,17 +75,17 @@ main {
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
-    background-color: #F1C40F;  /* Amarillo brillante para los botones */
+    background-color: #F1C40F; 
     border: none;
 }
 
 .product-buttons button:hover {
-    background-color: #D9A700;  /* Amarillo más oscuro al pasar el mouse */
+    background-color: #D9A700; 
 }
 
 .icon {
     display: flex;
-    justify-content: flex-end; /* Alinea el icono de eliminar a la derecha */
+    justify-content: flex-end;
     width: 100%;
 }
 
@@ -101,7 +101,7 @@ main {
 }
 
 .contenedor_resumen {
-    background: linear-gradient(135deg, #888888, #4A4A4A); /* Gris metálico */
+    background: linear-gradient(135deg, #888888, #4A4A4A); 
     height: auto;
     width: 30%;
     padding: 20px;
@@ -118,44 +118,44 @@ button {
     border: 1px solid black;
     cursor: pointer;
     padding: 10px 20px;
-    background-color: #D9A700; /* Amarillo brillante */
+    background-color: #D9A700;
     color: white;
     font-size: 16px;
 }
 
 button:hover {
-    background-color: #B68900;  /* Amarillo más oscuro */
+    background-color: #B68900; 
 }
 
 /* Para pantallas pequeñas (max-width 768px) */
 @media (max-width: 768px) {
     main {
-        flex-direction: column; /* Cambia la dirección para pantallas pequeñas */
+        flex-direction: column; 
         align-items: center;
     }
 
     .contenedor_productos {
-        width: 100%; /* Los productos ocuparán el 100% del ancho */
+        width: 100%; 
         gap: 10px;
     }
 
     .producto {
-        width: 100%;  /* Asegura que los productos ocupen todo el ancho disponible */
+        width: 100%;  
         padding: 10px;
     }
 
     .contenedor_resumen {
-        width: 90%;  /* Hace que el resumen de la compra ocupe el 90% del ancho */
+        width: 90%; 
         margin-top: 30px;
     }
 
     .icon img {
-        max-width: 30px; /* Reducción del tamaño del icono en pantallas pequeñas */
+        max-width: 30px;
         max-height: 30px;
     }
 
     button {
-        width: 100%; /* El botón ocupará todo el ancho */
+        width: 100%; 
         padding: 12px;
         font-size: 18px;
     }

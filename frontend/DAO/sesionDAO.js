@@ -1,5 +1,5 @@
 
-//SE crea la clase sesionDAO
+
 class SesionDao {
 
     // Funcion para realizar una solicitud fetch
@@ -11,9 +11,7 @@ class SesionDao {
                 body: body,
             });
     
-            //Si la la solicitud esta ok convierte en JSON
-            //Si esta mal se maneja con el bloque "catch"
-            //Que devulve un objeto jSON que incluye mensaje
+ 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -90,7 +88,7 @@ class SesionDao {
 
             if (respuestaJson.status) {
                 sessionStorage.setItem('usuarioId', respuestaJson.datos.id_persona); // Almacena el ID
-                // ... resto del código ...
+         
             }
             
     
@@ -98,7 +96,7 @@ class SesionDao {
             return respuestaJson;
         } catch (error) {
             console.error('Error al procesar la solicitud:', error);
-            return { status: false, mensaje: "Error de conexión." }; // Manejo de error
+            return { status: false, mensaje: "Error de conexión." }; 
         }
     }
     

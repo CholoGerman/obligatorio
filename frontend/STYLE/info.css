@@ -289,14 +289,13 @@ button::before {
 button:hover {
   color: #fff;
     border: 1px solid rgb(255,0,0);
-<<<<<<< HEAD
+
 }
 
 button:hover::before {
   box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
 }
-=======
-  }
+
   
   button:hover::before {
     box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
@@ -319,4 +318,4 @@ button:hover::before {
 .slide-down {
   animation: slideDown 1s ease forwards;
 }
->>>>>>> 130ce681fb7fb3f133a7dfc375971306d7910dbc
+

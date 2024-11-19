@@ -117,10 +117,26 @@ function mostrarProducto(repuesto) {
     document.getElementById('agregarCarrito').addEventListener('click', () => {
         agregarAlCarrito(repuesto);
     });
+
+    document.getElementById('agregarFavorito').addEventListener('click', () => {
+        agregarAlCarrito(repuesto);
+    });
+
 }
 
 function obtenerIdUsuario() {
     return sessionStorage.getItem('usuarioId');
+}
+
+
+
+function agregarFavorito(repuesto){
+    
+
+
+
+
+
 }
 
 function agregarAlCarrito(repuesto) {
@@ -131,10 +147,10 @@ function agregarAlCarrito(repuesto) {
     let productoExistente = carrito.find(item => item.id_repuesto === repuesto.id_repuesto);
     if (productoExistente) {
         // Si ya existe, aumentar la cantidad
-        productoExistente.cantidad += cantidad; // Usa la cantidad seleccionada
+        productoExistente.cantidad += cantidad; 
     } else {
         // Si no existe, agregarlo al carrito
-        repuesto.cantidad = cantidad; // Inicializar la cantidad
+        repuesto.cantidad = cantidad; 
         carrito.push(repuesto);
     }
 
@@ -142,7 +158,6 @@ function agregarAlCarrito(repuesto) {
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 
     // // Mostrar una alerta o realizar otra acción
-    // alert("Producto agregado al carrito.");
 
     let notificacion = document.getElementById('notificacion');
     notificacion.classList.remove('ocultar');

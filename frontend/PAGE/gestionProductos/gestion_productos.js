@@ -19,13 +19,13 @@ function mostrarCatalogo(catalogo) {
 
     if (catalogo.length === 0) {
         console.log("No se han recibido productos.");
-        return; // No hacer nada si no hay productos
+        return; 
     }
 
     let tbodyElement = document.querySelector("#contenedor_productos");
     tbodyElement.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevos productos
 
-    // Iterar sobre el catálogo para agregar cada producto al contenedor
+
     catalogo.forEach((repuesto) => {
         tbodyElement.innerHTML += ` 
             <div class="producto" data-id="${repuesto.id_repuesto}">
@@ -48,7 +48,7 @@ function mostrarCatalogo(catalogo) {
         botonModificar.addEventListener('click', (event) => {
             // Obtener el ID del producto para redirigir
             let id_repuesto = event.target.closest('.modificar').dataset.id;
-            console.log('ID del producto a modificar:', id_repuesto);  // Ver en la consola si el ID es correcto
+            console.log('ID del producto:', id_repuesto);  // Ver en la consola si el ID es correcto
 
             // Verificar si el ID existe y redirigir al formulario de edición
             if (id_repuesto) {
@@ -62,11 +62,11 @@ function mostrarCatalogo(catalogo) {
     document.querySelectorAll('.eliminar').forEach((botonEliminar) => {
         botonEliminar.addEventListener('click', async (event) => {
             let id_repuesto = event.target.closest('.eliminar').dataset.id;
-            console.log("ID del producto a eliminar:", id_repuesto);
+            console.log("ID del producto:", id_repuesto);
 
             // Confirmación antes de eliminar
             if (!confirm("¿Estás seguro de que deseas eliminar este producto?")) {
-                return; // Si el usuario cancela, no hacer nada
+                return; // Si el usuario cancela, no hace nada
             }
 
             let productoDao = new ProductoDao();

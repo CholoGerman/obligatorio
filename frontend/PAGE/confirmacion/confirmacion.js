@@ -17,8 +17,7 @@ function mostrarPedidos(pedidos) {
 
     pedidos.forEach((pedido) => {
         let precio = parseFloat(pedido.precio_total);
-        console.log("Precio:", precio);  // Verifica el valor de `precio_total`
-        console.log("Tipo de precio:", typeof precio);  // Verifica el tipo
+
 
         // Si el precio es válido (no NaN), muestra el pedido
         if (!isNaN(precio)) {
@@ -64,7 +63,7 @@ function asignarEventListeners() {
             let selectEstado = document.querySelector(`.estado-pedido[data-id="${idPedido}"]`);
             let nuevoEstado = selectEstado ? selectEstado.value : 'Enviado';  // Obtener el estado seleccionado
             
-            console.log(`Cambiando el estado del pedido ID ${idPedido} a: ${nuevoEstado}`);
+            console.log(` ${idPedido} a ${nuevoEstado}`);
             
             // Cambiar el estado del pedido usando la función cambiarEstadoPedido
             await new PedidoDao().cambiarEstadoPedido(idPedido, nuevoEstado);

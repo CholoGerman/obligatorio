@@ -6,14 +6,14 @@ window.onload =()=> {
 class FavoritoDao{
 
 
-    async  agregarFavorito(id_producto, correo){
+    async  agregarFavorito(id_producto, id_cliente){
 
        
 
         let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
         let formData = new FormData();
         formData.append("id_producto",id_producto);
-        formData.append("correo",correo);
+        formData.append("id_cliente",id_cliente);
       
         let config = {
             method:"POST",
@@ -68,23 +68,7 @@ class FavoritoDao{
 
 }
 
-// va a favorito.js
 
 
- function mostrarFavorito(productos) { incompleto
-
-    let tbodyElement = document.querySelector("#divFavorito");
-    tbodyElement.innerHTML = "";
-    productos.forEach((producto) => { // hay que poner el html de lo que muestra el cartel desplegable de los favoritos
-        tbodyElement.innerHTML += ` 
-     
-                                                                                  <======== ESTE HTML NO ESTA BIEN/ACTUALIZADO
-
-   
- `;
-        
-    }
-)
-}
 
 export default FavoritoDao;

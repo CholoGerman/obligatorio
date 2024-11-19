@@ -1,4 +1,4 @@
-import ProductoDao from '../../../frontend/DAO/productoDAO.js';  // Asegúrate de que la ruta esté correcta
+import ProductoDao from '../../../frontend/DAO/productoDAO.js';  
 
 window.onload = async () => {
     // Obtener el parámetro 'id' de la URL
@@ -6,11 +6,11 @@ window.onload = async () => {
     let id_repuesto = urlParams.get('id'); // Obtén el 'id' de la URL
 
     if (id_repuesto) {
-        console.log("Producto a editar con ID:", id_repuesto);
+        console.log("Producto:", id_repuesto);
         try {
             // Hacer la solicitud para obtener el producto con ese ID
             let producto = await new ProductoDao().obtenerProducto(id_repuesto);
-            console.log("Producto recibido:", producto);  // Asegúrate de que se está recibiendo correctamente
+            console.log("Producto recibido:", producto); 
 
             if (producto && producto[0]) { // Verifica que el producto tenga datos válidos
                 llenarFormularioConProducto(producto[0]); // Llama a la función para llenar el formulario
@@ -27,7 +27,7 @@ window.onload = async () => {
 
 // Función para llenar el formulario con el producto
 function llenarFormularioConProducto(producto) {
-    console.log("Llenando formulario con el producto:", producto);  // Asegúrate de que los datos estén presentes
+
 
     // Asigna los valores del producto a los campos del formulario
     document.querySelector("#nombre").value = producto.nombre || '';  

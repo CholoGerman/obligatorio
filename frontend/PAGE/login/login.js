@@ -1,8 +1,6 @@
 import SesionDao from '../../DAO/sesionDAO.js';
-//Importa la clase sessionDAO que se encarga de hacer las peticiones
-//Al servidor
 
-//Se ejecuta cuando la pagina se cargue por completo
+
 window.onload = () => {
 
     //Encuentra el login de formulario en DOM
@@ -28,8 +26,8 @@ window.onload = () => {
             //Crea una instancia de SesionDao   
             let sesionDao = new SesionDao();
             //Llama al método login de la clase SesionDao con los valores ingresados
-            let respuesta = await sesionDao.login(correo, password);
-            //EL "await" permite esperar la respuesta del serivor
+            let respuesta = await sesionDao.login(correo, password);           
+
             //Imprime la respuesta del servidor en consola
             console.log("Respuesta del servidor:", respuesta);
 

@@ -10,7 +10,7 @@ window.onload =()=> {
  class PedidoDao{
 
     async  obtenerPedido(id_pedido){
-    let url ="http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtener";
+    let url =  origen + "/backend/controlador/PedidosController.php?funcion=obtener";
     let formData = new FormData();
     formData.append("id_pedido",id_pedido);
     let config = {
@@ -24,7 +24,7 @@ window.onload =()=> {
 
 }
 async obtenerPedidos() {
-    let url = "http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerall";
+    let url =  origen + "/backend/controlador/PedidosController.php?funcion=obtenerall";
     let respuesta = await fetch(url);
     let pedidos = await respuesta.json();
     console.log("Pedidos recibidos:", pedidos);  // Verifica los datos recibidos
@@ -35,7 +35,7 @@ async obtenerPedidos() {
 
 
 async obtenerPedidosCliente(id_cliente) {
-    let url = `http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=obtenerCliente&id_cliente=${id_cliente}`;
+    let url =  origen + "/backend/controlador/PedidosController.php?funcion=obtenerCliente&id_cliente=${id_cliente}`;
     let config = {
         method: "GET",  // Cambiado a GET
     };
@@ -55,7 +55,7 @@ async obtenerPedidosCliente(id_cliente) {
 
 
 async cambiarEstadoPedido(id_pedido, estado) {
-    let url = origen + "/backend/controlador/PedidosController.php?funcion=estado";
+    let url =  origen + "/backend/controlador/PedidosController.php?funcion=estado";
     let formData = new FormData();
     formData.append("estado", estado);  
     formData.append("id_pedido", id_pedido);  

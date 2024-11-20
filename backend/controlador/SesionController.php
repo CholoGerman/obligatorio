@@ -1,4 +1,9 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 session_start(); // Asegúrate de iniciar la sesión
 
 require_once "../modelo/SesionDAO.php"; // Incluye el modelo de acceso a datos

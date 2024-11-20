@@ -1,3 +1,5 @@
+import origen from "../config/origin.js";
+
 window.onload =()=> {
     mostrarFavorito(productos);
 }
@@ -10,7 +12,7 @@ class FavoritoDao{
 
        
 
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=agregar";
         let formData = new FormData();
         formData.append("id_producto",id_producto);
         formData.append("id_cliente",id_cliente);
@@ -33,7 +35,7 @@ class FavoritoDao{
 
         
 
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=eliminar";
         let formData = new FormData();
         formData.append("id_producto",id_producto);
       
@@ -52,7 +54,7 @@ class FavoritoDao{
     
     async  obtenerFavoritos(correo){
     
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=obtener";
         let formData = new FormData();
         formData.append("correo",correo);
         let config = {

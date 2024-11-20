@@ -1,3 +1,5 @@
+import origen from "../config/origin.js";
+
 window.onload = async () => { 
     let agregar = new ProductoDao();
     agregar.agregarProducto(); 
@@ -9,7 +11,7 @@ class ProductoDao {
 
     // Metodo para obtener producto usando su id por parametro
     async obtenerProducto(id_repuesto) {
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=obtener";
         //Guarda la url en un variable.
         let formData = new FormData(); //Crea un formData para enviar datos
         formData.append("id_repuesto", id_repuesto); //Añadir el id del producto al formData
@@ -26,7 +28,7 @@ class ProductoDao {
 
     // Obtener el catálogo de productos
     async obtenerCatalogo() {
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerall";
+        let url =  origen + "/backend/controlador/ProductosController.php?funcion=obtenerall";
         let config = {
             method: "GET",
         };
@@ -46,7 +48,7 @@ class ProductoDao {
 
     // Agregar un nuevo producto
     async agregarProducto(formData) {
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=agregar"; 
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=agregar"; 
 
         // Configuración de la solicitud (POST)
         let config = {
@@ -72,7 +74,7 @@ class ProductoDao {
     
     // Eliminar un producto
     async eliminarProducto(id_repuesto) {
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=eliminar";
         
         // Crear FormData y agregar el id_repuesto
         let formData = new FormData();
@@ -106,7 +108,7 @@ class ProductoDao {
 
     // Modificar un producto existente
     async modificarProducto(formData) {
-        let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=modificar";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=modificar";
         let config = {
             method: "POST",
             body: formData
@@ -121,7 +123,7 @@ class ProductoDao {
 
     async obtenerEstadisticas(callback) {
         try {
-            let url = "http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerEstadisticas";
+            let url = origen + "/backend/controlador/ProductosController.php?funcion=obtenerEstadisticas";
             let respuesta = await fetch(url);
             let estadisticas = await respuesta.json();
     

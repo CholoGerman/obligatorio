@@ -1,8 +1,16 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 require_once "../modelo/ProductoDAO.php";
 //Contiene funciones de accceso a la base de datos para interactuar 
 //Con la informacion del producto
+
+
+
+
 
 //Se obtiene el valor de la funcion desde la URL
 //usando GET.

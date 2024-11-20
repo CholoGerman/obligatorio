@@ -1,4 +1,9 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 // Inicia la sesión si no ha sido iniciada previamente
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

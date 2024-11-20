@@ -1,3 +1,5 @@
+import origen from "../config/origin.js";
+
 window.onload = () => {
     mostrarUsuarios(clientes);
 
@@ -6,7 +8,7 @@ window.onload = () => {
  class UsuarioDao {
 
     async obtenerUsuarios() {
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtenerAll";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=obtenerAll";
         let respuesta = await fetch(url);
         let clientes = await respuesta.json();
         return clientes;
@@ -14,7 +16,7 @@ window.onload = () => {
     }
 
     async eliminarUsuario(correo) {
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=obtener";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=obtener";
         let formData = new FormData();
         formData.append("email",correo);
         let config = {
@@ -31,7 +33,7 @@ window.onload = () => {
     }
 
     async eliminarUsuario(correo) {
-        let url ="http://localhost/obligatorio/backend/controlador/ProductosController.php?funcion=eliminar";
+        let url = origen + "/backend/controlador/ProductosController.php?funcion=eliminar";
         let formData = new FormData();
         formData.append("email",correo);
         let config = {

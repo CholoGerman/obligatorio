@@ -1,4 +1,4 @@
-
+import origen from "../config/origin.js";
 
 class SesionDao {
 
@@ -28,7 +28,7 @@ class SesionDao {
     async registerAdmin(correo, password, nombre, apellido) {
 
         //Usa la url del controlador para hacer peticiones de datos
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=registerAdmin"; 
+        let url = origen + "/backend/controlador/SesionController.php?funcion=registerAdmin"; 
 
         // Crea un nuevo objeto FormData para enviar los datos del formulario al controlador
         let formData = new FormData(); // Crear un nuevo objeto FormData
@@ -52,7 +52,7 @@ class SesionDao {
   
     // Funcion para registrar un nuevo usuario
     async register(correo, password, nombre, apellido) {
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=register"; 
+        let url = origen + "/backend/controlador/SesionController.php?funcion=register"; 
         let formData = new FormData(); // Crear un nuevo objeto FormData
         formData.append("correo", correo); // Agregar correo
         formData.append("contraseña", password); // Agregar contraseña
@@ -73,7 +73,7 @@ class SesionDao {
     async login(correo, password) {
 
         // Usa la url del controlador para hacer peticiones de datos
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=login";
+        let url = origen + "/backend/controlador/SesionController.php?funcion=login";
         
         // Crea un nuevo objeto FormData para enviar los datos del formulario al controlador
         let formData = new FormData();
@@ -104,7 +104,7 @@ class SesionDao {
     async logOut() {
         
         // Usa la url del controlador para hacer peticiones de datos
-        let url = "http://localhost/obligatorio/backend/controlador/SesionController.php?funcion=logOut"; 
+        let url = origen + "/backend/controlador/SesionController.php?funcion=logOut"; 
         
         // Realiza la solicitud para cerrar sesión
         let respuesta = await fetch(url); 

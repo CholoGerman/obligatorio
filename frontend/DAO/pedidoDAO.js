@@ -1,3 +1,5 @@
+import origen from "../config/origin.js";
+
 window.onload =()=> {
       
     mostrarPedido(pedido);
@@ -53,7 +55,7 @@ async obtenerPedidosCliente(id_cliente) {
 
 
 async cambiarEstadoPedido(id_pedido, estado) {
-    let url = "http://localhost/obligatorio/backend/controlador/PedidosController.php?funcion=estado";
+    let url = origen + "/backend/controlador/PedidosController.php?funcion=estado";
     let formData = new FormData();
     formData.append("estado", estado);  
     formData.append("id_pedido", id_pedido);  

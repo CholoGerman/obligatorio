@@ -35,7 +35,7 @@ async obtenerPedidos() {
 
 
 async obtenerPedidosCliente(id_cliente) {
-    let url =  origen + "/backend/controlador/PedidosController.php?funcion=obtenerCliente&id_cliente=${id_cliente}`;
+    let url =  origen + "/backend/controlador/PedidosController.php?funcion=obtenerCliente&id_cliente=${id_cliente}";
     let config = {
         method: "GET",  // Cambiado a GET
     };

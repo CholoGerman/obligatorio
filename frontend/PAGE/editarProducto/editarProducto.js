@@ -1,3 +1,4 @@
+import origen from "../../config/origin.js"
 import ProductoDao from '../../../frontend/DAO/productoDAO.js';  
 
 window.onload = async () => {
@@ -55,7 +56,7 @@ function llenarFormularioConProducto(producto) {
         if (respuesta.status) {
             alert('Producto actualizado correctamente');
             // Redirige o recarga la página según sea necesario
-            window.location.href = 'http://localhost/obligatorio/frontend/PAGE/gestionProductos/gestion_Productos.html';  // Cambia la URL de redirección
+            window.location.href = origen + '/frontend/PAGE/gestionProductos/gestion_Productos.html';  // Cambia la URL de redirección
         } else {
             alert('Error al actualizar el producto');
         }

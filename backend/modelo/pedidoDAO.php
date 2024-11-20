@@ -47,23 +47,38 @@ class PedidoDao{
     
     
     
-function obtenerPedidosCliente($id_cliente){
-    $connection = connection();
-    $sql = "
-       SELECT p.id_pedido, p.fecha, p.metodo, 
-       d.cantidad, d.precio, d.estado,
-       (d.cantidad * d.precio) AS precio_total,  
-       e.num_dir, e.calle_dir, e.codigo_postal
-FROM Pedido p
-JOIN detalle d ON p.id_pedido = d.id_pedido
-JOIN envio e ON p.id_envio = e.id_envio
-WHERE p.id_cliente = $id_cliente;
-;
-    ";
-    $respuesta = $connection->query($sql);
-    $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
-    return $pedidos;
-}
+    function obtenerPedidosCliente($id_cliente) {
+        $connection = connection();
+        $sql = "
+           SELECT p.id_pedido, p.fecha, p.metodo, 
+                  d.cantidad, d.precio, d.estado,
+                  (d.cantidad * d.precio) AS precio_total,  
+                  e.num_dir, e.calle_dir, e.codigo_postal
+           FROM Pedido p
+           JOIN detalle d ON p.id_pedido = d.id_pedido
+           JOIN envio e ON p.id_envio = e.id_envio
+           WHERE p.id_cliente = ?;
+        ";
+    
+        $stmt = $connection->prepare($sql);
+        if (!$stmt) {
+            die("Error preparando la consulta: " . $connection->error);
+        }
+    
+        $stmt->bind_param("i", $id_cliente);
+        $stmt->execute();
+        $respuesta = $stmt->get_result();
+    
+        $pedidos = $respuesta->fetch_all(MYSQLI_ASSOC);
+    
+        // Log para verificar los resultados antes de devolverlos
+        error_log("Pedidos obtenidos: " . print_r($pedidos, true));
+    
+        $stmt->close();
+        return $pedidos;
+    }
+    
+    
 
 
 function cambiarEstadoPedido($id_pedido, $estado) {

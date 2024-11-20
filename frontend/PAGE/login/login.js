@@ -1,3 +1,4 @@
+import origen from "../../config/origin.js"
 import SesionDao from '../../DAO/sesionDAO.js';
 
 
@@ -40,10 +41,10 @@ window.onload = () => {
                 // Verifica si es un administrador
                 if (respuesta.datos.isAdmin) {
                     // Redirige a la página de administrador
-                    window.location.href = "http://localhost/obligatorio/frontend/PAGE/admin/controlador_Admin.html";
+                    window.location.href = origen + "/frontend/PAGE/admin/controlador_Admin.html";
                 } else {
                     // Redirige a la página de inicio normal
-                    window.location.href = "http://localhost/obligatorio/frontend/PAGE/inicio/index.html";
+                    window.location.href = origen + "/frontend/PAGE/inicio/index.html";
                 }
             } else {
                 alert(respuesta.mensaje);

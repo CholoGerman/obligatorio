@@ -1,3 +1,6 @@
+import origen from "../../config/origin.js"
+
+
 window.onload = () => {
 
     console.log("id del cliente:" + sessionStorage.getItem('clienteId'));
@@ -49,7 +52,7 @@ async function realizarCompra() {
     formData.append('codigo_postal', codigoPostal);
     formData.append('id_cliente', id_cliente);
 
-    let response = await fetch('http://localhost/obligatorio/backend/controlador/CarritoController.php?funcion=comprar', {
+    let response = await fetch(origen + '/backend/controlador/CarritoController.php?funcion=comprar', {
         method: 'POST',
         body: formData // Enviar como FormData
     });

@@ -33,12 +33,15 @@ function obtenerPedidos()
     $resultado = (new PedidoDao())->obtenerPedidos();
     echo json_encode($resultado);
 }
-function obtenerPedidosCliente()
-{ // Funcion para mostrar todos los pedidos de un cliente
+
+
+function obtenerPedidosCliente() {
     $id_cliente = $_GET['id_cliente'] ?? null;  // Usando null si no se encuentra el parámetro
-    $resultado = (new PedidoDao())->obtenerPedidosCliente($id_cliente);  // Llama al método correcto
+    error_log("ID Cliente recibido en el controlador: " . $id_cliente);  // Log de depuración
+    $resultado = (new PedidoDao())->obtenerPedidosCliente($id_cliente);
     echo json_encode($resultado);
 }
+
 
 
 function cambiarEstadoPedido()

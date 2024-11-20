@@ -52,7 +52,7 @@ function mostrarCatalogo(catalogo) {
 
             // Verificar si el ID existe y redirigir al formulario de edición
             if (id_repuesto) {
-                window.location.href = `http://localhost/obligatorio/frontend/PAGE/editarProducto/editarProducto.html?id=${id_repuesto}`;
+                window.location.href = origen + '/frontend/PAGE/editarProducto/editarProducto.html?id=${id_repuesto}';
             } else {
                 console.error('ID no encontrado en el atributo data-id');
             }

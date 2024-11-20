@@ -1,4 +1,4 @@
-
+import origen from "../../config/origin.js"
 import SesionDao from '../../DAO/sesionDAO.js'; // Importa la clase SesionDao desde el archivo especificado
 
 // Función que se ejecuta cuando la ventana se ha cargado completamente

@@ -1,3 +1,4 @@
+import origen from "../../config/origin.js"
 import ProductoDao from '../../DAO/productoDAO.js'; 
 
 // Se asegura de que el código se ejecute después de que el DOM haya cargado completamente

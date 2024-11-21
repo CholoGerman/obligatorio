@@ -1,2 +1,2 @@
-const origen =  "http://192.168.1.7/obligatorio";
+const origen =  "http://10.114.175.6/obligatorio";
 export default origen;

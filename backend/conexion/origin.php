@@ -1,6 +1,6 @@
 <?php
 
 function getOrigin(){
-    return "http://192.168.1.7/obligatorio";
+    return "http://10.114.175.6/obligatorio";
 }
 ?>

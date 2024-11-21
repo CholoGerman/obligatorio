@@ -365,3 +365,9 @@ Stack trace:
 
 )
 
+[20-Nov-2024 22:52:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xamppp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xamppp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xamppp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xamppp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25

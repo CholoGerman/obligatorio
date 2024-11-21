@@ -9,22 +9,39 @@ window.onload = async () => {
 
 class ProductoDao {
 
-    // Metodo para obtener producto usando su id por parametro
-    async obtenerProducto(id_repuesto) {
-        let url = origen + "/backend/controlador/ProductosController.php?funcion=obtener";
-        //Guarda la url en un variable.
-        let formData = new FormData(); //Crea un formData para enviar datos
-        formData.append("id_repuesto", id_repuesto); //Añadir el id del producto al formData
-
-        let config = { //Configura la solicitud HTTP
-            method: "POST", //Se aplica el motodo POST para enviar datos
-            body: formData //Cuerpo de la solicitud con los datos
+    // Metodo para obtener producto usando su id por parametroasync obtenerProducto(id_repuesto) {
+        async obtenerProducto(id_repuesto) {
+            if (!id_repuesto || isNaN(id_repuesto)) {
+                console.error("ID de producto inválido:", id_repuesto);
+                return { error: "ID de producto inválido" };
+            }
+        
+            let url = origen + "/backend/controlador/ProductosController.php?funcion=obtener";
+            let formData = new FormData();
+            formData.append("id_repuesto", id_repuesto);
+        
+            let config = {
+                method: "POST",
+                body: formData,
+            };
+        
+            try {
+                let respuesta = await fetch(url, config);
+        
+                if (!respuesta.ok) {
+                    throw new Error(`HTTP error! status: ${respuesta.status}`);
+                }
+        
+                let producto = await respuesta.json();
+                return producto;
+            } catch (error) {
+                console.error("Error al obtener el producto:", error);
+                return { error: "Error en la solicitud" };
+            }
         }
 
-        let respuesta = await fetch(url, config);   //Envia la solicitud y espera la respuesta
-        let producto = await respuesta.json();  //Convierte la respuesta a json
-        return producto; //Retorna el producto obtenido
-    }
+    
+    
 
     // Obtener el catálogo de productos
     async obtenerCatalogo() {

@@ -53,7 +53,8 @@ function mostrarCatalogo(catalogo) {
 
             // Verificar si el ID existe y redirigir al formulario de edición
             if (id_repuesto) {
-                window.location.href = origen + '/frontend/PAGE/editarProducto/editarProducto.html?id=${id_repuesto}';
+                window.location.href = `${origen}/frontend/PAGE/editarProducto/editarProducto.html?id=${id_repuesto}`;
+
             } else {
                 console.error('ID no encontrado en el atributo data-id');
             }
@@ -93,8 +94,8 @@ function mostrarCatalogo(catalogo) {
 
 // Función para filtrar productos según el texto ingresado en el campo de búsqueda
 function filtrarProductos(event, catalogo) {
-    const query = event.target.value.toLowerCase(); // Obtener el texto de búsqueda
-    const productosFiltrados = catalogo.filter(producto => 
+    let query = event.target.value.toLowerCase(); // Obtener el texto de búsqueda
+    let productosFiltrados = catalogo.filter(producto => 
         producto.nombre.toLowerCase().includes(query)
     );
     mostrarCatalogo(productosFiltrados); // Mostrar los productos filtrados

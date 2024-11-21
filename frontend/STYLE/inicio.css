@@ -315,3 +315,25 @@ cambio  */
     color: #FF0000; 
     font-size: 1.2em; 
 }
+
+.detalles {
+    display: flex;
+    flex-direction: column; /* Asegura que el título y el precio estén en líneas separadas */
+    background-color: #1C1C1C;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center; /* Centra el texto */
+}
+
+.detalles p:first-child {
+    font-size: 14px; /* Ajusta el tamaño del título */
+    margin: 0;
+    word-wrap: break-word; /* Permite que los títulos largos se ajusten automáticamente */
+}
+
+.detalles p:last-child {
+    font-size: 16px; /* Resalta un poco más el precio */
+    font-weight: bold;
+    margin: 0;
+    color: #FFDD00; /* Para destacarlo */
+}

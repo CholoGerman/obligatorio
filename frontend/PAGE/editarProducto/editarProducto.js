@@ -1,35 +1,38 @@
-import origen from "../../config/origin.js"
+import origen from "../../config/origin.js";
 import ProductoDao from '../../../frontend/DAO/productoDAO.js';  
 
 window.onload = async () => {
     // Obtener el parámetro 'id' de la URL
     let urlParams = new URLSearchParams(window.location.search);
     let id_repuesto = urlParams.get('id'); // Obtén el 'id' de la URL
+    
+    if (!id_repuesto || isNaN(id_repuesto)) {
+        console.error(`El ID del producto no es válido: ${id_repuesto}`);
+        return;
+    }
+    
+    id_repuesto = parseInt(id_repuesto); // Asegúrate de que sea un número entero
+    console.log("ID del producto a buscar:", id_repuesto);
 
-    if (id_repuesto) {
-        console.log("Producto:", id_repuesto);
-        try {
-            // Hacer la solicitud para obtener el producto con ese ID
-            let producto = await new ProductoDao().obtenerProducto(id_repuesto);
-            console.log("Producto recibido:", producto); 
+    try {
+        // Solicitar el producto al backend
+        let producto = await new ProductoDao().obtenerProducto(id_repuesto);
+        console.log("Producto recibido:", producto);
 
-            if (producto && producto[0]) { // Verifica que el producto tenga datos válidos
-                llenarFormularioConProducto(producto[0]); // Llama a la función para llenar el formulario
-            } else {
-                console.error("Producto no encontrado en la respuesta.");
-            }
-        } catch (error) {
-            console.error("Error al cargar el producto:", error);
+        // Verificar si se recibió un producto válido
+        if (producto && producto[0]) {
+            llenarFormularioConProducto(producto[0]); // Llenar el formulario con los datos
+        } else {
+            console.error("Producto no encontrado en la respuesta.");
         }
-    } else {
-        console.error('No se encontró el parámetro "id" en la URL');
+    } catch (error) {
+        console.error("Error al cargar el producto:", error);
     }
 };
 
+
 // Función para llenar el formulario con el producto
 function llenarFormularioConProducto(producto) {
-
-
     // Asigna los valores del producto a los campos del formulario
     document.querySelector("#nombre").value = producto.nombre || '';  
     document.querySelector("#stock").value = producto.stock !== undefined ? producto.stock : '';  
@@ -56,11 +59,10 @@ function llenarFormularioConProducto(producto) {
         if (respuesta.status) {
             alert('Producto actualizado correctamente');
             // Redirige o recarga la página según sea necesario
-            window.location.href = origen + '/frontend/PAGE/gestionProductos/gestion_Productos.html';  // Cambia la URL de redirección
+            window.location.href = origen + '/frontend/PAGE/gestionProductos/gestion_Productos.html'; 
         } else {
             alert('Error al actualizar el producto');
         }
     };
 }
-
 

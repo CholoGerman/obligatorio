@@ -1,5 +1,6 @@
 import ProductoDao from "../../DAO/productoDAO.js";
 import SesionDao from '../../../frontend/DAO/sesionDAO.js';
+import FavoritoDao from "../../DAO/favoritoDAO.js"; // Importar FavoritoDAO
 
 window.onload = async () => {
     let params = new URLSearchParams(window.location.search);
@@ -26,14 +27,8 @@ window.onload = async () => {
     document.getElementById('logoutButton').addEventListener('click', async () => {
         let sesionDao = new SesionDao();
         await sesionDao.logOut(); // Llama a la función de cierre de sesión
-  
     });
-
-
 };
-
-
-
 
 let menuToggle = document.getElementById('menuToggle');
 let dropdownMenu = document.getElementById('dropdownMenu');
@@ -49,9 +44,6 @@ document.addEventListener('click', function(event) {
         dropdownMenu.style.display = 'none';
     }
 });
-
-
-
 
 let cantidad = 1; 
 
@@ -84,7 +76,6 @@ function mostrarProducto(repuesto) {
             <img src="${imagenSrc}" style="aspect-ratio: auto" alt="${repuesto.nombre}">
         </div>
 
-
         <div class="product-info">
             <div class="primera_fila">
                 <h1 class="product-title">${repuesto.nombre}</h1>
@@ -92,7 +83,7 @@ function mostrarProducto(repuesto) {
             </div>
             <p class="product-details">Estado: ${repuesto.estado}</p>
             <p class="product-details">Color: ${repuesto.color}</p>
-             <p class="product-details">Stock: ${repuesto.stock}</p>
+            <p class="product-details">Stock: ${repuesto.stock}</p>
             
             <div class="product-buttons">
                 <button onclick="disminuirCantidad()">-</button>
@@ -104,13 +95,11 @@ function mostrarProducto(repuesto) {
 
         </div>
 
-        </div>
+    </div>
 
-          <div class="contenedor_descripcion">
-                <p class="product-details">Descripción: ${repuesto.descripcion}</p>
-
-        </div>
-
+    <div class="contenedor_descripcion">
+        <p class="product-details">Descripción: ${repuesto.descripcion}</p>
+    </div>
 
     `;
 
@@ -119,25 +108,47 @@ function mostrarProducto(repuesto) {
     });
 
     document.getElementById('agregarFavorito').addEventListener('click', () => {
-        agregarAlCarrito(repuesto);
+        agregarFavorito(repuesto); // Se llama a la función agregarFavorito
     });
-
 }
 
 function obtenerIdUsuario() {
     return sessionStorage.getItem('usuarioId');
 }
 
+// Función para agregar a favoritos
+async function agregarFavorito(repuesto) {
+    try {
+        // Obtener el id_persona desde sessionStorage
+        let usuarioId = sessionStorage.getItem('usuarioId');
 
+        // Verificar si el usuarioId está presente en el sessionStorage
+        if (!usuarioId) {
+            alert("No se ha encontrado un usuario en la sesión.");
+            return;
+        }
 
-function agregarFavorito(repuesto){
-    
+        // Llamar a la función agregarFavorito de FavoritoDao
+        let favoritoDao = new FavoritoDao();
+        let resultado = await favoritoDao.agregarFavorito(repuesto.id_repuesto, usuarioId);
 
-
-
-
-
+        // Verificar el resultado y mostrar el mensaje adecuado
+        if (resultado.status) {
+            console.log("Producto agregado a favoritos:", resultado.message);
+            alert("Producto agregado a favoritos!");
+        } else {
+            console.error("Error al agregar a favoritos:", resultado.message);
+            alert(resultado.message);
+        }
+    } catch (error) {
+        console.error("Error al agregar el producto a favoritos:", error);
+        alert("Hubo un error al agregar el producto a favoritos.");
+    }
 }
+
+
+
+
 
 function agregarAlCarrito(repuesto) {
     // Obtener el carrito actual del sessionStorage o crear uno nuevo
@@ -166,19 +177,4 @@ function agregarAlCarrito(repuesto) {
     setTimeout(() => {
         notificacion.classList.add('ocultar');
     }, 3000);
-
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,8 +8,8 @@ window.onload = async () => {
 
     if (clienteId) {
         try {
-            let favoritos = await new FavoritoDao().obtenerfavoritos(clienteId);
-            mostrarfavoritos(favoritos);
+            let favoritos = await new FavoritoDao().obtenerFavoritos(clienteId);
+            mostrarFavoritos(favoritos);
         } catch (error) {
             console.error("Error al obtener los favoritos:", error);
         }
@@ -19,30 +19,54 @@ window.onload = async () => {
     }
 };
 
-function mostrarfavoritos(favoritos) {
-    console.log("favoritos recibidos:", favoritos);
+function mostrarFavoritos(favoritos) {
+    console.log("Favoritos recibidos:", favoritos);
+
     if (!favoritos || favoritos.length === 0) {
         console.log("No se han recibido favoritos.");
         return;
     }
 
-    let tbodyElement = document.querySelector("#contenedor_favoritos");
-    tbodyElement.innerHTML = "";  // Limpiar el contenedor antes de agregar nuevos favoritos
+    let contenedor = document.querySelector("#contenedor_favoritos");
+    contenedor.innerHTML = "";  // Limpiar el contenedor antes de agregar nuevos favoritos
 
     favoritos.forEach((favorito) => {
-
         let precio = parseFloat(favorito.precio);  // Convertir a número
-        tbodyElement.innerHTML += `
+
+        contenedor.innerHTML += `
             <div class="producto" data-id="${favorito.id_favorito}">
-                <p>ID favorito: ${favorito.id_favorito}</p>
-                <p>Fecha: ${favorito.fecha}</p>
-                <p>Método: ${favorito.metodo}</p>
-                <p>Cantidad: ${favorito.cantidad}</p>
+                <p>Nombre: ${favorito.nombre}</p>
+                <p>Color: ${favorito.color}</p>
+                <p>Stock: ${favorito.stock}</p>
                 <p>Precio: ${isNaN(precio) ? 'N/A' : precio.toFixed(2)} €</p>
-                <p>Número de Dirección: ${favorito.num_dir}</p>
-                <p>Calle: ${favorito.calle_dir}</p>
-                <p>Estado: ${favorito.estado}</p>
-            </div>  
+                <p>Descripción: ${favorito.descripcion || 'No disponible'}</p>
+                <button class="eliminar-favorito" data-id="${favorito.id_favorito}">Eliminar de favoritos</button>
+            </div>
         `;
+    });
+
+    // Agregar los eventos de eliminación
+    document.querySelectorAll('.eliminar-favorito').forEach((btnEliminar) => {
+        btnEliminar.addEventListener('click', async (event) => {
+            let id_favorito = event.target.dataset.id;
+            console.log('Eliminar favorito con ID:', id_favorito);
+
+            // Confirmación antes de eliminar
+            if (confirm('¿Estás seguro de que deseas eliminar este producto de tus favoritos?')) {
+                try {
+                    let respuesta = await new FavoritoDao().eliminarFavorito(clienteId, id_favorito);
+                    if (respuesta.status) {
+                        alert('Producto eliminado de favoritos');
+                        // Eliminar el elemento del DOM
+                        event.target.closest('.producto').remove();
+                    } else {
+                        alert('Hubo un problema al eliminar el favorito');
+                    }
+                } catch (error) {
+                    console.error('Error al eliminar el favorito:', error);
+                    alert('Hubo un problema al eliminar el favorito');
+                }
+            }
+        });
     });
 }

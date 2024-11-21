@@ -43,17 +43,22 @@ switch ($funcion) {
 // Función para obtener un solo producto
 function obtenerProducto()
 {
-    $id_repuesto = $_POST["id_repuesto"];
-    //obtiene el id_respuesto del producto
-    //por el usuario mediante POST
+    if (isset($_POST['id_repuesto']) && !empty($_POST['id_repuesto'])) {
+        $id_repuesto = $_POST['id_repuesto'];
 
-    $respuesta = (new ProductoDao())->obtenerProducto($id_repuesto);
-    //Crea una instancia de ProductoDAO y llama al metodo 
-    //obtenerProducto pasando el id_respuesto
-    echo json_encode($respuesta);
-    //Convierta la respuesta en formato JSON y la
-    //envia al Cliente
+        // Validar que el ID es numérico
+        if (!is_numeric($id_repuesto)) {
+            echo json_encode(["error" => "ID de producto no válido"]);
+            return;
+        }
+
+        $respuesta = (new ProductoDao())->obtenerProducto((int) $id_repuesto);
+        echo json_encode($respuesta);
+    } else {
+        echo json_encode(["error" => "ID de producto no proporcionado"]);
+    }
 }
+
 
 // Función para obtener todos los productos
 function obtenerCatalogo()

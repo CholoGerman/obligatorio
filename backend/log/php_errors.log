@@ -365,3 +365,49 @@ Stack trace:
 
 )
 
+[21-Nov-2024 02:23:19 Europe/Berlin] ID Cliente recibido en el controlador: 3
+[21-Nov-2024 02:23:19 Europe/Berlin] Pedidos obtenidos: Array
+(
+)
+
+[21-Nov-2024 02:24:48 Europe/Berlin] Array
+(
+    [0] => Array
+        (
+            [id_repuesto] => 5
+            [cantidad] => 6
+            [precio] => 17565.00
+        )
+
+)
+
+[21-Nov-2024 02:25:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25
+[21-Nov-2024 02:25:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25
+[21-Nov-2024 02:26:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25
+[21-Nov-2024 02:26:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25
+[21-Nov-2024 02:27:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php:25
+Stack trace:
+#0 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(50): ProductoDao->obtenerProducto('${id_repuesto}')
+#1 C:\xampp\htdocs\obligatorio\backend\controlador\ProductosController.php(24): obtenerProducto()
+#2 {main}
+  thrown in C:\xampp\htdocs\obligatorio\backend\modelo\ProductoDAO.php on line 25
